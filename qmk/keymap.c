@@ -13,7 +13,6 @@
 // #include "masks/lily58.h"
 // #include "masks/crkbd.h"
 
-#ifdef REPEAT_KEY_ENABLE
 #include "repeat.h"
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -23,5 +22,4 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   oneshot_mod_state = get_oneshot_mods();
   return true;
 }
-#endif
 
