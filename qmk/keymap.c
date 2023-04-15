@@ -13,19 +13,6 @@
 // #include "masks/lily58.h"
 // #include "masks/crkbd.h"
 
-enum layer_number {
-  _BASE = 0,
-  _SYM,
-  _FUN,
-};
-
-/* see https://github.com/ChuseCubr/mini-ryoku for layout details */
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_BASE] = LAYOUT_mask(_BASE_LAYOUT),
-  [_SYM] = LAYOUT_mask(_SYM_LAYOUT),
-  [_FUN] = LAYOUT_mask(_FUN_LAYOUT),
-};
-
 #ifdef REPEAT_KEY_ENABLE
 #include "repeat.h"
 
