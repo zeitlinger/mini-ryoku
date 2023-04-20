@@ -38,9 +38,9 @@
       "KC_RCTL",
       "KC_LALT",
       "KC_SPC",
-      "MO(1)",
       "MO(2)",
-      "MO(3)"
+      "MO(3)",
+      "MO(1)"
     ],
     [
       "KC_DLR",
@@ -73,10 +73,10 @@
       "KC_COMM",
       "KC_DOT",
       "KC_SLSH",
-      "KC_NO",
-      "KC_NO",
       "KC_ENT",
-      "KC_BSPC"
+      "KC_BSPC",
+      "KC_TRNS",
+      "KC_TRNS"
     ],
     [
       "KC_7",
@@ -109,10 +109,10 @@
       "KC_RSFT",
       "KC_RCTL",
       "KC_LALT",
-      "KC_TAB",
+      "KC_TRNS",
+      "KC_TRNS",
       "KC_NO",
-      "KC_NO",
-      "KC_NO"
+      "KC_TAB"
     ],
     [
       "KC_F7",
@@ -147,8 +147,8 @@
       "KC_LALT",
       "KC_BTN1",
       "KC_BTN2",
-      "KC_NO",
-      "KC_NO"
+      "KC_TRNS",
+      "KC_TRNS"
     ],
     [
       "KC_NO",
@@ -174,7 +174,7 @@
       "KC_NO",
       "KC_NO",
       "KC_NO",
-      "KC_NO",
+      "KC_TRNS",
       "KC_NO",
       "KC_NO",
       "KC_NO",
@@ -183,8 +183,8 @@
       "KC_NO",
       "KC_NO",
       "KC_NO",
-      "KC_NO",
-      "KC_NO"
+      "KC_TRNS",
+      "KC_TRNS"
     ],
     [
       "KC_NO",
@@ -213,12 +213,12 @@
       "KC_NO",
       "KC_NO",
       "KC_NO",
+      "KC_TRNS",
       "KC_NO",
       "KC_NO",
       "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
+      "KC_TRNS",
+      "KC_TRNS",
       "KC_NO",
       "KC_NO"
     ],
@@ -249,14 +249,14 @@
       "KC_NO",
       "KC_NO",
       "KC_NO",
+      "KC_TRNS",
       "KC_NO",
       "KC_NO",
       "KC_NO",
       "KC_NO",
       "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO"
+      "KC_TRNS",
+      "KC_TRNS"
     ]
   ],
   "author": "zeitlinger"
