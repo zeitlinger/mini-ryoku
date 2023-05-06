@@ -7,12 +7,12 @@
   "layout": "LAYOUT",
   "layers": [
     [
-      "KC_W",
+      "KC_X",
       "KC_L",
       "KC_Y",
       "KC_P",
       "KC_B",
-      "KC_V",
+      "KC_W",
       "KC_F",
       "KC_O",
       "KC_U",
@@ -32,7 +32,7 @@
       "KC_LSFT",
       "KC_D",
       "KC_K",
-      "KC_X",
+      "KC_V",
       "KC_H",
       "KC_RSFT",
       "KC_RCTL",
