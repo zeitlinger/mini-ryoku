@@ -12,15 +12,15 @@
       "KC_D",
       "KC_P",
       "KC_W",
+      "KC_B",
       "KC_Y",
-      "KC_K",
       "KC_O",
       "KC_U",
       "KC_Z",
       "KC_N",
       "KC_R",
-      "KC_T",
       "KC_S",
+      "KC_T",
       "KC_G",
       "KC_M",
       "KC_H",
@@ -32,7 +32,7 @@
       "KC_LSFT",
       "KC_C",
       "KC_V",
-      "KC_B",
+      "KC_K",
       "KC_F",
       "KC_RSFT",
       "KC_RCTL",
@@ -225,4 +225,3 @@
   ],
   "author": "zeitlinger"
 }
-
