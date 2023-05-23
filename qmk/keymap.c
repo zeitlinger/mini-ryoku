@@ -17,12 +17,19 @@
 
 #define _BASE1 5
 
+bool base1_fast_key_processed = false;
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   process_repeat_key(keycode, record);
 
   //if layer base1 (5), then return to base layer after this key
-  if (layer_state_is(_BASE1)) {
-    layer_clear();
+  if (keycode >= KC_A && keycode <= KC_Z && layer_state_is(_BASE1)) {
+    if (base1_fast_key_processed) {
+      layer_clear();
+      base1_fast_key_processed = false;
+    } else {
+      base1_fast_key_processed = true;
+    }
   }
 
   mod_state = get_mods();
