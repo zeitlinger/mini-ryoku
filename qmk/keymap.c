@@ -15,11 +15,19 @@
 
 #include "repeat.h"
 
+#define _BASE1 5
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   process_repeat_key(keycode, record);
+
+  //if layer base1 (5), then return to base layer after this key
+  if (layer_state_is(_BASE1)) {
+    layer_clear();
+  }
 
   mod_state = get_mods();
   oneshot_mod_state = get_oneshot_mods();
   return true;
 }
+
 
