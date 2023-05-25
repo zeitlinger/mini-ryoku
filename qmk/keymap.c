@@ -15,19 +15,19 @@
 
 #include "repeat.h"
 
-#define _BASE1 5
+#define _BASE1 1
 
 bool base1_fast_key_processed = false;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   process_repeat_key(keycode, record);
 
-  //if layer base1 (5), then return to base layer after this key
-  if (keycode >= KC_A && keycode <= KC_Z && layer_state_is(_BASE1)) {
+  //if layer base1 (1), then return to base layer after this key
+  if (layer_state_is(_BASE1)) {
     if (base1_fast_key_processed) {
       layer_clear();
       base1_fast_key_processed = false;
-    } else {
+    } else if (keycode >= KC_A && keycode <= KC_Z) {
       base1_fast_key_processed = true;
     }
   }
