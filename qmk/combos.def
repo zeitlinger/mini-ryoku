@@ -1,0 +1,8 @@
+//	name	  result	 chord keys
+COMB(C_K,	KC_L,	MO(1), KC_L)
+COMB(C_B,	KC_B,	MO(1), KC_D)
+COMB(C_Y,	KC_Y,	MO(1), KC_G)
+COMB(C_P,	KC_P,	MO(1), KC_N)
+COMB(C_M,	KC_M,	MO(1), KC_R)
+COMB(C_W,	KC_W,	MO(1), KC_T)
+COMB(C_C,	KC_C,	MO(1), KC_S)

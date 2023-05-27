@@ -14,6 +14,8 @@
 // #include "masks/crkbd.h"
 
 #include "repeat.h"
+#include "g/keymap_combo.h"
+
 
 #define _BASE1 1
 
@@ -22,8 +24,12 @@ bool base1_fast_key_processed = false;
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   process_repeat_key(keycode, record);
 
+  //if layer0 and right thumb pressed
+
   //if layer base1 (1), then return to base layer after this key
   if (layer_state_is(_BASE1)) {
+    //if key on right side released, and it's a layer key, then return to base0
+
     if (base1_fast_key_processed) {
       layer_clear();
       base1_fast_key_processed = false;
