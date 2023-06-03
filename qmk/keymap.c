@@ -24,19 +24,19 @@
 #define _BASE1 1
 #define _BASE2 2
 
-bool fast_key_processed = false;
+//bool fast_key_processed = false;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   process_repeat_key(keycode, record);
 
-  if (layer_state_is(_BASE1) || layer_state_is(_BASE2)) {
-    if (fast_key_processed) {
-      layer_clear();
-      fast_key_processed = false;
-    } else if (keycode >= KC_A && keycode <= KC_Z) {
-      fast_key_processed = true;
-    }
-  }
+//  if (layer_state_is(_BASE1) || layer_state_is(_BASE2)) {
+//    if (fast_key_processed) {
+//      layer_clear();
+//      fast_key_processed = false;
+//    } else if (keycode >= KC_A && keycode <= KC_Z) {
+//      fast_key_processed = true;
+//    }
+//  }
 
   if (keycode == KC_F24 && record->event.pressed) {
     SEND_STRING(". ");
