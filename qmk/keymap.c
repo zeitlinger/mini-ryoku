@@ -21,10 +21,28 @@
 #include "repeat.h"
 #include "g/keymap_combo.h"
 
-#define _BASE1 1
-#define _BASE2 2
+#define _UPPER    1
+#define _NUM_NAV  2
+#define _OH_MOUSE 3
+#define _FN_SYM   5
+#define _MEDIA    5
 
 //bool fast_key_processed = false;
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+  switch (get_highest_layer(state)) {
+    case _UPPER:
+    case _MEDIA:
+        //toggle shift
+        if (get_mods() & MOD_MASK_SHIFT) {
+            del_mods(MOD_MASK_SHIFT);
+        } else {
+            add_mods(MOD_MASK_SHIFT);
+        }
+        break;
+    }
+  return state;
+}
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   process_repeat_key(keycode, record);
