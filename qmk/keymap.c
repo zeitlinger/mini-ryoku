@@ -32,13 +32,15 @@
 layer_state_t layer_state_set_user(layer_state_t state) {
   switch (get_highest_layer(state)) {
     case _UPPER:
-    case _MEDIA:
         //toggle shift
         if (get_mods() & MOD_MASK_SHIFT) {
             del_mods(MOD_MASK_SHIFT);
         } else {
             add_mods(MOD_MASK_SHIFT);
         }
+        break;
+    default:
+        del_mods(MOD_MASK_SHIFT);
         break;
     }
   return state;
