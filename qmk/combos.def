@@ -1,4 +1,4 @@
-// file is generated from aptex.md using https://github.com/zeitlinger/keyboard/blob/main/generateKeyboard.kt
+// file is generated from README.md using https://github.com/zeitlinger/keyboard/blob/main/generateKeyboard.kt
 COMB(C_BASE_KC_B         , KC_B                                              , KC_M, KC_F)
 COMB(C_BASE_KC_V         , KC_V                                              , KC_C, KC_M)
 COMB(C_BASE_KC_Z         , KC_Z                                              , KC_SLASH, KC_C)

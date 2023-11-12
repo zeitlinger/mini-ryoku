@@ -3,7 +3,7 @@
 
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from aptex.md using https://github.com/zeitlinger/keyboard/blob/main/generateKeyboard.kt
+ * file is generated from README.md using https://github.com/zeitlinger/keyboard/blob/main/generateKeyboard.kt
  */
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
