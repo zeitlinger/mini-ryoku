@@ -13,11 +13,6 @@
 // #include "masks/lily58.h"
 // #include "masks/crkbd.h"
 
-#define TH_1 LT(1,KC_BSPC)
-#define TH_2 LT(2,KC_SPC)
-#define TH_3 LT(3,KC_ENT)
-#define TH_4 LT(4,KC_ESC)
-
 #include "repeat.h"
 #include "g/keymap_combo.h"
 
@@ -26,8 +21,6 @@
 #define _OH_MOUSE 3
 #define _FN_SYM   5
 #define _MEDIA    5
-
-//bool fast_key_processed = false;
 
 layer_state_t layer_state_set_user(layer_state_t state) {
   switch (get_highest_layer(state)) {
@@ -49,15 +42,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   process_repeat_key(keycode, record);
 
-//  if (layer_state_is(_BASE1) || layer_state_is(_BASE2)) {
-//    if (fast_key_processed) {
-//      layer_clear();
-//      fast_key_processed = false;
-//    } else if (keycode >= KC_A && keycode <= KC_Z) {
-//      fast_key_processed = true;
-//    }
-//  }
-
   if (keycode == KC_F24 && record->event.pressed) {
     SEND_STRING(". ");
     add_oneshot_mods(MOD_BIT(KC_LSFT));  // Set one-shot mod for shift.
@@ -68,7 +52,3 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   oneshot_mod_state = get_oneshot_mods();
   return true;
 }
-
-//todo
-//",", ";"
-//".", ":"
