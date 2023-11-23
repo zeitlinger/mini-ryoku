@@ -16,15 +16,16 @@
 #include "repeat.h"
 #include "g/keymap_combo.h"
 
-#define _UPPER    1
+#define _SHIFT    1
 #define _NUM_NAV  2
 #define _OH_MOUSE 3
-#define _FN_SYM   5
+#define _FN_SYM   4
 #define _MEDIA    5
+#define _ALT      6
 
 layer_state_t layer_state_set_user(layer_state_t state) {
   switch (get_highest_layer(state)) {
-    case _UPPER:
+    case _SHIFT:
         //toggle shift
         if (get_mods() & MOD_MASK_SHIFT) {
             del_mods(MOD_MASK_SHIFT);
@@ -32,8 +33,11 @@ layer_state_t layer_state_set_user(layer_state_t state) {
             add_mods(MOD_MASK_SHIFT);
         }
         break;
+    case _ALT:
+        add_mods(MOD_MASK_ALT);
+        break;
     default:
-        del_mods(MOD_MASK_SHIFT);
+        del_mods(MOD_MASK_CSAG);
         break;
     }
   return state;
