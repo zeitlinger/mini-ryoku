@@ -42,10 +42,37 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   process_repeat_key(keycode, record);
 
-  if (keycode == KC_F24 && record->event.pressed) {
-    SEND_STRING(". ");
-    add_oneshot_mods(MOD_BIT(KC_LSFT));  // Set one-shot mod for shift.
-    return false;
+  switch (keycode) {
+    case KC_F22:
+      // Always start by sending Alt Tab to goto the next window with only a combo tap.
+      // We can then do Tab/S-Tab to continue moving around the windows if we want to.
+      if (record->event.pressed) {
+          register_code(KC_LALT);
+          tap_code16(KC_TAB);
+          layer_on(_ALT);
+      } else {
+          layer_off(_ALT);
+          unregister_code(KC_LALT);
+      }
+      return false;
+    case KC_F23:
+      // Always start by sending Ctrl Tab to goto the next window with only a combo tap.
+      // We can then do Tab/S-Tab to continue moving around the windows if we want to.
+      if (record->event.pressed) {
+          register_code(KC_LCTL);
+          tap_code16(KC_TAB);
+          layer_on(_CTRL);
+      } else {
+          layer_off(_CTRL);
+          unregister_code(KC_LCTL);
+      }
+      return false;
+    case KC_F24:
+      if (record->event.pressed) {
+        SEND_STRING(". ");
+        add_oneshot_mods(MOD_BIT(KC_LSFT));  // Set one-shot mod for shift.
+      }
+      return false;
   }
 
   mod_state = get_mods();
