@@ -43,6 +43,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   process_repeat_key(keycode, record);
 
   switch (keycode) {
+    case KC_F21:
+      if (record->event.pressed) {
+          layer_on(_MOUSE);
+      } else {
+          layer_off(_MOUSE);
+      }
+      return false;
     case KC_F22:
       // Always start by sending Alt Tab to goto the next window with only a combo tap.
       // We can then do Tab/S-Tab to continue moving around the windows if we want to.
