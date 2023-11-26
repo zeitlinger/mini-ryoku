@@ -16,9 +16,6 @@
 #include "repeat.h"
 #include "g/keymap_combo.h"
 
-bool is_alt_tab_active = false;
-uint16_t alt_tab_timer = 0;
-
 layer_state_t layer_state_set_user(layer_state_t state) {
   switch (get_highest_layer(state)) {
     case _SHIFT:
@@ -40,54 +37,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   process_repeat_key(keycode, record);
 
   switch (keycode) {
-    case KC_F13:
-      if (record->event.pressed) {
-        if (!is_alt_tab_active) {
-          is_alt_tab_active = true;
-          register_code(KC_LALT);
-        }
-        alt_tab_timer = timer_read();
-        register_code(KC_TAB);
-      } else {
-        unregister_code(KC_TAB);
-      }
-      break;
-    case KC_F14:
-      if (record->event.pressed) {
-        if (!is_alt_tab_active) {
-          is_alt_tab_active = true;
-          register_code(KC_LALT);
-        }
-        alt_tab_timer = timer_read();
-        tap_code16(S(KC_TAB));
-      } else {
-        unregister_code(KC_TAB);
-      }
-      break;
-    case KC_F15:
-      if (record->event.pressed) {
-        if (!is_alt_tab_active) {
-          is_alt_tab_active = true;
-          register_code(KC_LCTL);
-        }
-        alt_tab_timer = timer_read();
-        register_code(KC_TAB);
-      } else {
-        unregister_code(KC_TAB);
-      }
-      break;
-    case KC_F16:
-      if (record->event.pressed) {
-        if (!is_alt_tab_active) {
-          is_alt_tab_active = true;
-          register_code(KC_LCTL);
-        }
-        alt_tab_timer = timer_read();
-        tap_code16(S(KC_TAB));
-      } else {
-        unregister_code(KC_TAB);
-      }
-      break;
     case KC_F17:
       if (record->event.pressed) {
           layer_on(_MOUSE);
@@ -106,14 +55,4 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   mod_state = get_mods();
   oneshot_mod_state = get_oneshot_mods();
   return true;
-}
-
-void matrix_scan_user(void) {
-  if (is_alt_tab_active) {
-    if (timer_elapsed(alt_tab_timer) > 1000) {
-      unregister_code(KC_LALT);
-      unregister_code(KC_LCTL);
-      is_alt_tab_active = false;
-    }
-  }
 }
