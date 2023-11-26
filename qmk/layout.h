@@ -12,7 +12,7 @@
 #define _FN 3
 #define _MOUSE 4
 #define _SYM 5
-#define _SYML 6
+#define _SYMR 6
 #define _MEDIA 7
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
