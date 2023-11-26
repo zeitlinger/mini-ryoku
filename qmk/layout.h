@@ -15,6 +15,12 @@
 #define _SYMR 6
 #define _MEDIA 7
 
+enum custom_keycodes {
+	REPEAT = SAFE_RANGE,
+	MOUSE,
+    DOT_SPC
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[0] = LAYOUT_split_3x5_2(
             KC_SLASH, KC_W, KC_M, KC_F, KC_NO, KC_NO, KC_Y, KC_O, KC_U, KC_MINUS,

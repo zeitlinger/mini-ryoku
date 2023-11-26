@@ -37,14 +37,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   process_repeat_key(keycode, record);
 
   switch (keycode) {
-    case KC_F17:
+    case MOUSE:
       if (record->event.pressed) {
           layer_on(_MOUSE);
       } else {
           layer_off(_MOUSE);
       }
       return false;
-    case KC_F18:
+    case DOT_SPC:
       if (record->event.pressed) {
         SEND_STRING(". ");
         add_oneshot_mods(MOD_BIT(KC_LSFT));  // Set one-shot mod for shift.
