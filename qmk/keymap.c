@@ -16,6 +16,9 @@
 #include "repeat.h"
 #include "g/keymap_combo.h"
 
+bool is_alt_tab_active = false;
+uint16_t alt_tab_timer = 0;
+
 layer_state_t layer_state_set_user(layer_state_t state) {
   switch (get_highest_layer(state)) {
     case _SHIFT:
@@ -25,12 +28,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         } else {
             add_mods(MOD_MASK_SHIFT);
         }
-        break;
-    case _ALT:
-        add_mods(MOD_MASK_ALT);
-        break;
-    case _CTRL:
-        add_mods(MOD_MASK_CTRL);
         break;
     default:
         del_mods(MOD_MASK_CSAG);
@@ -43,38 +40,62 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   process_repeat_key(keycode, record);
 
   switch (keycode) {
-    case KC_F21:
+    case KC_F13:
+      if (record->event.pressed) {
+        if (!is_alt_tab_active) {
+          is_alt_tab_active = true;
+          register_code(KC_LALT);
+        }
+        alt_tab_timer = timer_read();
+        register_code(KC_TAB);
+      } else {
+        unregister_code(KC_TAB);
+      }
+      break;
+    case KC_F14:
+      if (record->event.pressed) {
+        if (!is_alt_tab_active) {
+          is_alt_tab_active = true;
+          register_code(KC_LALT);
+        }
+        alt_tab_timer = timer_read();
+        tap_code16(S(KC_TAB));
+      } else {
+        unregister_code(KC_TAB);
+      }
+      break;
+    case KC_F15:
+      if (record->event.pressed) {
+        if (!is_alt_tab_active) {
+          is_alt_tab_active = true;
+          register_code(KC_LCTL);
+        }
+        alt_tab_timer = timer_read();
+        register_code(KC_TAB);
+      } else {
+        unregister_code(KC_TAB);
+      }
+      break;
+    case KC_F16:
+      if (record->event.pressed) {
+        if (!is_alt_tab_active) {
+          is_alt_tab_active = true;
+          register_code(KC_LCTL);
+        }
+        alt_tab_timer = timer_read();
+        tap_code16(S(KC_TAB));
+      } else {
+        unregister_code(KC_TAB);
+      }
+      break;
+    case KC_F17:
       if (record->event.pressed) {
           layer_on(_MOUSE);
       } else {
           layer_off(_MOUSE);
       }
       return false;
-    case KC_F22:
-      // Always start by sending Alt Tab to goto the next window with only a combo tap.
-      // We can then do Tab/S-Tab to continue moving around the windows if we want to.
-      if (record->event.pressed) {
-          register_code(KC_LALT);
-          tap_code16(KC_TAB);
-          layer_on(_ALT);
-      } else {
-          layer_off(_ALT);
-          unregister_code(KC_LALT);
-      }
-      return false;
-    case KC_F23:
-      // Always start by sending Ctrl Tab to goto the next window with only a combo tap.
-      // We can then do Tab/S-Tab to continue moving around the windows if we want to.
-      if (record->event.pressed) {
-          register_code(KC_LCTL);
-          tap_code16(KC_TAB);
-          layer_on(_CTRL);
-      } else {
-          layer_off(_CTRL);
-          unregister_code(KC_LCTL);
-      }
-      return false;
-    case KC_F24:
+    case KC_F18:
       if (record->event.pressed) {
         SEND_STRING(". ");
         add_oneshot_mods(MOD_BIT(KC_LSFT));  // Set one-shot mod for shift.
@@ -85,4 +106,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   mod_state = get_mods();
   oneshot_mod_state = get_oneshot_mods();
   return true;
+}
+
+void matrix_scan_user(void) {
+  if (is_alt_tab_active) {
+    if (timer_elapsed(alt_tab_timer) > 1000) {
+      unregister_code(KC_LALT);
+      unregister_code(KC_LCTL);
+      is_alt_tab_active = false;
+    }
+  }
 }
