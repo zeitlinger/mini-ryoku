@@ -61,7 +61,7 @@ COMB(C_MODS_RIGHT_S                     , LM(1, MOD_LSFT)                    , K
 COMB(C_MODS_RIGHT_SA                    , LM(1, MOD_LSFT | MOD_LALT)         , KC_SPC, KC_I, KC_N)
 SUBS(C_BASE_AND                         , "and "                             , KC_T, KC_G)
 SUBS(C_BASE_BR                          , "br"                               , KC_R, LT(7,KC_B))
-SUBS(C_BASE_ENT                         , "ent"                              , KC_N, KC_L)
+SUBS(C_BASE_ENT                         , "ent"                              , KC_N, KC_P)
 SUBS(C_BASE_FOR                         , "for"                              , KC_F, KC_H)
 SUBS(C_BASE_ING                         , "ing"                              , KC_A, RALT(KC_QUOTE))
 SUBS(C_BASE_ION                         , "ion"                              , KC_I, LT(6,KC_COMMA))
