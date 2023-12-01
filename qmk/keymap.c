@@ -56,3 +56,5 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   oneshot_mod_state = get_oneshot_mods();
   return true;
 }
+
+#include "custom_timeout.c"
