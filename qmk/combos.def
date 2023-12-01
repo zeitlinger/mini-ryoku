@@ -1,4 +1,5 @@
 // file is generated from README.md using https://github.com/zeitlinger/keyboard/blob/main/generateKeyboard.kt
+COMB(C_BASE_CW_TOGG                     , CW_TOGG                            , KC_S, KC_T, KC_H)
 COMB(C_BASE_DOT_SPC                     , DOT_SPC                            , KC_L, LT(4,KC_DOT))
 COMB(C_BASE_KC_AMPR                     , KC_AMPR                            , LT(4,KC_DOT), LT(3,KC_BSPC))
 COMB(C_BASE_KC_ASTR                     , KC_ASTR                            , KC_D, LT(3,KC_BSPC))
@@ -48,7 +49,6 @@ COMB(C_BASE_RALTKC_Q                    , RALT(KC_Q)                         , K
 COMB(C_BASE_RALTKC_S                    , RALT(KC_S)                         , KC_M, KC_L)
 COMB(C_BASE_RALTKC_TILD                 , RALT(KC_TILD)                      , KC_P, LT(3,KC_BSPC))
 COMB(C_BASE_RALTKC_Y                    , RALT(KC_Y)                         , KC_M, KC_U)
-COMB(C_BASE_RCSKC_F12                   , RCS(KC_F12)                        , KC_S, KC_T, KC_H)
 COMB(C_BASE_RCSKC_V                     , RCS(KC_V)                          , KC_H, LT(7,KC_B))
 COMB(C_BASE_REPEAT                      , REPEAT                             , RALT(KC_QUOTE), LT(6,KC_COMMA))
 COMB(C_BASE_RIGHT_A                     , LM(0, MOD_LALT)                    , KC_L, KC_I)
