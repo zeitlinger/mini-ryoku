@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_NO, KC_6, KC_5, KC_NO, KC_NO, KC_NO, KC_ESC, KC_PGUP, KC_PGDN, KC_NO,
             KC_4, LALT_T(KC_3), LCTL_T(KC_2), LSFT_T(KC_1), KC_NO, KC_NO, RSFT_T(KC_LEFT), RCTL_T(KC_UP), LALT_T(KC_DOWN), KC_RIGHT,
             KC_INS, KC_9, KC_8, KC_7, KC_NO, KC_NO, KC_HOME, KC_BSPC, KC_DEL, KC_END,
-                            KC_SPC, KC_0, KC_NO, KC_NO),
+                            KC_NO, KC_0, KC_NO, KC_NO),
 	[4] = LAYOUT_split_3x5_2(
             KC_NO, KC_F6, KC_F5, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
             KC_F4, KC_F3, KC_F2, KC_F1, KC_NO, KC_NO, KC_RSFT, KC_RCTL, KC_LALT, KC_NO,
@@ -61,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_SLASH, KC_LCBR, KC_RCBR, KC_NO,
             KC_NO, LALT(KC_F4), KC_LGUI, LCTL(KC_W), KC_NO, KC_NO, KC_SEMICOLON, KC_LEFT_BRACKET, KC_RIGHT_BRACKET, KC_BACKSLASH,
             KC_NO, KC_LALT, KC_LCTL, KC_LSFT, KC_NO, KC_NO, RALT(KC_TILD), KC_EQUAL, KC_PIPE, KC_AMPR,
-                            LCTL(KC_Z), KC_TAB, KC_NO, KC_NO),
+                            LCTL(KC_Z), KC_TAB, KC_SPC, RCS(KC_Z)),
 	[8] = LAYOUT_split_3x5_2(
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
             KC_NO, KC_PSCR, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
