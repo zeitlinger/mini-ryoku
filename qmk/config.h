@@ -7,13 +7,13 @@
 //#define IGNORE_MOD_TAP_INTERRUPT
 
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
-#define QUICK_TAP_TERM 0
+//#define QUICK_TAP_TERM 0
 
 //#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 #define CAPS_WORD_INVERT_ON_SHIFT
 
 #define EXTRA_SHORT_COMBOS
-//#define COMBO_STRICT_TIMER
+#define COMBO_STRICT_TIMER
 //#define COMBO_TERM 100
 #define COMBO_TERM 50        // how quickly all combo keys must be pressed in succession to trigger
 //#define COMBO_MUST_HOLD_MODS // if a combo triggers a modifier, only trigger when the combo is held
