@@ -6,21 +6,7 @@
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
   switch(index) {
     case C_BASE_KC_K: return 80;
-    case C_BASE_LEFT_A: return 10;
-    case C_BASE_LEFT_C: return 10;
-    case C_BASE_LEFT_CA: return 10;
-    case C_BASE_LEFT_CS: return 10;
-    case C_BASE_LEFT_CSA: return 10;
-    case C_BASE_LEFT_S: return 10;
-    case C_BASE_LEFT_SA: return 10;
     case C_BASE_QK_REPEAT_KEY: return 20;
-    case C_BASE_RIGHT_A: return 10;
-    case C_BASE_RIGHT_C: return 10;
-    case C_BASE_RIGHT_CA: return 10;
-    case C_BASE_RIGHT_CS: return 10;
-    case C_BASE_RIGHT_CSA: return 10;
-    case C_BASE_RIGHT_S: return 10;
-    case C_BASE_RIGHT_SA: return 10;
     case C_MODS_LEFT_A: return 10;
     case C_MODS_LEFT_C: return 10;
     case C_MODS_LEFT_CA: return 10;
@@ -35,6 +21,20 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_MODS_RIGHT_CSA: return 10;
     case C_MODS_RIGHT_S: return 10;
     case C_MODS_RIGHT_SA: return 10;
+    case C_OSM_LEFT_A: return 10;
+    case C_OSM_LEFT_C: return 10;
+    case C_OSM_LEFT_CA: return 10;
+    case C_OSM_LEFT_CS: return 10;
+    case C_OSM_LEFT_CSA: return 10;
+    case C_OSM_LEFT_S: return 10;
+    case C_OSM_LEFT_SA: return 10;
+    case C_OSM_RIGHT_A: return 10;
+    case C_OSM_RIGHT_C: return 10;
+    case C_OSM_RIGHT_CA: return 10;
+    case C_OSM_RIGHT_CS: return 10;
+    case C_OSM_RIGHT_CSA: return 10;
+    case C_OSM_RIGHT_S: return 10;
+    case C_OSM_RIGHT_SA: return 10;
     default:
       return COMBO_TERM;
   }
