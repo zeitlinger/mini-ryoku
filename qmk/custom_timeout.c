@@ -7,7 +7,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
   switch(index) {
     case C_BASE_KC_K: return 80;
     case C_BASE_LCTLKC_X: return 100;
-    case C_BASE_QK_ALT_REPEAT_KEY: return 10;
+    case C_BASE_QK_ALT_REPEAT_KEY: return 20;
     case C_BASE_QK_REPEAT_KEY: return 20;
     case C_MODS_LEFT_A: return 10;
     case C_MODS_LEFT_C: return 10;
