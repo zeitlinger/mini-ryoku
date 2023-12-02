@@ -53,18 +53,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_WH_L, KC_WH_U, KC_WH_D, KC_WH_R,
                             KC_NO, KC_NO, KC_NO, KC_NO),
 	[6] = LAYOUT_split_3x5_2(
-            KC_NO, RSA(KC_TILD), KC_PLUS, KC_PERC, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+            KC_NO, RALT(KC_TILD), KC_PLUS, KC_PERC, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
             KC_DLR, KC_LPRN, KC_RPRN, KC_COLN, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-            KC_CIRC, KC_HASH, KC_AT, KC_ASTR, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+            RALT(KC_CIRC), KC_HASH, KC_AT, KC_ASTR, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
                             KC_NO, KC_NO, KC_NO, KC_NO),
 	[7] = LAYOUT_split_3x5_2(
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_SLASH, KC_LCBR, KC_RCBR, KC_NO,
             KC_NO, LALT(KC_F4), KC_LGUI, LCTL(KC_W), KC_NO, KC_NO, KC_SEMICOLON, KC_LEFT_BRACKET, KC_RIGHT_BRACKET, KC_BACKSLASH,
-            KC_NO, KC_LALT, KC_LCTL, KC_LSFT, KC_NO, KC_NO, RALT(KC_TILD), KC_EQUAL, KC_PIPE, KC_AMPR,
+            KC_NO, LALT_T(KC_LALT), LCTL_T(LSFT(KC_UNDO)), LSFT_T(LCTL(KC_AGAIN)), KC_NO, KC_NO, RALT(KC_GRV), RALT(KC_DQUO), KC_EQUAL, KC_PIPE,
                             LCTL(KC_Z), KC_TAB, KC_SPC, RCS(KC_Z)),
 	[8] = LAYOUT_split_3x5_2(
-            KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-            KC_NO, KC_PSCR, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+            KC_NO, KC_NO, KC_PSCR, KC_NO, KC_NO, KC_NO, KC_NO, KC_BRID, KC_BRIU, KC_NO,
+            KC_NO, KC_VOLD, KC_VOLU, KC_MUTE, KC_NO, KC_NO, KC_MPLY, KC_MPRV, KC_MNXT, KC_NO,
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
                             KC_NO, KC_NO, KC_NO, KC_NO),
 };
