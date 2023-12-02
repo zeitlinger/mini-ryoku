@@ -1,5 +1,5 @@
 // file is generated from README.md using https://github.com/zeitlinger/keyboard/blob/main/generateKeyboard.kt
-COMB(C_BASE_DOT_SPC                     , DOT_SPC                            , KC_L, LT(4,KC_DOT))
+COMB(C_BASE_DOT_SPC                     , DOT_SPC                            , LT(6,KC_COMMA), LT(4,KC_DOT))
 COMB(C_BASE_KC_AMPR                     , KC_AMPR                            , LT(4,KC_DOT), LT(3,KC_BSPC))
 COMB(C_BASE_KC_ASTR                     , KC_ASTR                            , KC_D, LT(3,KC_BSPC))
 COMB(C_BASE_KC_AT                       , KC_AT                              , KC_G, LT(3,KC_BSPC))
@@ -9,7 +9,6 @@ COMB(C_BASE_KC_CIRC                     , KC_CIRC                            , L
 COMB(C_BASE_KC_COLN                     , KC_COLN                            , KC_H, LT(3,KC_BSPC))
 COMB(C_BASE_KC_DLR                      , KC_DLR                             , KC_R, LT(3,KC_BSPC))
 COMB(C_BASE_KC_ENT                      , KC_ENT                             , KC_O, KC_U)
-COMB(C_BASE_KC_ENT                      , KC_ENT                             , LT(6,KC_COMMA), LT(4,KC_DOT))
 COMB(C_BASE_KC_EQUAL                    , KC_EQUAL                           , RALT(KC_QUOTE), LT(3,KC_BSPC))
 COMB(C_BASE_KC_EXLM                     , KC_EXLM                            , KC_P, RALT(KC_QUOTE), LT(6,KC_COMMA))
 COMB(C_BASE_KC_HASH                     , KC_HASH                            , KC_C, LT(3,KC_BSPC))
