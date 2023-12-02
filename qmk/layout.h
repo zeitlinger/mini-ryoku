@@ -17,9 +17,8 @@
 #define _MEDIA 8
 
 enum custom_keycodes {
-	REPEAT = SAFE_RANGE,
-	MOUSE,
-    DOT_SPC
+	MOUSE = SAFE_RANGE,
+	DOT_SPC
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {

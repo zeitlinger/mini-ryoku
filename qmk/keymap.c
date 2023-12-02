@@ -13,8 +13,8 @@
 // #include "masks/lily58.h"
 // #include "masks/crkbd.h"
 
-#include "repeat.h"
 #include "g/keymap_combo.h"
+#include "custom_timeout.c"
 
 layer_state_t layer_state_set_user(layer_state_t state) {
   switch (get_highest_layer(state)) {
@@ -34,8 +34,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  process_repeat_key(keycode, record);
-
   switch (keycode) {
     case MOUSE:
       if (record->event.pressed) {
@@ -52,9 +50,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false;
   }
 
-  mod_state = get_mods();
-  oneshot_mod_state = get_oneshot_mods();
   return true;
 }
 
-#include "custom_timeout.c"

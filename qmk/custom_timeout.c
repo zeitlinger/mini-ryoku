@@ -13,6 +13,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_BASE_LEFT_CSA: return 10;
     case C_BASE_LEFT_S: return 10;
     case C_BASE_LEFT_SA: return 10;
+    case C_BASE_QK_REPEAT_KEY: return 20;
     case C_BASE_RIGHT_A: return 10;
     case C_BASE_RIGHT_C: return 10;
     case C_BASE_RIGHT_CA: return 10;
