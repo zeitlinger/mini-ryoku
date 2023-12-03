@@ -7,8 +7,8 @@
  */
 
 #define _BASE 0
-#define _MODS 1
-#define _SHIFT 2
+#define _MODC 1
+#define _MODS 2
 #define _NUMNAV 3
 #define _FN 4
 #define _MOUSE 5
