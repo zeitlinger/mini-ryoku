@@ -12,9 +12,8 @@
 #define _NUMNAV 3
 #define _FN 4
 #define _MOUSE 5
-#define _SYML 6
-#define _SYMR 7
-#define _MEDIA 8
+#define _SYMR 6
+#define _MEDIA 7
 
 enum custom_keycodes {
 	MOUSE = SAFE_RANGE,
@@ -25,17 +24,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[0] = LAYOUT_split_3x5_2(
             KC_SLASH, KC_W, KC_M, KC_F, KC_NO, KC_NO, KC_Y, KC_O, KC_U, KC_MINUS,
             KC_R, KC_S, KC_T, KC_H, KC_NO, KC_NO, KC_N, KC_A, KC_I, KC_L,
-            LT(7,KC_B), KC_C, KC_G, KC_D, KC_NO, KC_NO, KC_P, ALGR(KC_QUOTE), LT(6,KC_COMMA), LT(4,KC_DOT),
+            LT(6,KC_B), KC_C, KC_G, KC_D, KC_NO, KC_NO, KC_P, QK_REPEAT_KEY, QK_ALT_REPEAT_KEY, LT(4,KC_ENT),
                             MO(2), KC_SPC, KC_E, LT(3,KC_BSPC)),
 	[1] = LAYOUT_split_3x5_2(
             KC_SLASH, KC_W, KC_M, KC_F, KC_NO, KC_NO, KC_Y, KC_O, KC_U, KC_MINUS,
             KC_R, ALT_T(KC_S), SFT_T(KC_T), CTL_T(KC_H), KC_NO, KC_NO, CTL_T(KC_N), SFT_T(KC_A), ALT_T(KC_I), KC_L,
-            LT(7,KC_B), KC_C, KC_G, KC_D, KC_NO, KC_NO, KC_P, ALGR(KC_QUOTE), LT(6,KC_COMMA), LT(4,KC_DOT),
+            LT(6,KC_B), KC_C, KC_G, KC_D, KC_NO, KC_NO, KC_P, QK_REPEAT_KEY, QK_ALT_REPEAT_KEY, LT(4,KC_ENT),
                             MO(2), KC_SPC, KC_E, KC_TAB),
 	[2] = LAYOUT_split_3x5_2(
             KC_SLASH, KC_W, KC_M, KC_F, KC_NO, KC_NO, KC_Y, KC_O, KC_U, KC_MINUS,
-            LT(8,KC_R), ALT_T(KC_S), SFT_T(KC_T), CTL_T(KC_H), KC_NO, KC_NO, CTL_T(KC_N), SFT_T(KC_A), ALT_T(KC_I), KC_L,
-            LT(7,KC_B), KC_C, KC_G, KC_D, KC_NO, KC_NO, KC_P, ALGR(KC_QUOTE), LT(6,KC_COMMA), LT(4,KC_DOT),
+            LT(7,KC_R), ALT_T(KC_S), SFT_T(KC_T), CTL_T(KC_H), KC_NO, KC_NO, CTL_T(KC_N), SFT_T(KC_A), ALT_T(KC_I), KC_L,
+            LT(6,KC_B), KC_C, KC_G, KC_D, KC_NO, KC_NO, KC_P, QK_REPEAT_KEY, QK_ALT_REPEAT_KEY, LT(4,KC_ENT),
                             MO(2), KC_SPC, KC_E, KC_SPC),
 	[3] = LAYOUT_split_3x5_2(
             KC_NO, KC_6, KC_5, KC_NO, KC_NO, KC_NO, KC_ESC, KC_PGUP, KC_PGDN, KC_NO,
@@ -53,16 +52,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_WH_L, KC_WH_U, KC_WH_D, KC_WH_R,
                             KC_NO, KC_NO, KC_NO, KC_NO),
 	[6] = LAYOUT_split_3x5_2(
-            KC_NO, ALGR(KC_TILD), KC_PLUS, KC_PERC, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-            KC_DLR, KC_LPRN, KC_RPRN, KC_COLN, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-            ALGR(KC_CIRC), KC_HASH, KC_AT, KC_ASTR, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-                            KC_NO, KC_NO, KC_NO, KC_NO),
-	[7] = LAYOUT_split_3x5_2(
-            KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_SLASH, KC_LCBR, KC_RCBR, KC_NO,
-            KC_NO, A(KC_F4), KC_LGUI, C(KC_W), KC_NO, KC_NO, KC_SEMICOLON, KC_LEFT_BRACKET, KC_RIGHT_BRACKET, KC_BACKSLASH,
-            KC_NO, ALT_T(KC_LALT), SFT_T(S(KC_UNDO)), CTL_T(C(KC_AGAIN)), KC_NO, KC_NO, ALGR(KC_GRV), ALGR(KC_DQUO), KC_EQUAL, KC_PIPE,
+            KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, ALGR(KC_GRV), KC_MINUS, KC_EQUAL, KC_NO,
+            KC_NO, A(KC_F4), KC_LGUI, C(KC_W), KC_NO, KC_NO, ALGR(KC_QUOTE), KC_LEFT_BRACKET, KC_RIGHT_BRACKET, KC_BACKSLASH,
+            KC_NO, ALT_T(KC_LALT), SFT_T(S(KC_UNDO)), CTL_T(C(KC_AGAIN)), KC_NO, KC_NO, KC_SEMICOLON, KC_COMMA, KC_DOT, KC_SLASH,
                             C(KC_Z), KC_TAB, KC_SPC, RCS(KC_Z)),
-	[8] = LAYOUT_split_3x5_2(
+	[7] = LAYOUT_split_3x5_2(
             KC_NO, KC_NO, KC_PSCR, KC_NO, KC_NO, KC_NO, KC_NO, KC_BRID, KC_BRIU, KC_NO,
             KC_NO, KC_VOLD, KC_VOLU, KC_MUTE, KC_NO, KC_NO, KC_MPLY, KC_MPRV, KC_MNXT, KC_NO,
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
