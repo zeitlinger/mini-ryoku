@@ -11,8 +11,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_BASE_ALGRKC_QUOTE: return 20;
     case C_BASE_ALGRKC_TILD: return 20;
     case C_BASE_CKC_X: return 100;
-    case C_BASE_CKC_Z: return 20;
-    case C_BASE_CTL_TKC_DLR: return 20;
+    case C_BASE_KC_0: return 20;
     case C_BASE_KC_1: return 20;
     case C_BASE_KC_2: return 20;
     case C_BASE_KC_3: return 20;
@@ -27,6 +26,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_BASE_KC_AT: return 20;
     case C_BASE_KC_BACKSLASH: return 20;
     case C_BASE_KC_COLN: return 20;
+    case C_BASE_KC_DLR: return 20;
     case C_BASE_KC_EQUAL: return 20;
     case C_BASE_KC_EXLM: return 20;
     case C_BASE_KC_HASH: return 20;
@@ -46,12 +46,9 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_BASE_KC_RPRN: return 20;
     case C_BASE_KC_SEMICOLON: return 20;
     case C_BASE_KC_SLASH: return 20;
-    case C_BASE_KC_TAB: return 20;
     case C_BASE_KC_UNDS: return 20;
-    case C_BASE_PARNAV: return 20;
+    case C_BASE_PARNAV: return 30;
     case C_BASE_QK_ALT_REPEAT_KEY: return 20;
-    case C_BASE_RCSKC_Z: return 20;
-    case C_BASE_SKC_TAB: return 20;
     case C_OSM_LEFT_A: return 22;
     case C_OSM_LEFT_C: return 12;
     case C_OSM_LEFT_CA: return 32;
