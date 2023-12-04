@@ -25,11 +25,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           layer_off(_MOUSE);
       }
       return false;
-    case PARNAV:
+    case TABNAV:
       if (record->event.pressed) {
-          layer_on(_PARNAV);
+          layer_on(_TABNAV);
       } else {
-          layer_off(_PARNAV);
+          layer_off(_TABNAV);
       }
       return false;
     case DOT_SPC:
