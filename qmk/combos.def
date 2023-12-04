@@ -59,6 +59,7 @@ COMB(C_BASE_KC_V                        , KC_V                               , K
 COMB(C_BASE_KC_X                        , KC_X                               , KC_C, KC_D)
 COMB(C_BASE_KC_Z                        , KC_Z                               , KC_F, KC_M)
 COMB(C_BASE_MOUSE                       , MOUSE                              , LT(1,KC_TAB), LT(2,KC_BSPC))
+COMB(C_BASE_PARNAV                      , PARNAV                             , KC_E, KC_SPC)
 COMB(C_BASE_QK_ALT_REPEAT_KEY           , QK_ALT_REPEAT_KEY                  , KC_SPC, QK_REPEAT_KEY)
 COMB(C_BASE_QK_CAPS_WORD_TOGGLE         , QK_CAPS_WORD_TOGGLE                , KC_COMMA, QK_REPEAT_KEY)
 COMB(C_BASE_RCSKC_V                     , RCS(KC_V)                          , KC_H, LT(5,KC_B))

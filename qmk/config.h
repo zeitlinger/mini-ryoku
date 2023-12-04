@@ -13,7 +13,7 @@
 #define CAPS_WORD_INVERT_ON_SHIFT
 
 #define EXTRA_SHORT_COMBOS
-#define COMBO_STRICT_TIMER
+//#define COMBO_STRICT_TIMER
 //#define COMBO_TERM 100
 #define COMBO_TERM 50        // how quickly all combo keys must be pressed in succession to trigger
 //#define COMBO_MUST_HOLD_MODS // if a combo triggers a modifier, only trigger when the combo is held
@@ -22,6 +22,12 @@
 
 // Mouse key speed and acceleration.
 #define MOUSEKEY_INERTIA
+
+//#define MOUSEKEY_DELAY 20
+//#define MOUSEKEY_MAX_SPEED 8
+//#define MOUSEKEY_TIME_TO_MAX 12
+//#define MOUSEKEY_WHEEL_DELAY 200
+//#define MOUSEKEY_WHEEL_MAX_SPEED 16
 
 //#define MK_COMBINED
 //#define MOUSEKEY_DELAY          0

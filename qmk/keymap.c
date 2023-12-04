@@ -25,6 +25,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           layer_off(_MOUSE);
       }
       return false;
+    case PARNAV:
+      if (record->event.pressed) {
+          layer_on(_PARNAV);
+      } else {
+          layer_off(_PARNAV);
+      }
+      return false;
     case DOT_SPC:
       if (record->event.pressed) {
         SEND_STRING(". ");

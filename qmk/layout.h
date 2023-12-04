@@ -16,7 +16,8 @@
 
 enum custom_keycodes {
 	MOUSE = SAFE_RANGE,
-	DOT_SPC
+	PARNAV,
+    DOT_SPC
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
