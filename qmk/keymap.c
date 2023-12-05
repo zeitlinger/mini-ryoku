@@ -25,13 +25,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             layer_off(_MOUSE);
         }
         return false;
-    case TABNAV:
-        if (record->event.pressed) {
-            layer_on(_TABNAV);
-        } else {
-            layer_off(_TABNAV);
-        }
-        return false;
     case FN:
         if (record->event.pressed) {
             layer_on(_FN);
