@@ -54,17 +54,17 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_OSM_LEFT_A: return 22;
     case C_OSM_LEFT_C: return 12;
     case C_OSM_LEFT_CA: return 32;
-    case C_OSM_LEFT_CS: return 12;
-    case C_OSM_LEFT_CSA: return 12;
+    case C_OSM_LEFT_CS: return 32;
+    case C_OSM_LEFT_CSA: return 42;
     case C_OSM_LEFT_S: return 12;
-    case C_OSM_LEFT_SA: return 12;
+    case C_OSM_LEFT_SA: return 32;
     case C_OSM_RIGHT_A: return 22;
     case C_OSM_RIGHT_C: return 12;
     case C_OSM_RIGHT_CA: return 32;
-    case C_OSM_RIGHT_CS: return 12;
-    case C_OSM_RIGHT_CSA: return 12;
+    case C_OSM_RIGHT_CS: return 32;
+    case C_OSM_RIGHT_CSA: return 42;
     case C_OSM_RIGHT_S: return 12;
-    case C_OSM_RIGHT_SA: return 12;
+    case C_OSM_RIGHT_SA: return 32;
     default:
       return COMBO_TERM;
   }
