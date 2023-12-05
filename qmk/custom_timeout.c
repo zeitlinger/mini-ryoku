@@ -10,8 +10,10 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_BASE_ALGRKC_GRV: return 30;
     case C_BASE_ALGRKC_QUOTE: return 30;
     case C_BASE_ALGRKC_TILD: return 30;
+    case C_BASE_BRA: return 30;
     case C_BASE_CKC_X: return 100;
     case C_BASE_CKC_Z: return 20;
+    case C_BASE_FN: return 30;
     case C_BASE_KC_0: return 30;
     case C_BASE_KC_1: return 30;
     case C_BASE_KC_2: return 30;

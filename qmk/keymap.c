@@ -32,6 +32,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             layer_off(_TABNAV);
         }
         return false;
+    case FN:
+        if (record->event.pressed) {
+            layer_on(_FN);
+        } else {
+            layer_off(_FN);
+        }
+        return false;
+    case BRA:
+        if (record->event.pressed) {
+            layer_on(_BRA);
+        } else {
+            layer_off(_BRA);
+        }
+        return false;
     case DOT_SPC:
         if (record->event.pressed) {
             SEND_STRING(". ");
