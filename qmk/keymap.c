@@ -38,6 +38,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         add_oneshot_mods(MOD_BIT(KC_LSFT));  // Set one-shot mod for shift.
       }
       return false;
+    case CUT:
+      if (record->event.pressed) {
+        tap_code16(C(KC_X));
+      }
+      return false;
+    case COPY:
+      if (record->event.pressed) {
+        tap_code16(C(KC_C));
+      }
+      return false;
+    case PASTE:
+      if (record->event.pressed) {
+        tap_code16(C(KC_V));
+      }
+      return false;
   }
 
   return true;

@@ -15,8 +15,11 @@
 #define _MEDIA 6
 
 enum custom_keycodes {
-	MOUSE = SAFE_RANGE,
-	TABNAV,
+	CUT = SAFE_RANGE,
+	COPY,
+    PASTE,
+    MOUSE,
+    TABNAV,
     DOT_SPC
 };
 
@@ -28,8 +31,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                             LT(1,KC_TAB), KC_SPC, KC_E, LT(2,KC_BSPC)),
 	[1] = LAYOUT_split_3x5_2(
             A(KC_F4), RCS(KC_Z), C(KC_Z), A(KC_F7), KC_NO, KC_NO, KC_INS, KC_PGUP, KC_PGDN, KC_NO,
-            CTL_T(KC_DLR), ALT_T(KC_LPRN), SFT_T(KC_RPRN), CTL_T(KC_TAB), KC_NO, KC_NO, CTL_T(KC_LEFT), SFT_T(KC_UP), ALT_T(KC_DOWN), KC_RIGHT,
-            KC_HOME, C(KC_W), KC_ASTR, S(KC_TAB), KC_NO, KC_NO, KC_ENT, KC_BSPC, KC_DEL, KC_END,
+            C(CUT), ALT_T(COPY), SFT_T(PASTE), CTL_T(KC_TAB), KC_NO, KC_NO, CTL_T(KC_LEFT), SFT_T(KC_UP), ALT_T(KC_DOWN), KC_RIGHT,
+            KC_HOME, C(KC_W), RCS(KC_V), S(KC_TAB), KC_NO, KC_NO, KC_ENT, KC_BSPC, KC_DEL, KC_END,
                             KC_NO, KC_NO, KC_TAB, KC_BSPC),
 	[2] = LAYOUT_split_3x5_2(
             KC_NO, KC_6, KC_5, ALGR(KC_CIRC), KC_NO, KC_NO, ALGR(KC_TILD), KC_UNDS, KC_PLUS, KC_NO,
