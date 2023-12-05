@@ -17,44 +17,47 @@
 #include "custom_timeout.c"
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  switch (keycode) {
+    switch (keycode) {
     case MOUSE:
-      if (record->event.pressed) {
-          layer_on(_MOUSE);
-      } else {
-          layer_off(_MOUSE);
-      }
-      return false;
+        if (record->event.pressed) {
+            layer_on(_MOUSE);
+        } else {
+            layer_off(_MOUSE);
+        }
+        return false;
     case TABNAV:
-      if (record->event.pressed) {
-          layer_on(_TABNAV);
-      } else {
-          layer_off(_TABNAV);
-      }
-      return false;
+        if (record->event.pressed) {
+            layer_on(_TABNAV);
+        } else {
+            layer_off(_TABNAV);
+        }
+        return false;
     case DOT_SPC:
-      if (record->event.pressed) {
-        SEND_STRING(". ");
-        add_oneshot_mods(MOD_BIT(KC_LSFT));  // Set one-shot mod for shift.
-      }
-      return false;
-    case CUT:
-      if (record->event.pressed) {
-        tap_code16(C(KC_X));
-      }
-      return false;
-    case COPY:
-      if (record->event.pressed) {
-        tap_code16(C(KC_C));
-      }
-      return false;
-    case PASTE:
-      if (record->event.pressed) {
-        tap_code16(C(KC_V));
-      }
-      return false;
-  }
+        if (record->event.pressed) {
+            SEND_STRING(". ");
+            add_oneshot_mods(MOD_BIT(KC_LSFT));  // Set one-shot mod for shift.
+        }
+        return false;
+    case CTL_T(CUT):
+        if (record->tap.count && record->event.pressed) {
+            tap_code16(C(KC_X));
+            return false;
+        }
+        break;
+    case ALT_T(COPY):
+        if (record->tap.count && record->event.pressed) {
+            tap_code16(C(KC_C));
+            return false;
+        }
+        return true;
+    case SFT_T(PASTE):
+        if (record->tap.count && record->event.pressed) {
+            tap_code16(C(KC_V));
+            return false;
+        }
+        return true;
+    }
 
-  return true;
+    return true;
 }
 
