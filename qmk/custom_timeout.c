@@ -10,8 +10,6 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_BASE_ALGRKC_GRV: return 30;
     case C_BASE_ALGRKC_QUOTE: return 30;
     case C_BASE_ALGRKC_TILD: return 30;
-    case C_BASE_BRA: return 30;
-    case C_BASE_FN: return 30;
     case C_BASE_KC_0: return 30;
     case C_BASE_KC_1: return 30;
     case C_BASE_KC_2: return 30;
@@ -49,6 +47,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_BASE_KC_SEMICOLON: return 30;
     case C_BASE_KC_SLASH: return 30;
     case C_BASE_KC_UNDS: return 30;
+    case C_BASE_NUMBRA: return 200;
     case C_BASE_QK_ALT_REPEAT_KEY: return 30;
     case C_OSM_LEFT_A: return 22;
     case C_OSM_LEFT_C: return 12;
