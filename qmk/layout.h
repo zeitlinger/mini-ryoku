@@ -19,6 +19,7 @@ enum custom_keycodes {
 	NEXT_TAB = SAFE_RANGE,
 	NEXT_WINDOW,
     NUMBRA,
+    ONE_SHOT_MOUSE,
     DOT_SPC
 };
 
@@ -30,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                             LT(1,KC_TAB), KC_SPC, KC_E, LT(3,KC_BSPC)),
 	[1] = LAYOUT_split_3x5_2(
             KC_NO, C(KC_W), C(KC_Z), RCS(KC_Z), KC_NO, KC_NO, KC_ESC, KC_TAB, KC_INS, KC_NO,
-            MO(2), ALT_T(NEXT_TAB), SFT_T(NEXT_WINDOW), CTL_T(S(KC_TAB)), KC_NO, KC_NO, KC_LEFT, KC_UP, KC_DOWN, KC_RIGHT,
+            MO(2), ALT_T(NEXT_TAB), SFT_T(NEXT_WINDOW), KC_LCTL, KC_NO, KC_NO, KC_LEFT, KC_UP, KC_DOWN, KC_RIGHT,
             RCS(KC_V), C(KC_C), C(KC_V), C(KC_X), KC_NO, KC_NO, KC_ENT, KC_BSPC, KC_DEL, KC_SPC,
                             KC_NO, KC_NO, KC_ENT, NUMBRA),
 	[2] = LAYOUT_split_3x5_2(

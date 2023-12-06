@@ -23,13 +23,15 @@ bool is_one_shot_mouse_active = false;
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
     case ONE_SHOT_MOUSE:
-        layer_on(_MOUSE);
-        is_one_shot_mouse_active = true;
+        if (record->event.pressed) {
+            layer_on(_MOUSE);
+            is_one_shot_mouse_active = true;
+        }
         break;
     case KC_BTN1:
     case KC_BTN2:
     case KC_BTN3:
-        if (!record->event.pressed && is_one_shot_mouse_active) {
+        if (record->event.pressed && is_one_shot_mouse_active) {
             layer_off(_MOUSE);
             is_one_shot_mouse_active = false;
         }
@@ -44,7 +46,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case DOT_SPC:
         if (record->event.pressed) {
             SEND_STRING(". ");
-            add_oneshot_mods(MOD_BIT(KC_LSFT));  // Set one-shot mod for shift.
+            add_oneshot_mods(MOD_BIT(KC_LSFT));
         }
         return false;
     case NEXT_WINDOW:
@@ -67,6 +69,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             register_code(KC_TAB);
         } else {
             unregister_code(KC_TAB);
+        }
+        break;
+    default:
+        //can use any key as shift tap key in switcher
+        if (record->event.pressed && (is_window_switcher_active || is_tab_switcher_active)) {
+            tap_code16(S(KC_TAB));
+            return false;
         }
         break;
     }

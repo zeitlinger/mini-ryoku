@@ -55,6 +55,7 @@ COMB(C_BASE_KC_V                        , KC_V                               , K
 COMB(C_BASE_KC_X                        , KC_X                               , KC_C, KC_D)
 COMB(C_BASE_KC_Z                        , KC_Z                               , KC_F, KC_M)
 COMB(C_BASE_NUMBRA                      , NUMBRA                             , LT(1,KC_TAB), LT(3,KC_BSPC))
+COMB(C_BASE_ONE_SHOT_MOUSE              , ONE_SHOT_MOUSE                     , KC_COMMA, KC_P)
 COMB(C_BASE_QK_ALT_REPEAT_KEY           , QK_ALT_REPEAT_KEY                  , KC_SPC, QK_REPEAT_KEY)
 COMB(C_BASE_QK_CAPS_WORD_TOGGLE         , QK_CAPS_WORD_TOGGLE                , KC_COMMA, QK_REPEAT_KEY)
 COMB(C_OSM_LEFT_A                       , OSM(MOD_LALT)                      , KC_H, KC_S)
