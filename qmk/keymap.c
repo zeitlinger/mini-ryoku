@@ -18,9 +18,22 @@
 
 bool is_window_switcher_active = false;
 bool is_tab_switcher_active = false;
+bool is_one_shot_mouse_active = false;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
+    case ONE_SHOT_MOUSE:
+        layer_on(_MOUSE);
+        is_one_shot_mouse_active = true;
+        break;
+    case KC_BTN1:
+    case KC_BTN2:
+    case KC_BTN3:
+        if (!record->event.pressed && is_one_shot_mouse_active) {
+            layer_off(_MOUSE);
+            is_one_shot_mouse_active = false;
+        }
+        break;
     case NUMBRA:
         if (record->event.pressed) {
             layer_on(_NUMBRA);
@@ -78,14 +91,3 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     }
     return state;
 }
-//
-//void matrix_scan_user(void) {
-//  if (is_alt_tab_active) {
-//    if (timer_elapsed(alt_tab_timer) > 1000) {
-//      unregister_code(KC_LALT);
-//      unregister_code(KC_LCTL);
-//      is_alt_tab_active = false;
-//    }
-//  }
-//}
-//
