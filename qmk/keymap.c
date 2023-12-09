@@ -20,7 +20,43 @@ bool is_window_switcher_active = false;
 bool is_tab_switcher_active = false;
 bool is_one_shot_mouse_active = false;
 
+bool process_switcher(uint16_t keycode, keyrecord_t *record) {
+    if (record->event.pressed) {
+        bool switch_window = keycode == SFT_T(NEXT_WINDOW);
+        bool switch_tab = keycode == ALT_T(NEXT_TAB);
+
+        if ((is_tab_switcher_active && !switch_tab) || (is_window_switcher_active && !switch_window)) {
+            //can use any key as shift tap key in switcher
+            tap_code16(S(KC_TAB));
+            return true;
+        }
+
+        if (switch_window) {
+            if (!is_window_switcher_active) {
+                is_window_switcher_active = true;
+                register_code(KC_LALT);
+            }
+            tap_code16(KC_TAB);
+            return true;
+        }
+
+        if (switch_tab) {
+            if (!is_tab_switcher_active) {
+                is_tab_switcher_active = true;
+                register_code(KC_LCTL);
+            }
+            tap_code16(KC_TAB);
+            return true;
+        }
+    }
+    return false;
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (process_switcher(keycode, record)) {
+        return false;
+    }
+
     if (!record->tap.count) {
         int target_layer = target_layer_on_hold(keycode, record);
         if (target_layer >= 0) {
@@ -65,7 +101,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             add_oneshot_mods(MOD_BIT(KC_LSFT));
         }
         return false;
-    case INTELLIJ_PASTE:
+    case CTL_T(INTELLIJ_PASTE):
         if (record->event.pressed) {
             tap_code16(S(KC_TAB));
             set_oneshot_layer(_NUM, ONESHOT_START);
@@ -73,34 +109,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             clear_oneshot_layer_state(ONESHOT_PRESSED);
         }
         return false;
-    case NEXT_WINDOW:
-        if (record->event.pressed) {
-            if (!is_window_switcher_active) {
-                is_window_switcher_active = true;
-                register_code(KC_LALT);
-            }
-            register_code(KC_TAB);
-        } else {
-            unregister_code(KC_TAB);
-        }
-        break;
-    case NEXT_TAB:
-        if (record->event.pressed) {
-            if (!is_tab_switcher_active) {
-                is_tab_switcher_active = true;
-                register_code(KC_LCTL);
-            }
-            register_code(KC_TAB);
-        } else {
-            unregister_code(KC_TAB);
-        }
-        break;
     default:
-        //can use any key as shift tap key in switcher
-        if (record->event.pressed && (is_window_switcher_active || is_tab_switcher_active)) {
-            tap_code16(S(KC_TAB));
-            return false;
-        }
         break;
     }
 
