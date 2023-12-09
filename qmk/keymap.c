@@ -97,7 +97,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
     case CTL_T(INTELLIJ_PASTE):
         if (record->tap.count && record->event.pressed) {
-            tap_code16(S(KC_TAB));
+            tap_code16(C(S(KC_V)));
             set_oneshot_layer(_NUM, ONESHOT_START);
         } else {
             clear_oneshot_layer_state(ONESHOT_PRESSED);
