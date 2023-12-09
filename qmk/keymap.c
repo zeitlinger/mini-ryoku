@@ -96,13 +96,30 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
         return false;
     case CTL_T(INTELLIJ_PASTE):
-        if (record->tap.count && record->event.pressed) {
-            tap_code16(C(S(KC_V)));
-            set_oneshot_layer(_NUM, ONESHOT_START);
-        } else {
-            clear_oneshot_layer_state(ONESHOT_PRESSED);
+        if (record->tap.count) {
+            if (record->event.pressed) {
+                tap_code16(C(S(KC_V)));
+                set_oneshot_layer(_NUM, ONESHOT_START);
+            } else {
+                clear_oneshot_layer_state(ONESHOT_PRESSED);
+            }
+            return false;
         }
-        return false;
+    case ALT_T(KC_ACL0):
+        if (record->tap.count && record->event.pressed) {
+            mousekey_on(KC_ACL0);
+            return false;
+        }
+    case SFT_T(KC_ACL1):
+        if (record->tap.count && record->event.pressed) {
+            mousekey_on(KC_ACL1);
+            return false;
+        }
+    case CTL_T(KC_ACL2):
+        if (record->tap.count && record->event.pressed) {
+            mousekey_on(KC_ACL2);
+            return false;
+        }
     default:
         break;
     }
