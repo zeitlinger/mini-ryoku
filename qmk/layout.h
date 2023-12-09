@@ -6,7 +6,7 @@
  * file is generated from README.md using https://github.com/zeitlinger/keyboard/blob/main/generateKeyboard.kt
  */
 
-#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/ac3b4cd15a95054359459c6c9179eae1712ddbbb/README.md"
+#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/afd57e03130381cd243c38eb7374e793b4c14467/README.md"
 
 #define _BASE 0
 #define _BASEMODS 1
@@ -66,9 +66,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_NO, KC_9, KC_8, KC_7, KC_NO, KC_NO, KC_MINUS, KC_EQUAL, KC_AMPR, KC_SLASH,
                             KC_NO, KC_NO, KC_NO, KC_NO),
 	[7] = LAYOUT_split_3x5_2(
-            KC_NO, KC_BTN3, KC_BTN2, KC_NO, KC_NO, KC_NO, KC_NO, KC_BTN2, KC_BTN3, KC_NO,
-            MO(8), ALT_T(KC_ACL0), SFT_T(KC_ACL1), CTL_T(KC_ACL2), KC_NO, KC_NO, KC_MS_L, KC_MS_U, KC_MS_D, KC_MS_R,
-            KC_NO, KC_NO, TG(7), KC_BTN1, KC_NO, KC_NO, KC_BTN1, TG(7), KC_NO, KC_NO,
+            KC_NO, KC_BTN3, KC_BTN2, KC_BTN1, KC_NO, KC_NO, KC_NO, KC_BTN2, KC_BTN3, KC_NO,
+            MO(8), KC_ACL0, KC_ACL1, KC_ACL2, KC_NO, KC_NO, KC_MS_L, KC_MS_U, KC_MS_D, KC_MS_R,
+            KC_NO, KC_LALT, KC_LSFT, KC_LCTL, KC_NO, KC_NO, KC_NO, TG(7), KC_NO, KC_NO,
                             KC_NO, KC_NO, KC_NO, KC_NO),
 	[8] = LAYOUT_split_3x5_2(
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
