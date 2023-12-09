@@ -114,10 +114,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    is_one_shot_mouse_active = false;
-
     switch (get_highest_layer(state)) {
     case _BASE:
+        is_one_shot_mouse_active = false;
         if (is_window_switcher_active) {
           unregister_code(KC_LALT);
           is_window_switcher_active = false;
