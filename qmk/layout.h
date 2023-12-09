@@ -36,10 +36,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_B, KC_C, KC_G, KC_D, KC_NO, KC_NO, KC_P, QK_REPEAT_KEY, KC_COMMA, KC_DOT,
                             LT(2,KC_TAB), KC_SPC, KC_E, LT(5,KC_BSPC)),
 	[1] = LAYOUT_split_3x5_2(
-            KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-            KC_NO, KC_LALT, KC_LSFT, KC_LCTL, KC_NO, KC_NO, KC_LCTL, KC_LSFT, KC_LALT, KC_NO,
-            KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-                            KC_NO, KC_SPC, KC_E, KC_NO),
+            QK_SWAP_HANDS_TAP_TOGGLE, KC_W, KC_M, KC_F, KC_NO, KC_NO, KC_Y, KC_O, KC_U, QK_REBOOT,
+            KC_R, ALT_T(KC_S), SFT_T(KC_T), CTL_T(KC_H), KC_NO, KC_NO, CTL_T(KC_N), SFT_T(KC_A), ALT_T(KC_I), KC_L,
+            KC_B, KC_C, KC_G, KC_D, KC_NO, KC_NO, KC_P, QK_REPEAT_KEY, KC_COMMA, KC_DOT,
+                            LT(2,KC_TAB), KC_SPC, KC_E, LT(5,KC_BSPC)),
 	[2] = LAYOUT_split_3x5_2(
             KC_NO, C(KC_W), C(KC_Z), RCS(KC_Z), KC_NO, KC_NO, KC_ESC, KC_TAB, KC_INS, KC_NO,
             MO(3), ALT_T(NEXT_TAB), SFT_T(NEXT_WINDOW), CTL_T(INTELLIJ_PASTE), KC_NO, KC_NO, CTL_T(KC_LEFT), SFT_T(KC_UP), ALT_T(KC_DOWN), KC_RIGHT,

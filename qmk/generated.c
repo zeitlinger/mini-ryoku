@@ -62,16 +62,32 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
   }
 }
 
-int target_layer_on_hold(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-    case CTL_T(KC_LEFT): return 1;
-    case SFT_T(KC_UP): return 1;
-    case ALT_T(KC_DOWN): return 1;
-    case ALT_T(KC_F2): return 1;
-    case SFT_T(KC_F1): return 1;
-    case CTL_T(KC_F10): return 1;
-    default:
-        return -1;
+bool target_layer_on_hold(uint16_t keycode, keyrecord_t *record) {
+    if (!record->tap.count) {
+        if (record->event.pressed) {
+            switch (keycode) {
+            case CTL_T(KC_LEFT): layer_on(1); add_mods(MOD_BIT(KC_LCTL)); return true;
+            case SFT_T(KC_UP): layer_on(1); add_mods(MOD_BIT(KC_LSFT)); return true;
+            case ALT_T(KC_DOWN): layer_on(1); add_mods(MOD_BIT(KC_LALT)); return true;
+            case ALT_T(KC_F2): layer_on(1); add_mods(MOD_BIT(KC_LALT)); return true;
+            case SFT_T(KC_F1): layer_on(1); add_mods(MOD_BIT(KC_LSFT)); return true;
+            case CTL_T(KC_F10): layer_on(1); add_mods(MOD_BIT(KC_LCTL)); return true;
+            default:
+                break;
+            }
+        } else {
+            switch (keycode) {
+            case CTL_T(KC_LEFT): layer_off(1); del_mods(MOD_BIT(KC_LCTL)); return true;
+            case SFT_T(KC_UP): layer_off(1); del_mods(MOD_BIT(KC_LSFT)); return true;
+            case ALT_T(KC_DOWN): layer_off(1); del_mods(MOD_BIT(KC_LALT)); return true;
+            case ALT_T(KC_F2): layer_off(1); del_mods(MOD_BIT(KC_LALT)); return true;
+            case SFT_T(KC_F1): layer_off(1); del_mods(MOD_BIT(KC_LSFT)); return true;
+            case CTL_T(KC_F10): layer_off(1); del_mods(MOD_BIT(KC_LCTL)); return true;
+            default:
+                break;
+            }
+        }
     }
+    return false;
 }
 

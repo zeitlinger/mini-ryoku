@@ -21,7 +21,7 @@ bool is_tab_switcher_active = false;
 bool is_one_shot_mouse_active = false;
 
 bool process_switcher(uint16_t keycode, keyrecord_t *record) {
-    if (record->event.pressed) {
+    if (record->tap.count && record->event.pressed) {
         bool switch_window = keycode == SFT_T(NEXT_WINDOW);
         bool switch_tab = keycode == ALT_T(NEXT_TAB);
 
@@ -56,16 +56,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (process_switcher(keycode, record)) {
         return false;
     }
-
-    if (!record->tap.count) {
-        int target_layer = target_layer_on_hold(keycode, record);
-        if (target_layer >= 0) {
-            if (record->event.pressed) {
-                layer_on(target_layer);
-            } else {
-                layer_off(target_layer);
-            }
-        }
+    if (target_layer_on_hold(keycode, record)) {
+        return false;
     }
 
     switch (keycode) {
@@ -102,7 +94,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
         return false;
     case CTL_T(INTELLIJ_PASTE):
-        if (record->event.pressed) {
+        if (record->tap.count && record->event.pressed) {
             tap_code16(S(KC_TAB));
             set_oneshot_layer(_NUM, ONESHOT_START);
         } else {
