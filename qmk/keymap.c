@@ -65,6 +65,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             add_oneshot_mods(MOD_BIT(KC_LSFT));
         }
         return false;
+    case INTELLIJ_PASTE:
+        if (record->event.pressed) {
+            tap_code16(S(KC_TAB));
+            set_oneshot_layer(_NUM, ONESHOT_START);
+        } else {
+            clear_oneshot_layer_state(ONESHOT_PRESSED);
+        }
+        return false;
     case NEXT_WINDOW:
         if (record->event.pressed) {
             if (!is_window_switcher_active) {

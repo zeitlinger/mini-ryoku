@@ -6,7 +6,7 @@
  * file is generated from README.md using https://github.com/zeitlinger/keyboard/blob/main/generateKeyboard.kt
  */
 
-#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/d05815443407b4d6365b182019542895ea15efdc/README.md"
+#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/c4e2f90bcfc97fefea4b49c3a702dac009e9ba32/README.md"
 
 #define _BASE 0
 #define _BASEMODS 1
@@ -20,8 +20,9 @@
 #define _MEDIA 9
 
 enum custom_keycodes {
-	NEXT_TAB = SAFE_RANGE,
-	NEXT_WINDOW,
+	INTELLIJ_PASTE = SAFE_RANGE,
+	NEXT_TAB,
+    NEXT_WINDOW,
     NUMBRA,
     ONE_SHOT_MOUSE,
     DOT_SPC,
@@ -41,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                             KC_NO, KC_SPC, KC_E, KC_NO),
 	[2] = LAYOUT_split_3x5_2(
             KC_NO, C(KC_W), C(KC_Z), RCS(KC_Z), KC_NO, KC_NO, KC_ESC, KC_TAB, KC_INS, KC_NO,
-            MO(3), ALT_T(NEXT_TAB), SFT_T(NEXT_WINDOW), KC_LCTL, KC_NO, KC_NO, CTL_T(KC_LEFT), SFT_T(KC_UP), ALT_T(KC_DOWN), KC_RIGHT,
+            MO(3), ALT_T(NEXT_TAB), SFT_T(NEXT_WINDOW), CTL_T(INTELLIJ_PASTE), KC_NO, KC_NO, CTL_T(KC_LEFT), SFT_T(KC_UP), ALT_T(KC_DOWN), KC_RIGHT,
             RCS(KC_V), C(KC_C), C(KC_V), C(KC_X), KC_NO, KC_NO, KC_ENT, KC_BSPC, KC_DEL, KC_SPC,
                             KC_NO, KC_NO, KC_ENT, NUMBRA),
 	[3] = LAYOUT_split_3x5_2(
