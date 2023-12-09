@@ -73,6 +73,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (record->event.pressed && is_one_shot_mouse_active) {
             layer_off(_MOUSE);
             is_one_shot_mouse_active = false;
+            tap_code16(keycode);
+            return false;
         }
         break;
     case NUMBRA:
@@ -109,6 +111,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
+    is_one_shot_mouse_active = false;
+
     switch (get_highest_layer(state)) {
     case _BASE:
         if (is_window_switcher_active) {
