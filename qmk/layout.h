@@ -6,7 +6,7 @@
  * file is generated from README.md using https://github.com/zeitlinger/keyboard/blob/main/generateKeyboard.kt
  */
 
-#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/a9c124ee8c543e120c8637d92709b4275dd1f92b/README.md"
+#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/738caa643ec660237778e727c511f60a8ee8adef/README.md"
 
 #define _BASE 0
 #define _BASEMODS 1
