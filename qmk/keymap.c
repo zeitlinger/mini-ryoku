@@ -54,6 +54,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             layer_off(_NUMBRA);
         }
         return false;
+    case PRINT_VERSION:
+        if (record->event.pressed) {
+            SEND_STRING(VERSION_STRING);
+        }
+        return false;
     case DOT_SPC:
         if (record->event.pressed) {
             SEND_STRING(". ");

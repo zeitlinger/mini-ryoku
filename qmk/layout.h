@@ -6,6 +6,8 @@
  * file is generated from README.md using https://github.com/zeitlinger/keyboard/blob/main/generateKeyboard.kt
  */
 
+#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/a9c124ee8c543e120c8637d92709b4275dd1f92b/README.md"
+
 #define _BASE 0
 #define _BASEMODS 1
 #define _TABNAV 2
@@ -22,12 +24,13 @@ enum custom_keycodes {
 	NEXT_WINDOW,
     NUMBRA,
     ONE_SHOT_MOUSE,
-    DOT_SPC
+    DOT_SPC,
+    PRINT_VERSION
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[0] = LAYOUT_split_3x5_2(
-            QK_SWAP_HANDS_ONE_SHOT, KC_W, KC_M, KC_F, KC_NO, KC_NO, KC_Y, KC_O, KC_U, KC_ESC,
+            QK_SWAP_HANDS_TAP_TOGGLE, KC_W, KC_M, KC_F, KC_NO, KC_NO, KC_Y, KC_O, KC_U, QK_REBOOT,
             KC_R, KC_S, KC_T, KC_H, KC_NO, KC_NO, KC_N, KC_A, KC_I, KC_L,
             KC_B, KC_C, KC_G, KC_D, KC_NO, KC_NO, KC_P, QK_REPEAT_KEY, KC_COMMA, KC_DOT,
                             LT(2,KC_TAB), KC_SPC, KC_E, LT(5,KC_BSPC)),
@@ -73,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                             KC_NO, KC_NO, KC_NO, KC_NO),
 	[9] = LAYOUT_split_3x5_2(
             DT_PRNT, KC_BRID, KC_BRIU, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-            DT_UP, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_PSCR, KC_NO, KC_NO, KC_NO,
+            DT_UP, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_PSCR, PRINT_VERSION, KC_NO, KC_NO,
             DT_DOWN, KC_MPRV, KC_MNXT, KC_MPLY, KC_NO, KC_NO, KC_MUTE, KC_VOLD, KC_VOLU, KC_NO,
                             KC_NO, KC_NO, KC_NO, KC_NO),
 };
