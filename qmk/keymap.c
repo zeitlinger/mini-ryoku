@@ -14,13 +14,24 @@
 // #include "masks/crkbd.h"
 
 #include "g/keymap_combo.h"
-#include "custom_timeout.c"
+#include "generated.c"
 
 bool is_window_switcher_active = false;
 bool is_tab_switcher_active = false;
 bool is_one_shot_mouse_active = false;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (!record->tap.count) {
+        int target_layer = target_layer_on_hold(keycode, record);
+        if (target_layer >= 0) {
+            if (record->event.pressed) {
+                layer_on(target_layer);
+            } else {
+                layer_off(target_layer);
+            }
+        }
+    }
+
     switch (keycode) {
     case ONE_SHOT_MOUSE:
         if (record->event.pressed) {

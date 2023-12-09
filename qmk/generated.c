@@ -60,3 +60,16 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
   }
 }
 
+int target_layer_on_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+    case CTL_T(KC_LEFT): return 1;
+    case SFT_T(KC_UP): return 1;
+    case ALT_T(KC_DOWN): return 1;
+    case ALT_T(KC_F2): return 1;
+    case SFT_T(KC_F1): return 1;
+    case CTL_T(KC_F10): return 1;
+    default:
+        return -1;
+    }
+}
+
