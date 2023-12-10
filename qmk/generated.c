@@ -1,6 +1,6 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/6989c8836b8eca28ea38bd009db080cf1a9b86a2/README.md using https://github.com/zeitlinger/keyboard/blob/6989c8836b8eca28ea38bd009db080cf1a9b86a2/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/f31d9716756a7d148b85ef7b03281e8eea3b383d/README.md using https://github.com/zeitlinger/keyboard/blob/f31d9716756a7d148b85ef7b03281e8eea3b383d/generateKeyboard.kt
  */
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
@@ -89,5 +89,15 @@ bool target_layer_on_hold(uint16_t keycode, keyrecord_t *record) {
         }
     }
     return false;
+}
+
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case KC_TAB: return true;
+        case KC_BSPC: return true;
+        default:
+            // Do not select the hold action when another key is pressed.
+            return false;
+    }
 }
 

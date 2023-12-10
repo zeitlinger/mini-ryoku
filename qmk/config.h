@@ -2,6 +2,7 @@
 
 // Configure the global tapping term (default: 200ms)
 #define TAPPING_TERM 170
+#define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
 
 // Prevent normal rollover on alphas from accidentally triggering mods.
 //#define IGNORE_MOD_TAP_INTERRUPT

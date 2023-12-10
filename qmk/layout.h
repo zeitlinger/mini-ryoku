@@ -3,10 +3,10 @@
 
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/6989c8836b8eca28ea38bd009db080cf1a9b86a2/README.md using https://github.com/zeitlinger/keyboard/blob/6989c8836b8eca28ea38bd009db080cf1a9b86a2/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/f31d9716756a7d148b85ef7b03281e8eea3b383d/README.md using https://github.com/zeitlinger/keyboard/blob/f31d9716756a7d148b85ef7b03281e8eea3b383d/generateKeyboard.kt
  */
 
-#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/6989c8836b8eca28ea38bd009db080cf1a9b86a2/README.md"
+#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/f31d9716756a7d148b85ef7b03281e8eea3b383d/README.md"
 
 #define _BASE 0
 #define _TABNAV 1
@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             RCS(KC_V), C(KC_C), C(KC_V), C(KC_X), KC_NO, KC_NO, KC_ENT, KC_BSPC, KC_DEL, KC_SPC,
                             KC_NO, KC_NO, KC_ENT, NUMBRA),
 	[2] = LAYOUT_split_3x5_2(
-            KC_NO, KC_NO, A(KC_F7), KC_NO, KC_NO, KC_NO, ALGR(KC_CIRC), KC_LEFT_BRACKET, KC_RIGHT_BRACKET, KC_NO,
+            KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, ALGR(KC_CIRC), KC_LEFT_BRACKET, KC_RIGHT_BRACKET, KC_NO,
             KC_NO, KC_LALT, KC_LSFT, KC_LCTL, KC_NO, KC_NO, KC_HOME, KC_PGUP, KC_PGDN, KC_END,
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_MINUS, KC_EQUAL, KC_AMPR, KC_SLASH,
                             KC_NO, KC_NO, KC_NO, KC_NO),
