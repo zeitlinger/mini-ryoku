@@ -28,7 +28,7 @@ bool process_switcher(uint16_t keycode, keyrecord_t *record) {
         if ((is_tab_switcher_active && !switch_tab) || (is_window_switcher_active && !switch_window)) {
             //can use any key as shift tap key in switcher
             tap_code16(S(KC_TAB));
-            return true;
+            return false;
         }
 
         if (switch_window) {
@@ -37,7 +37,7 @@ bool process_switcher(uint16_t keycode, keyrecord_t *record) {
                 register_code(KC_LALT);
             }
             tap_code16(KC_TAB);
-            return true;
+            return false;
         }
 
         if (switch_tab) {
@@ -46,17 +46,17 @@ bool process_switcher(uint16_t keycode, keyrecord_t *record) {
                 register_code(KC_LCTL);
             }
             tap_code16(KC_TAB);
-            return true;
+            return false;
         }
     }
-    return false;
+    return true;
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    if (process_switcher(keycode, record)) {
+    if (!process_switcher(keycode, record)) {
         return false;
     }
-    if (target_layer_on_hold(keycode, record)) {
+    if (!target_layer_on_hold(keycode, record)) {
         return false;
     }
 
