@@ -3,10 +3,10 @@
 
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/925d231ce5c0d6fdf517bd1415e616948d05604b/README.md using https://github.com/zeitlinger/keyboard/blob/925d231ce5c0d6fdf517bd1415e616948d05604b/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/6989c8836b8eca28ea38bd009db080cf1a9b86a2/README.md using https://github.com/zeitlinger/keyboard/blob/6989c8836b8eca28ea38bd009db080cf1a9b86a2/generateKeyboard.kt
  */
 
-#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/925d231ce5c0d6fdf517bd1415e616948d05604b/README.md"
+#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/6989c8836b8eca28ea38bd009db080cf1a9b86a2/README.md"
 
 #define _BASE 0
 #define _TABNAV 1
@@ -34,10 +34,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             QK_SWAP_HANDS_TAP_TOGGLE, KC_W, KC_M, KC_F, KC_NO, KC_NO, KC_Y, KC_O, KC_U, QK_REBOOT,
             KC_R, KC_S, KC_T, KC_H, KC_NO, KC_NO, KC_N, KC_A, KC_I, KC_L,
             KC_B, KC_C, KC_G, KC_D, KC_NO, KC_NO, KC_P, QK_REPEAT_KEY, KC_COMMA, KC_DOT,
-                            LT(1,KC_TAB), KC_SPC, KC_E, LT(3,KC_BSPC)),
+                            LT(_TABNAV,KC_TAB), KC_SPC, KC_E, LT(_FN,KC_BSPC)),
 	[1] = LAYOUT_split_3x5_2(
             KC_NO, C(KC_W), C(KC_Z), RCS(KC_Z), KC_NO, KC_NO, KC_ESC, KC_TAB, KC_INS, KC_NO,
-            MO(2), ALT_T(NEXT_TAB), SFT_T(NEXT_WINDOW), CTL_T(INTELLIJ_PASTE), KC_NO, KC_NO, CTL_T(KC_LEFT), SFT_T(KC_UP), ALT_T(KC_DOWN), KC_RIGHT,
+            MO(_NAV2), ALT_T(NEXT_TAB), SFT_T(NEXT_WINDOW), CTL_T(INTELLIJ_PASTE), KC_NO, KC_NO, CTL_T(KC_LEFT), SFT_T(KC_UP), ALT_T(KC_DOWN), KC_RIGHT,
             RCS(KC_V), C(KC_C), C(KC_V), C(KC_X), KC_NO, KC_NO, KC_ENT, KC_BSPC, KC_DEL, KC_SPC,
                             KC_NO, KC_NO, KC_ENT, NUMBRA),
 	[2] = LAYOUT_split_3x5_2(
@@ -46,9 +46,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_MINUS, KC_EQUAL, KC_AMPR, KC_SLASH,
                             KC_NO, KC_NO, KC_NO, KC_NO),
 	[3] = LAYOUT_split_3x5_2(
-            KC_NO, KC_F6, KC_F5, KC_F4, KC_NO, KC_NO, KC_NO, TG(7), KC_NO, KC_NO,
-            KC_F3, ALT_T(KC_F2), SFT_T(KC_F1), CTL_T(KC_F10), KC_NO, KC_NO, OSM(MOD_LCTL), OSM(MOD_LSFT), OSM(MOD_LALT), MO(4),
-            KC_F11, KC_F9, KC_F8, KC_F7, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, MO(9),
+            KC_NO, KC_F6, KC_F5, KC_F4, KC_NO, KC_NO, KC_NO, TG(_MOUSE), KC_NO, KC_NO,
+            KC_F3, ALT_T(KC_F2), SFT_T(KC_F1), CTL_T(KC_F10), KC_NO, KC_NO, OSM(MOD_LCTL), OSM(MOD_LSFT), OSM(MOD_LALT), MO(_NUM),
+            KC_F11, KC_F9, KC_F8, KC_F7, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, MO(_MEDIA),
                             NUMBRA, KC_F12, KC_NO, KC_NO),
 	[4] = LAYOUT_split_3x5_2(
             KC_NO, KC_6, KC_5, KC_4, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
@@ -67,8 +67,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                             KC_NO, KC_NO, KC_NO, KC_NO),
 	[7] = LAYOUT_split_3x5_2(
             KC_NO, KC_BTN3, KC_BTN2, KC_BTN1, KC_NO, KC_NO, KC_NO, KC_BTN2, KC_BTN3, KC_NO,
-            MO(8), KC_ACL0, KC_ACL1, KC_ACL2, KC_NO, KC_NO, KC_MS_L, KC_MS_U, KC_MS_D, KC_MS_R,
-            KC_NO, KC_LALT, KC_LSFT, KC_LCTL, KC_NO, KC_NO, KC_BTN1, TG(7), KC_NO, KC_NO,
+            MO(_MOUSE2), KC_ACL0, KC_ACL1, KC_ACL2, KC_NO, KC_NO, KC_MS_L, KC_MS_U, KC_MS_D, KC_MS_R,
+            KC_NO, KC_LALT, KC_LSFT, KC_LCTL, KC_NO, KC_NO, KC_BTN1, TG(_MOUSE), KC_NO, KC_NO,
                             KC_NO, KC_NO, KC_NO, KC_NO),
 	[8] = LAYOUT_split_3x5_2(
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
