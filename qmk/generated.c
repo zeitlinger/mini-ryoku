@@ -1,6 +1,6 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/09a75dac767d36d457a4b46b867feeec20f1f53b/README.md using https://github.com/zeitlinger/keyboard/blob/09a75dac767d36d457a4b46b867feeec20f1f53b/generateKeyboard.kt
  */
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
@@ -66,23 +66,23 @@ bool target_layer_on_hold(uint16_t keycode, keyrecord_t *record) {
     if (!record->tap.count) {
         if (record->event.pressed) {
             switch (keycode) {
-            case CTL_T(KC_LEFT): layer_on(_BASEMODS); add_mods(MOD_BIT(KC_LCTL)); return true;
-            case SFT_T(KC_UP): layer_on(_BASEMODS); add_mods(MOD_BIT(KC_LSFT)); return true;
-            case ALT_T(KC_DOWN): layer_on(_BASEMODS); add_mods(MOD_BIT(KC_LALT)); return true;
-            case ALT_T(KC_F2): layer_on(_BASEMODS); add_mods(MOD_BIT(KC_LALT)); return true;
-            case SFT_T(KC_F1): layer_on(_BASEMODS); add_mods(MOD_BIT(KC_LSFT)); return true;
-            case CTL_T(KC_F10): layer_on(_BASEMODS); add_mods(MOD_BIT(KC_LCTL)); return true;
+            case CTL_T(KC_LEFT): layer_on(_BASEMODS); add_mods(MOD_BIT(KC_LCTL)); return false;
+            case SFT_T(KC_UP): layer_on(_BASEMODS); add_mods(MOD_BIT(KC_LSFT)); return false;
+            case ALT_T(KC_DOWN): layer_on(_BASEMODS); add_mods(MOD_BIT(KC_LALT)); return false;
+            case ALT_T(KC_F2): layer_on(_BASEMODS); add_mods(MOD_BIT(KC_LALT)); return false;
+            case SFT_T(KC_F1): layer_on(_BASEMODS); add_mods(MOD_BIT(KC_LSFT)); return false;
+            case CTL_T(KC_F10): layer_on(_BASEMODS); add_mods(MOD_BIT(KC_LCTL)); return false;
             default:
                 break;
             }
         } else {
             switch (keycode) {
-            case CTL_T(KC_LEFT): layer_off(_BASEMODS); del_mods(MOD_BIT(KC_LCTL)); return true;
-            case SFT_T(KC_UP): layer_off(_BASEMODS); del_mods(MOD_BIT(KC_LSFT)); return true;
-            case ALT_T(KC_DOWN): layer_off(_BASEMODS); del_mods(MOD_BIT(KC_LALT)); return true;
-            case ALT_T(KC_F2): layer_off(_BASEMODS); del_mods(MOD_BIT(KC_LALT)); return true;
-            case SFT_T(KC_F1): layer_off(_BASEMODS); del_mods(MOD_BIT(KC_LSFT)); return true;
-            case CTL_T(KC_F10): layer_off(_BASEMODS); del_mods(MOD_BIT(KC_LCTL)); return true;
+            case CTL_T(KC_LEFT): layer_off(_BASEMODS); del_mods(MOD_BIT(KC_LCTL)); return false;
+            case SFT_T(KC_UP): layer_off(_BASEMODS); del_mods(MOD_BIT(KC_LSFT)); return false;
+            case ALT_T(KC_DOWN): layer_off(_BASEMODS); del_mods(MOD_BIT(KC_LALT)); return false;
+            case ALT_T(KC_F2): layer_off(_BASEMODS); del_mods(MOD_BIT(KC_LALT)); return false;
+            case SFT_T(KC_F1): layer_off(_BASEMODS); del_mods(MOD_BIT(KC_LSFT)); return false;
+            case CTL_T(KC_F10): layer_off(_BASEMODS); del_mods(MOD_BIT(KC_LCTL)); return false;
             default:
                 break;
             }
