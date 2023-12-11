@@ -22,7 +22,7 @@ bool is_one_shot_mouse_active = false;
 
 bool process_switcher(uint16_t keycode, keyrecord_t *record) {
     if (record->tap.count && record->event.pressed) {
-        bool switch_window = keycode == SFT_T(NEXT_WINDOW);
+        bool switch_window = keycode == CTL_T(NEXT_WINDOW);
         bool switch_tab = keycode == ALT_T(NEXT_TAB);
 
         if ((is_tab_switcher_active && !switch_tab) || (is_window_switcher_active && !switch_window)) {
@@ -95,7 +95,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             add_oneshot_mods(MOD_BIT(KC_LSFT));
         }
         return false;
-    case CTL_T(INTELLIJ_PASTE):
+    case SFT_T(INTELLIJ_PASTE):
         if (record->tap.count) {
             if (record->event.pressed) {
                 tap_code16(C(S(KC_V)));
