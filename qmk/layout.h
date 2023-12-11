@@ -3,10 +3,10 @@
 
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/2536c9a6251c94e84642e211cbd4ce1561d2ebe9/README.md using https://github.com/zeitlinger/keyboard/blob/2536c9a6251c94e84642e211cbd4ce1561d2ebe9/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/9bc0a6922f35b20b0bb44bf0b0e6e57c072753ca/README.md using https://github.com/zeitlinger/keyboard/blob/9bc0a6922f35b20b0bb44bf0b0e6e57c072753ca/generateKeyboard.kt
  */
 
-#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/2536c9a6251c94e84642e211cbd4ce1561d2ebe9/README.md"
+#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/9bc0a6922f35b20b0bb44bf0b0e6e57c072753ca/README.md"
 
 #define _BASE 0
 #define _TABNAV 1
@@ -47,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                             KC_NO, KC_NO, KC_NO, KC_NO),
 	[_FN] = LAYOUT_split_3x5_2(
             KC_NO, KC_F6, KC_F5, KC_F4, KC_NO, KC_NO, KC_NO, TG(_MOUSE), KC_NO, KC_NO,
-            KC_F3, ALT_T(KC_F2), CTL_T(KC_F1), SFT_T(KC_F10), KC_NO, KC_NO, OSM(MOD_LCTL), OSM(MOD_LSFT), OSM(MOD_LALT), MO(_NUM),
+            KC_F3, ALT_T(KC_F2), CTL_T(KC_F1), SFT_T(KC_F10), KC_NO, KC_NO, OSM(MOD_LSFT), OSM(MOD_LCTL), OSM(MOD_LALT), MO(_NUM),
             KC_F11, KC_F9, KC_F8, KC_F7, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, MO(_MEDIA),
                             NUMBRA, KC_F12, KC_NO, KC_NO),
 	[_NUM] = LAYOUT_split_3x5_2(
