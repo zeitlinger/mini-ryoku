@@ -1,6 +1,6 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/12180a33bdc3a3b91ad52b215854cf74afe9b8b3/README.md using https://github.com/zeitlinger/keyboard/blob/12180a33bdc3a3b91ad52b215854cf74afe9b8b3/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
  */
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
