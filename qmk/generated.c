@@ -1,6 +1,6 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/9bc0a6922f35b20b0bb44bf0b0e6e57c072753ca/README.md using https://github.com/zeitlinger/keyboard/blob/9bc0a6922f35b20b0bb44bf0b0e6e57c072753ca/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/873bb58a44b7d794e9436dfcb74d6874198e1c70/README.md using https://github.com/zeitlinger/keyboard/blob/873bb58a44b7d794e9436dfcb74d6874198e1c70/generateKeyboard.kt
  */
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
@@ -47,7 +47,6 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_BASE_KC_SEMICOLON: return 30;
     case C_BASE_KC_SLASH: return 30;
     case C_BASE_KC_UNDS: return 30;
-    case C_BASE_NUMBRA: return 100;
     case C_BASE_QK_ALT_REPEAT_KEY: return 30;
     case C_OSM_LEFT_A: return 22;
     case C_OSM_LEFT_C: return 12;

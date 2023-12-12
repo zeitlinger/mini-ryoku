@@ -22,8 +22,8 @@ bool is_one_shot_mouse_active = false;
 
 bool process_switcher(uint16_t keycode, keyrecord_t *record) {
     if (record->tap.count && record->event.pressed) {
-        bool switch_window = keycode == CTL_T(NEXT_WINDOW);
-        bool switch_tab = keycode == ALT_T(NEXT_TAB);
+        bool switch_window = keycode == _HANDLER_NEXT_WINDOW;
+        bool switch_tab = keycode == _HANDLER_NEXT_TAB;
 
         if ((is_tab_switcher_active && !switch_tab) || (is_window_switcher_active && !switch_window)) {
             //can use any key as shift tap key in switcher
@@ -61,7 +61,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
 
     switch (keycode) {
-    case ONE_SHOT_MOUSE:
+    case _HANDLER_ONE_SHOT_MOUSE:
         if (record->event.pressed) {
             layer_on(_MOUSE);
             is_one_shot_mouse_active = true;
@@ -77,25 +77,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         }
         break;
-    case NUMBRA:
+    case _HANDLER_NUMBRA:
         if (record->event.pressed) {
             layer_on(_NUMBRA);
         } else {
             layer_off(_NUMBRA);
         }
         return false;
-    case PRINT_VERSION:
+    case _HANDLER_PRINT_VERSION:
         if (record->event.pressed) {
             SEND_STRING(VERSION_STRING);
         }
         return false;
-    case DOT_SPC:
+    case _HANDLER_DOT_SPC:
         if (record->event.pressed) {
             SEND_STRING(". ");
             add_oneshot_mods(MOD_BIT(KC_LSFT));
         }
         return false;
-    case SFT_T(INTELLIJ_PASTE):
+    case _HANDLER_INTELLIJ_PASTE:
         if (record->tap.count) {
             if (record->event.pressed) {
                 tap_code16(C(S(KC_V)));
