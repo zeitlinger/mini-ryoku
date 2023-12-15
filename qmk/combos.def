@@ -1,4 +1,4 @@
-// file is generated from https://github.com/zeitlinger/keyboard/blob/18663684658b6645186e381dc25c7fbdac465388/README.md using https://github.com/zeitlinger/keyboard/blob/18663684658b6645186e381dc25c7fbdac465388/generateKeyboard.kt
+// file is generated from https://github.com/zeitlinger/keyboard/blob/42f2ec55b2ca3bf14b434026403b4168455c3b80/README.md using https://github.com/zeitlinger/keyboard/blob/42f2ec55b2ca3bf14b434026403b4168455c3b80/generateKeyboard.kt
 COMB(C_BASE_AKC_F7                      , A(KC_F7)                           , KC_B, KC_T)
 COMB(C_BASE_ALGRKC_CIRC                 , ALGR(KC_CIRC)                      , KC_SPC, KC_Y)
 COMB(C_BASE_ALGRKC_DQUO                 , ALGR(KC_DQUO)                      , KC_E, KC_N)

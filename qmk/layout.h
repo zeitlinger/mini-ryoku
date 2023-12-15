@@ -3,10 +3,10 @@
 
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/18663684658b6645186e381dc25c7fbdac465388/README.md using https://github.com/zeitlinger/keyboard/blob/18663684658b6645186e381dc25c7fbdac465388/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/42f2ec55b2ca3bf14b434026403b4168455c3b80/README.md using https://github.com/zeitlinger/keyboard/blob/42f2ec55b2ca3bf14b434026403b4168455c3b80/generateKeyboard.kt
  */
 
-#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/18663684658b6645186e381dc25c7fbdac465388/README.md"
+#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/42f2ec55b2ca3bf14b434026403b4168455c3b80/README.md"
 
 #define _BASE 0
 #define _FN 1
@@ -27,12 +27,12 @@ enum custom_keycodes {
     PRINT_VERSION
 };
 
-#define _HANDLER_INTELLIJ_PASTE CustomKey(key=SFT_T(INTELLIJ_PASTE), targetLayerName=Num)
-#define _HANDLER_NEXT_TAB CustomKey(key=ALT_T(NEXT_TAB), targetLayerName=null)
-#define _HANDLER_NEXT_WINDOW CustomKey(key=CTL_T(NEXT_WINDOW), targetLayerName=null)
-#define _HANDLER_ONE_SHOT_MOUSE CustomKey(key=ONE_SHOT_MOUSE, targetLayerName=Mouse)
-#define _HANDLER_DOT_SPC CustomKey(key=DOT_SPC, targetLayerName=null)
-#define _HANDLER_PRINT_VERSION CustomKey(key=PRINT_VERSION, targetLayerName=null)
+#define _HANDLER_INTELLIJ_PASTE SFT_T(INTELLIJ_PASTE)
+#define _HANDLER_NEXT_TAB ALT_T(NEXT_TAB)
+#define _HANDLER_NEXT_WINDOW CTL_T(NEXT_WINDOW)
+#define _HANDLER_ONE_SHOT_MOUSE ONE_SHOT_MOUSE
+#define _HANDLER_DOT_SPC DOT_SPC
+#define _HANDLER_PRINT_VERSION PRINT_VERSION
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_BASE] = LAYOUT_split_3x5_2(
