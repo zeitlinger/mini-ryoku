@@ -77,13 +77,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         }
         break;
-    case _HANDLER_MOUSE:
-        if (record->event.pressed) {
-            layer_on(_MOUSE);
-        } else {
-            layer_off(_MOUSE);
-        }
-        return false;
     case _HANDLER_PRINT_VERSION:
         if (record->event.pressed) {
             SEND_STRING(VERSION_STRING);

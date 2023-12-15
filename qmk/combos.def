@@ -1,4 +1,4 @@
-// file is generated from https://github.com/zeitlinger/keyboard/blob/f1e6791e0798e82d95648ec7ef87a630f713fef3/README.md using https://github.com/zeitlinger/keyboard/blob/f1e6791e0798e82d95648ec7ef87a630f713fef3/generateKeyboard.kt
+// file is generated from https://github.com/zeitlinger/keyboard/blob/7f6dacd25c2c90c4ef62830d74b87ccca551cd20/README.md using https://github.com/zeitlinger/keyboard/blob/7f6dacd25c2c90c4ef62830d74b87ccca551cd20/generateKeyboard.kt
 COMB(C_BASE_AKC_F7                      , A(KC_F7)                           , KC_B, KC_T)
 COMB(C_BASE_ALGRKC_CIRC                 , ALGR(KC_CIRC)                      , KC_SPC, KC_Y)
 COMB(C_BASE_ALGRKC_DQUO                 , ALGR(KC_DQUO)                      , KC_E, KC_N)
@@ -55,7 +55,6 @@ COMB(C_BASE_KC_UNDS                     , KC_UNDS                            , K
 COMB(C_BASE_KC_V                        , KC_V                               , KC_M, KC_W)
 COMB(C_BASE_KC_X                        , KC_X                               , KC_C, KC_D)
 COMB(C_BASE_KC_Z                        , KC_Z                               , KC_F, KC_M)
-COMB(C_BASE_MO_MOUSE                    , MO(_MOUSE)                         , LT(_FN,KC_BSPC), LT(_TABNAV,KC_TAB))
 COMB(C_BASE_ONE_SHOT_MOUSE              , ONE_SHOT_MOUSE                     , KC_COMMA, KC_P)
 COMB(C_BASE_QK_ALT_REPEAT_KEY           , QK_ALT_REPEAT_KEY                  , KC_E, QK_REPEAT_KEY)
 COMB(C_BASE_QK_CAPS_WORD_TOGGLE         , QK_CAPS_WORD_TOGGLE                , KC_COMMA, QK_REPEAT_KEY)
