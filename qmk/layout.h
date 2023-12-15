@@ -3,10 +3,10 @@
 
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/42f2ec55b2ca3bf14b434026403b4168455c3b80/README.md using https://github.com/zeitlinger/keyboard/blob/42f2ec55b2ca3bf14b434026403b4168455c3b80/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/f1e6791e0798e82d95648ec7ef87a630f713fef3/README.md using https://github.com/zeitlinger/keyboard/blob/f1e6791e0798e82d95648ec7ef87a630f713fef3/generateKeyboard.kt
  */
 
-#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/42f2ec55b2ca3bf14b434026403b4168455c3b80/README.md"
+#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/f1e6791e0798e82d95648ec7ef87a630f713fef3/README.md"
 
 #define _BASE 0
 #define _FN 1
@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             QK_SWAP_HANDS_TAP_TOGGLE, KC_W, KC_M, KC_F, KC_NO, KC_NO, KC_Y, KC_O, KC_U, QK_REBOOT,
             KC_R, KC_S, KC_T, KC_H, KC_NO, KC_NO, KC_N, KC_A, KC_I, KC_L,
             KC_B, KC_C, KC_G, KC_D, KC_NO, KC_NO, KC_P, QK_REPEAT_KEY, KC_COMMA, KC_DOT,
-                            MO(_TABNAV), KC_SPC, KC_E, LT(_FN,KC_BSPC)),
+                            LT(_TABNAV,KC_TAB), KC_SPC, KC_E, LT(_FN,KC_BSPC)),
 	[_FN] = LAYOUT_split_3x5_2(
             KC_NO, KC_F6, KC_F5, KC_F4, KC_NO, KC_NO, KC_NO, TG(_MOUSE), KC_NO, KC_NO,
             KC_F3, ALT_T(KC_F2), CTL_T(KC_F1), SFT_T(KC_F10), KC_NO, KC_NO, OSM(MOD_LSFT), OSM(MOD_LCTL), OSM(MOD_LALT), MO(_NUM),
