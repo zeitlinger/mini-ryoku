@@ -1,10 +1,10 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/7f6dacd25c2c90c4ef62830d74b87ccca551cd20/README.md using https://github.com/zeitlinger/keyboard/blob/7f6dacd25c2c90c4ef62830d74b87ccca551cd20/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/8f9ca0b0a25cbafe9cd30ed06c614d09c868f783/README.md using https://github.com/zeitlinger/keyboard/blob/8f9ca0b0a25cbafe9cd30ed06c614d09c868f783/generateKeyboard.kt
  */
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
-  switch(index) {
+    switch(index) {
     case C_BASE_ALGRKC_CIRC: return 25;
     case C_BASE_ALGRKC_DQUO: return 25;
     case C_BASE_ALGRKC_GRV: return 25;
@@ -57,8 +57,8 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_OSM_RIGHT_CS: return 22;
     case C_OSM_RIGHT_S: return 12;
     default:
-      return COMBO_TERM;
-  }
+        return COMBO_TERM;
+    }
 }
 
 bool target_layer_on_hold(uint16_t keycode, keyrecord_t *record) {
@@ -92,11 +92,27 @@ bool target_layer_on_hold(uint16_t keycode, keyrecord_t *record) {
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case KC_TAB: return true;
-        case KC_BSPC: return true;
-        default:
-            // Do not select the hold action when another key is pressed.
-            return false;
+    case KC_TAB: return true;
+    case KC_BSPC: return true;
+    default:
+        // Do not select the hold action when another key is pressed.
+        return false;
     }
 }
 
+bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
+    if (!layer_state_is(_BASE)) {
+        switch (combo_index) {
+        case C_OSM_LEFT_C: return false;
+        case C_OSM_LEFT_S: return false;
+        case C_OSM_LEFT_A: return false;
+        case C_OSM_LEFT_CS: return false;
+        case C_OSM_RIGHT_C: return false;
+        case C_OSM_RIGHT_S: return false;
+        case C_OSM_RIGHT_A: return false;
+        case C_OSM_RIGHT_CS: return false;
+        }
+    }
+
+    return true;
+}
