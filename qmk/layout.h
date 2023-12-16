@@ -3,10 +3,10 @@
 
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/33f0a7d43a5e6f8f8425a1ab0b9f5610758244eb/README.md using https://github.com/zeitlinger/keyboard/blob/33f0a7d43a5e6f8f8425a1ab0b9f5610758244eb/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/cc706696c62e834eca5e5ef2cca393b42afa51a3/README.md using https://github.com/zeitlinger/keyboard/blob/cc706696c62e834eca5e5ef2cca393b42afa51a3/generateKeyboard.kt
  */
 
-#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/33f0a7d43a5e6f8f8425a1ab0b9f5610758244eb/README.md"
+#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/cc706696c62e834eca5e5ef2cca393b42afa51a3/README.md"
 
 #define _BASE 0
 #define _FN 1
@@ -35,6 +35,8 @@ enum custom_keycodes {
 #define _HANDLER_ONE_SHOT_MOUSE ONE_SHOT_MOUSE
 #define _HANDLER_DOT_SPC DOT_SPC
 #define _HANDLER_PRINT_VERSION PRINT_VERSION
+#define _HANDLER__TAP_C_CKC_Z LT(_NAV2,_TAP_C_CKC_Z)
+#define _HANDLER__TAP_C_CKC_W SFT_T(_TAP_C_CKC_W)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_BASE] = LAYOUT_split_3x5_2(

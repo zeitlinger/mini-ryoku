@@ -1,6 +1,6 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/33f0a7d43a5e6f8f8425a1ab0b9f5610758244eb/README.md using https://github.com/zeitlinger/keyboard/blob/33f0a7d43a5e6f8f8425a1ab0b9f5610758244eb/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/cc706696c62e834eca5e5ef2cca393b42afa51a3/README.md using https://github.com/zeitlinger/keyboard/blob/cc706696c62e834eca5e5ef2cca393b42afa51a3/generateKeyboard.kt
  */
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
@@ -65,8 +65,8 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     if (record->tap.count) {
         if (record->event.pressed) {
             switch (keycode) {
-            case _TAP_C_CKC_Z: tap_code16(C(KC_Z)); return false;
-            case _TAP_C_CKC_W: tap_code16(C(KC_W)); return false;
+            case _HANDLER__TAP_C_CKC_Z: tap_code16(C(KC_Z)); return false;
+            case _HANDLER__TAP_C_CKC_W: tap_code16(C(KC_W)); return false;
             default:
                 break;
             }
