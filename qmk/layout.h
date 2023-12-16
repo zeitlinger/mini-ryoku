@@ -3,10 +3,10 @@
 
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/8f9ca0b0a25cbafe9cd30ed06c614d09c868f783/README.md using https://github.com/zeitlinger/keyboard/blob/8f9ca0b0a25cbafe9cd30ed06c614d09c868f783/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
  */
 
-#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/8f9ca0b0a25cbafe9cd30ed06c614d09c868f783/README.md"
+#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md"
 
 #define _BASE 0
 #define _FN 1
@@ -24,10 +24,12 @@ enum custom_keycodes {
     NEXT_WINDOW,
     ONE_SHOT_MOUSE,
     DOT_SPC,
-    PRINT_VERSION
+    PRINT_VERSION,
+    _TAP_C_CKC_Z,
+    _TAP_C_CKC_W
 };
 
-#define _HANDLER_INTELLIJ_PASTE SFT_T(INTELLIJ_PASTE)
+#define _HANDLER_INTELLIJ_PASTE INTELLIJ_PASTE
 #define _HANDLER_NEXT_TAB ALT_T(NEXT_TAB)
 #define _HANDLER_NEXT_WINDOW CTL_T(NEXT_WINDOW)
 #define _HANDLER_ONE_SHOT_MOUSE ONE_SHOT_MOUSE
@@ -56,8 +58,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
                             KC_NO, KC_NO, KC_NO, KC_NO),
 	[_TABNAV] = LAYOUT_split_3x5_2(
-            KC_NO, C(KC_W), C(KC_Z), RCS(KC_Z), KC_NO, KC_NO, KC_ESC, KC_TAB, KC_INS, KC_NO,
-            MO(_NAV2), ALT_T(NEXT_TAB), CTL_T(NEXT_WINDOW), SFT_T(INTELLIJ_PASTE), KC_NO, KC_NO, SFT_T(KC_LEFT), CTL_T(KC_UP), ALT_T(KC_DOWN), KC_RIGHT,
+            KC_NO, RCS(KC_Z), INTELLIJ_PASTE, KC_NO, KC_NO, KC_NO, KC_ESC, KC_TAB, KC_INS, KC_NO,
+            LT(_NAV2,_TAP_C_CKC_Z), ALT_T(NEXT_TAB), CTL_T(NEXT_WINDOW), SFT_T(_TAP_C_CKC_W), KC_NO, KC_NO, SFT_T(KC_LEFT), CTL_T(KC_UP), ALT_T(KC_DOWN), KC_RIGHT,
             RCS(KC_V), C(KC_X), C(KC_V), C(KC_C), KC_NO, KC_NO, KC_ENT, KC_BSPC, KC_DEL, KC_SPC,
                             KC_NO, KC_NO, KC_ENT, KC_NO),
 	[_NAV2] = LAYOUT_split_3x5_2(

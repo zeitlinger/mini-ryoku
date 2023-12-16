@@ -19,6 +19,7 @@
 bool is_window_switcher_active = false;
 bool is_tab_switcher_active = false;
 bool is_one_shot_mouse_active = false;
+bool is_one_shot_num_active = false;
 
 bool process_switcher(uint16_t keycode, keyrecord_t *record) {
     if (record->tap.count && record->event.pressed) {
@@ -56,8 +57,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!process_switcher(keycode, record)) {
         return false;
     }
-    if (!target_layer_on_hold(keycode, record)) {
+    if (!process_record_generated(keycode, record)) {
         return false;
+    }
+    if (is_one_shot_num_active) {
+        if (record->event.pressed) {
+            layer_off(_NUM);
+            is_one_shot_num_active = false;
+        }
+        return true;
     }
 
     switch (keycode) {
@@ -92,9 +100,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (record->tap.count) {
             if (record->event.pressed) {
                 tap_code16(C(S(KC_V)));
-                set_oneshot_layer(_NUM, ONESHOT_START);
-            } else {
-                clear_oneshot_layer_state(ONESHOT_PRESSED);
+                is_one_shot_num_active = true;
+                layer_on(_NUM);
             }
             return false;
         }

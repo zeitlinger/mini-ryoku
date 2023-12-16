@@ -1,6 +1,6 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/8f9ca0b0a25cbafe9cd30ed06c614d09c868f783/README.md using https://github.com/zeitlinger/keyboard/blob/8f9ca0b0a25cbafe9cd30ed06c614d09c868f783/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
  */
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
@@ -61,8 +61,17 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     }
 }
 
-bool target_layer_on_hold(uint16_t keycode, keyrecord_t *record) {
-    if (!record->tap.count) {
+bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
+    if (record->tap.count) {
+        if (record->event.pressed) {
+            switch (keycode) {
+            case _TAP_C_CKC_Z: tap_code16(C(KC_Z)); return false;
+            case _TAP_C_CKC_W: tap_code16(C(KC_W)); return false;
+            default:
+                break;
+            }
+        }
+    } else {
         if (record->event.pressed) {
             switch (keycode) {
             case ALT_T(KC_F2): layer_on(_BASEMODS); add_mods(MOD_BIT(KC_LALT)); return false;
@@ -94,6 +103,7 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
     case KC_TAB: return true;
     case KC_BSPC: return true;
+    case _TAP_C_CKC_Z: return true;
     default:
         // Do not select the hold action when another key is pressed.
         return false;
