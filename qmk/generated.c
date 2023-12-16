@@ -1,6 +1,6 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/cc706696c62e834eca5e5ef2cca393b42afa51a3/README.md using https://github.com/zeitlinger/keyboard/blob/cc706696c62e834eca5e5ef2cca393b42afa51a3/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/1d24bf78b52a257a71856700c35886d1c65c13b7/README.md using https://github.com/zeitlinger/keyboard/blob/1d24bf78b52a257a71856700c35886d1c65c13b7/generateKeyboard.kt
  */
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
@@ -101,9 +101,9 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-    case KC_TAB: return true;
-    case KC_BSPC: return true;
-    case _TAP_C_CKC_Z: return true;
+    case LT(_TABNAV,KC_TAB): return true;
+    case LT(_FN,KC_BSPC): return true;
+    case LT(_NAV2,_TAP_C_CKC_Z): return true;
     default:
         // Do not select the hold action when another key is pressed.
         return false;

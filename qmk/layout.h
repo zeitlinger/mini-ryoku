@@ -3,10 +3,10 @@
 
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/cc706696c62e834eca5e5ef2cca393b42afa51a3/README.md using https://github.com/zeitlinger/keyboard/blob/cc706696c62e834eca5e5ef2cca393b42afa51a3/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/1d24bf78b52a257a71856700c35886d1c65c13b7/README.md using https://github.com/zeitlinger/keyboard/blob/1d24bf78b52a257a71856700c35886d1c65c13b7/generateKeyboard.kt
  */
 
-#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/cc706696c62e834eca5e5ef2cca393b42afa51a3/README.md"
+#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/1d24bf78b52a257a71856700c35886d1c65c13b7/README.md"
 
 #define _BASE 0
 #define _FN 1
@@ -60,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
                             KC_NO, KC_NO, KC_NO, KC_NO),
 	[_TABNAV] = LAYOUT_split_3x5_2(
-            KC_NO, RCS(KC_Z), INTELLIJ_PASTE, KC_NO, KC_NO, KC_NO, KC_ESC, KC_TAB, KC_INS, KC_NO,
+            KC_NO, RCS(KC_F), INTELLIJ_PASTE, RCS(KC_Z), KC_NO, KC_NO, KC_ESC, KC_TAB, KC_INS, KC_NO,
             LT(_NAV2,_TAP_C_CKC_Z), ALT_T(NEXT_TAB), CTL_T(NEXT_WINDOW), SFT_T(_TAP_C_CKC_W), KC_NO, KC_NO, SFT_T(KC_LEFT), CTL_T(KC_UP), ALT_T(KC_DOWN), KC_RIGHT,
             RCS(KC_V), C(KC_X), C(KC_V), C(KC_C), KC_NO, KC_NO, KC_ENT, KC_BSPC, KC_DEL, KC_SPC,
                             KC_NO, KC_NO, KC_ENT, KC_NO),
