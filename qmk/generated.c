@@ -1,53 +1,53 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/1d24bf78b52a257a71856700c35886d1c65c13b7/README.md using https://github.com/zeitlinger/keyboard/blob/1d24bf78b52a257a71856700c35886d1c65c13b7/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/847585847d08a8246bd479c331a7b1ce5d89a0b6/README.md using https://github.com/zeitlinger/keyboard/blob/847585847d08a8246bd479c331a7b1ce5d89a0b6/generateKeyboard.kt
  */
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     switch(index) {
-    case C_BASE_ALGRKC_CIRC: return 25;
-    case C_BASE_ALGRKC_DQUO: return 25;
-    case C_BASE_ALGRKC_GRV: return 25;
-    case C_BASE_ALGRKC_QUOTE: return 25;
-    case C_BASE_ALGRKC_TILD: return 25;
-    case C_BASE_KC_0: return 25;
-    case C_BASE_KC_1: return 25;
-    case C_BASE_KC_2: return 25;
-    case C_BASE_KC_3: return 25;
-    case C_BASE_KC_4: return 25;
-    case C_BASE_KC_5: return 25;
-    case C_BASE_KC_6: return 25;
-    case C_BASE_KC_7: return 25;
-    case C_BASE_KC_8: return 25;
-    case C_BASE_KC_9: return 25;
-    case C_BASE_KC_AMPR: return 25;
-    case C_BASE_KC_ASTR: return 25;
-    case C_BASE_KC_AT: return 25;
-    case C_BASE_KC_BACKSLASH: return 25;
-    case C_BASE_KC_COLN: return 25;
-    case C_BASE_KC_DLR: return 25;
-    case C_BASE_KC_EQUAL: return 25;
-    case C_BASE_KC_EXLM: return 25;
-    case C_BASE_KC_HASH: return 25;
+    case C_BASE_ALGRKC_CIRC: return 20;
+    case C_BASE_ALGRKC_DQUO: return 20;
+    case C_BASE_ALGRKC_GRV: return 20;
+    case C_BASE_ALGRKC_QUOTE: return 20;
+    case C_BASE_ALGRKC_TILD: return 20;
+    case C_BASE_KC_0: return 20;
+    case C_BASE_KC_1: return 20;
+    case C_BASE_KC_2: return 20;
+    case C_BASE_KC_3: return 20;
+    case C_BASE_KC_4: return 20;
+    case C_BASE_KC_5: return 20;
+    case C_BASE_KC_6: return 20;
+    case C_BASE_KC_7: return 20;
+    case C_BASE_KC_8: return 20;
+    case C_BASE_KC_9: return 20;
+    case C_BASE_KC_AMPR: return 20;
+    case C_BASE_KC_ASTR: return 20;
+    case C_BASE_KC_AT: return 20;
+    case C_BASE_KC_BACKSLASH: return 20;
+    case C_BASE_KC_COLN: return 20;
+    case C_BASE_KC_COMMA: return 20;
+    case C_BASE_KC_DLR: return 20;
+    case C_BASE_KC_EQUAL: return 20;
+    case C_BASE_KC_EXLM: return 20;
+    case C_BASE_KC_HASH: return 20;
     case C_BASE_KC_K: return 120;
-    case C_BASE_KC_LABK: return 25;
-    case C_BASE_KC_LCBR: return 25;
-    case C_BASE_KC_LEFT_BRACKET: return 25;
-    case C_BASE_KC_LGUI: return 25;
-    case C_BASE_KC_LPRN: return 25;
-    case C_BASE_KC_MINUS: return 25;
-    case C_BASE_KC_PERC: return 25;
-    case C_BASE_KC_PIPE: return 25;
-    case C_BASE_KC_PLUS: return 25;
-    case C_BASE_KC_QUES: return 25;
-    case C_BASE_KC_RABK: return 25;
-    case C_BASE_KC_RCBR: return 25;
-    case C_BASE_KC_RIGHT_BRACKET: return 25;
-    case C_BASE_KC_RPRN: return 25;
-    case C_BASE_KC_SEMICOLON: return 25;
-    case C_BASE_KC_SLASH: return 25;
-    case C_BASE_KC_UNDS: return 25;
-    case C_BASE_QK_ALT_REPEAT_KEY: return 25;
+    case C_BASE_KC_LABK: return 20;
+    case C_BASE_KC_LCBR: return 20;
+    case C_BASE_KC_LEFT_BRACKET: return 20;
+    case C_BASE_KC_LGUI_1: return 20;
+    case C_BASE_KC_LPRN: return 20;
+    case C_BASE_KC_MINUS: return 20;
+    case C_BASE_KC_PERC: return 20;
+    case C_BASE_KC_PIPE: return 20;
+    case C_BASE_KC_PLUS: return 20;
+    case C_BASE_KC_QUES: return 20;
+    case C_BASE_KC_RABK: return 20;
+    case C_BASE_KC_RCBR: return 20;
+    case C_BASE_KC_RIGHT_BRACKET: return 20;
+    case C_BASE_KC_RPRN: return 20;
+    case C_BASE_KC_SEMICOLON: return 20;
+    case C_BASE_KC_SLASH: return 20;
+    case C_BASE_KC_UNDS: return 20;
     case C_OSM_LEFT_A: return 22;
     case C_OSM_LEFT_C: return 12;
     case C_OSM_LEFT_CS: return 22;

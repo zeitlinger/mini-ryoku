@@ -3,20 +3,24 @@
 
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/1d24bf78b52a257a71856700c35886d1c65c13b7/README.md using https://github.com/zeitlinger/keyboard/blob/1d24bf78b52a257a71856700c35886d1c65c13b7/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/847585847d08a8246bd479c331a7b1ce5d89a0b6/README.md using https://github.com/zeitlinger/keyboard/blob/847585847d08a8246bd479c331a7b1ce5d89a0b6/generateKeyboard.kt
  */
 
-#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/1d24bf78b52a257a71856700c35886d1c65c13b7/README.md"
+#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/847585847d08a8246bd479c331a7b1ce5d89a0b6/README.md"
 
 #define _BASE 0
-#define _FN 1
-#define _MOUSE 2
-#define _MOUSE2 3
-#define _TABNAV 4
-#define _NAV2 5
-#define _NUM 6
-#define _BASEMODS 7
-#define _MEDIA 8
+#define _LEADER 1
+#define _LEADERTOGGLE 2
+#define _FN 3
+#define _MOUSE 4
+#define _MOUSE2 5
+#define _TABNAV 6
+#define _NAV2 7
+#define _NUM 8
+#define _BASEMODS 9
+#define _PARBRA 10
+#define _MEDIA 11
+#define _DEBUG 12
 
 enum custom_keycodes {
 	INTELLIJ_PASTE = SAFE_RANGE,
@@ -40,29 +44,39 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_BASE] = LAYOUT_split_3x5_2(
-            QK_SWAP_HANDS_TAP_TOGGLE, KC_W, KC_M, KC_F, KC_NO, KC_NO, KC_Y, KC_O, KC_U, QK_REBOOT,
+            KC_NO, KC_W, KC_M, KC_F, KC_NO, KC_NO, KC_Y, KC_O, KC_U, KC_NO,
             KC_R, KC_S, KC_T, KC_H, KC_NO, KC_NO, KC_N, KC_A, KC_I, KC_L,
-            KC_B, KC_C, KC_G, KC_D, KC_NO, KC_NO, KC_P, QK_REPEAT_KEY, KC_COMMA, KC_DOT,
+            KC_B, KC_C, KC_G, KC_D, KC_NO, KC_NO, KC_P, OSL(_LEADER), QK_REPEAT_KEY, KC_DOT,
                             LT(_TABNAV,KC_TAB), KC_SPC, KC_E, LT(_FN,KC_BSPC)),
+	[_LEADER] = LAYOUT_split_3x5_2(
+            KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+            KC_NO, OSL(_PARBRA), KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+            TG(_DEBUG), KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+                            KC_NO, OSL(_LEADERTOGGLE), KC_NO, KC_NO),
+	[_LEADERTOGGLE] = LAYOUT_split_3x5_2(
+            KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+            KC_NO, TG(_PARBRA), KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+            TG(_DEBUG), KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+                            KC_NO, TG(_LEADER), KC_NO, KC_NO),
 	[_FN] = LAYOUT_split_3x5_2(
             KC_NO, KC_F6, KC_F5, KC_F4, KC_NO, KC_NO, KC_NO, TG(_MOUSE), KC_NO, KC_NO,
             KC_F3, ALT_T(KC_F2), CTL_T(KC_F1), SFT_T(KC_F10), KC_NO, KC_NO, OSM(MOD_LSFT), OSM(MOD_LCTL), OSM(MOD_LALT), MO(_NUM),
-            KC_F11, KC_F9, KC_F8, KC_F7, KC_NO, KC_NO, KC_NO, A(KC_F7), KC_NO, MO(_MEDIA),
+            KC_F11, KC_F9, KC_F8, KC_F7, KC_NO, KC_NO, KC_NO, KC_NO, QK_ALT_REPEAT_KEY, MO(_MEDIA),
                             KC_NO, KC_F12, KC_NO, KC_NO),
 	[_MOUSE] = LAYOUT_split_3x5_2(
             KC_NO, KC_BTN3, KC_BTN2, KC_BTN1, KC_NO, KC_NO, KC_NO, KC_BTN2, KC_BTN3, KC_NO,
             MO(_MOUSE2), KC_ACL0, KC_ACL1, KC_ACL2, KC_NO, KC_NO, KC_MS_L, KC_MS_U, KC_MS_D, KC_MS_R,
-            KC_NO, KC_LALT, KC_LCTL, KC_LSFT, KC_NO, KC_NO, KC_BTN1, TG(_MOUSE), KC_NO, KC_NO,
-                            MO(_TABNAV), KC_NO, KC_NO, KC_NO),
+            KC_NO, KC_LALT, KC_LCTL, KC_LSFT, KC_NO, KC_NO, KC_BTN1, KC_NO, KC_NO, KC_NO,
+                            MO(_TABNAV), TG(_MOUSE), KC_NO, KC_NO),
 	[_MOUSE2] = LAYOUT_split_3x5_2(
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_WH_L, KC_WH_U, KC_WH_D, KC_WH_R,
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
                             KC_NO, KC_NO, KC_NO, KC_NO),
 	[_TABNAV] = LAYOUT_split_3x5_2(
-            KC_NO, RCS(KC_F), INTELLIJ_PASTE, RCS(KC_Z), KC_NO, KC_NO, KC_ESC, KC_TAB, KC_INS, KC_NO,
+            KC_NO, KC_NO, INTELLIJ_PASTE, RCS(KC_Z), KC_NO, KC_NO, KC_ESC, KC_TAB, KC_SPC, KC_NO,
             LT(_NAV2,_TAP_C_CKC_Z), ALT_T(NEXT_TAB), CTL_T(NEXT_WINDOW), SFT_T(_TAP_C_CKC_W), KC_NO, KC_NO, SFT_T(KC_LEFT), CTL_T(KC_UP), ALT_T(KC_DOWN), KC_RIGHT,
-            RCS(KC_V), C(KC_X), C(KC_V), C(KC_C), KC_NO, KC_NO, KC_ENT, KC_BSPC, KC_DEL, KC_SPC,
+            RCS(KC_V), C(KC_X), C(KC_V), C(KC_C), KC_NO, KC_NO, KC_ENT, KC_BSPC, KC_DEL, KC_INS,
                             KC_NO, KC_NO, KC_ENT, KC_NO),
 	[_NAV2] = LAYOUT_split_3x5_2(
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, ALGR(KC_CIRC), KC_LEFT_BRACKET, KC_RIGHT_BRACKET, KC_NO,
@@ -75,13 +89,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_NO, KC_9, KC_8, KC_7, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
                             KC_NO, KC_NO, KC_NO, KC_NO),
 	[_BASEMODS] = LAYOUT_split_3x5_2(
-            QK_SWAP_HANDS_TAP_TOGGLE, KC_W, KC_M, KC_F, KC_NO, KC_NO, KC_Y, KC_O, KC_U, QK_REBOOT,
+            KC_NO, KC_W, KC_M, KC_F, KC_NO, KC_NO, KC_Y, KC_O, KC_U, KC_NO,
             KC_R, ALT_T(KC_S), CTL_T(KC_T), SFT_T(KC_H), KC_NO, KC_NO, SFT_T(KC_N), CTL_T(KC_A), ALT_T(KC_I), KC_L,
-            KC_B, KC_C, KC_G, KC_D, KC_NO, KC_NO, KC_P, QK_REPEAT_KEY, KC_COMMA, KC_DOT,
+            KC_B, KC_C, KC_G, KC_D, KC_NO, KC_NO, KC_P, KC_NO, KC_NO, KC_DOT,
                             KC_NO, KC_SPC, KC_E, KC_NO),
+	[_PARBRA] = LAYOUT_split_3x5_2(
+            KC_NO, KC_HASH, KC_ASTR, KC_NO, KC_NO, KC_NO, ALGR(KC_CIRC), KC_LEFT_BRACKET, KC_RIGHT_BRACKET, KC_NO,
+            KC_DLR, KC_LPRN, KC_RPRN, KC_AT, KC_NO, KC_NO, ALGR(KC_QUOTE), ALGR(KC_GRV), KC_BACKSLASH, KC_SEMICOLON,
+            KC_PERC, KC_LABK, KC_RABK, KC_LGUI, KC_NO, KC_NO, KC_MINUS, KC_EQUAL, KC_AMPR, KC_SLASH,
+                            KC_NO, TG(_PARBRA), KC_NO, KC_NO),
 	[_MEDIA] = LAYOUT_split_3x5_2(
-            DT_PRNT, KC_BRID, KC_BRIU, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-            DT_UP, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_PSCR, PRINT_VERSION, KC_NO, KC_NO,
-            DT_DOWN, KC_MPRV, KC_MNXT, KC_MPLY, KC_NO, KC_NO, KC_MUTE, KC_VOLD, KC_VOLU, KC_NO,
+            KC_NO, KC_BRID, KC_BRIU, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+            KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_PSCR, PRINT_VERSION, KC_NO, KC_NO,
+            KC_NO, KC_MPRV, KC_MNXT, KC_MPLY, KC_NO, KC_NO, KC_MUTE, KC_VOLD, KC_VOLU, KC_NO,
                             KC_NO, KC_NO, KC_NO, KC_NO),
+	[_DEBUG] = LAYOUT_split_3x5_2(
+            KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+            KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+            KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+                            KC_NO, TG(_DEBUG), KC_NO, KC_NO),
 };
