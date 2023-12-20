@@ -1,4 +1,4 @@
-// file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
+// file is generated from https://github.com/zeitlinger/keyboard/blob/aed755aef124f3c28a99b4553e018a8a5b1f327f/README.md using https://github.com/zeitlinger/keyboard/blob/aed755aef124f3c28a99b4553e018a8a5b1f327f/generateKeyboard.kt
 COMB(C_BASE_AKC_F7                      , A(KC_F7)                           , KC_B, KC_G)
 COMB(C_BASE_DOT_SPC                     , DOT_SPC                            , KC_L, QK_ALT_REPEAT_KEY)
 COMB(C_BASE_KC_ENT                      , KC_ENT                             , QK_ALT_REPEAT_KEY, QK_REPEAT_KEY)
