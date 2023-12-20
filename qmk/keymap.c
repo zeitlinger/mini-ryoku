@@ -62,7 +62,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     if (is_one_shot_num_active) {
         if (record->event.pressed) {
-            layer_off(_NUM);
+            layer_off(_NUMLEFT);
             is_one_shot_num_active = false;
         }
         return true;
@@ -101,11 +101,59 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 tap_code16(C(S(KC_V)));
                 is_one_shot_num_active = true;
-                layer_on(_NUM);
+                layer_on(_NUMLEFT);
             }
             return false;
         }
         break;
+    case _HANDLER_LEADER_LEFT_ALT:
+        if (record->event.pressed) {
+            add_mods(MOD_BIT(KC_LALT));
+            set_oneshot_layer(_BASEMODSRIGHT, ONESHOT_START);
+        } else {
+            clear_oneshot_layer_state(ONESHOT_PRESSED);
+        }
+        return false;
+    case _HANDLER_LEADER_LEFT_CTL:
+        if (record->event.pressed) {
+            add_mods(MOD_BIT(KC_LCTL));
+            set_oneshot_layer(_BASEMODSRIGHT, ONESHOT_START);
+        } else {
+            clear_oneshot_layer_state(ONESHOT_PRESSED);
+        }
+        return false;
+    case _HANDLER_LEADER_LEFT_SFT:
+        if (record->event.pressed) {
+            add_mods(MOD_BIT(KC_LSFT));
+            set_oneshot_layer(_BASEMODSRIGHT, ONESHOT_START);
+        } else {
+            clear_oneshot_layer_state(ONESHOT_PRESSED);
+        }
+        return false;
+    case _HANDLER_LEADER_RIGHT_ALT:
+        if (record->event.pressed) {
+            add_mods(MOD_BIT(KC_LALT));
+            set_oneshot_layer(_BASEMODSLEFT, ONESHOT_START);
+        } else {
+            clear_oneshot_layer_state(ONESHOT_PRESSED);
+        }
+        return false;
+    case _HANDLER_LEADER_RIGHT_CTL:
+        if (record->event.pressed) {
+            add_mods(MOD_BIT(KC_LCTL));
+            set_oneshot_layer(_BASEMODSLEFT, ONESHOT_START);
+        } else {
+            clear_oneshot_layer_state(ONESHOT_PRESSED);
+        }
+        return false;
+    case _HANDLER_LEADER_RIGHT_SFT:
+        if (record->event.pressed) {
+            add_mods(MOD_BIT(KC_LSFT));
+            set_oneshot_layer(_BASEMODSLEFT, ONESHOT_START);
+        } else {
+            clear_oneshot_layer_state(ONESHOT_PRESSED);
+        }
+        return false;
     default:
         break;
     }

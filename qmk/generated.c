@@ -1,61 +1,11 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/847585847d08a8246bd479c331a7b1ce5d89a0b6/README.md using https://github.com/zeitlinger/keyboard/blob/847585847d08a8246bd479c331a7b1ce5d89a0b6/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
  */
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     switch(index) {
-    case C_BASE_ALGRKC_CIRC: return 20;
-    case C_BASE_ALGRKC_DQUO: return 20;
-    case C_BASE_ALGRKC_GRV: return 20;
-    case C_BASE_ALGRKC_QUOTE: return 20;
-    case C_BASE_ALGRKC_TILD: return 20;
-    case C_BASE_KC_0: return 20;
-    case C_BASE_KC_1: return 20;
-    case C_BASE_KC_2: return 20;
-    case C_BASE_KC_3: return 20;
-    case C_BASE_KC_4: return 20;
-    case C_BASE_KC_5: return 20;
-    case C_BASE_KC_6: return 20;
-    case C_BASE_KC_7: return 20;
-    case C_BASE_KC_8: return 20;
-    case C_BASE_KC_9: return 20;
-    case C_BASE_KC_AMPR: return 20;
-    case C_BASE_KC_ASTR: return 20;
-    case C_BASE_KC_AT: return 20;
-    case C_BASE_KC_BACKSLASH: return 20;
-    case C_BASE_KC_COLN: return 20;
-    case C_BASE_KC_COMMA: return 20;
-    case C_BASE_KC_DLR: return 20;
-    case C_BASE_KC_EQUAL: return 20;
-    case C_BASE_KC_EXLM: return 20;
-    case C_BASE_KC_HASH: return 20;
     case C_BASE_KC_K: return 120;
-    case C_BASE_KC_LABK: return 20;
-    case C_BASE_KC_LCBR: return 20;
-    case C_BASE_KC_LEFT_BRACKET: return 20;
-    case C_BASE_KC_LGUI_1: return 20;
-    case C_BASE_KC_LPRN: return 20;
-    case C_BASE_KC_MINUS: return 20;
-    case C_BASE_KC_PERC: return 20;
-    case C_BASE_KC_PIPE: return 20;
-    case C_BASE_KC_PLUS: return 20;
-    case C_BASE_KC_QUES: return 20;
-    case C_BASE_KC_RABK: return 20;
-    case C_BASE_KC_RCBR: return 20;
-    case C_BASE_KC_RIGHT_BRACKET: return 20;
-    case C_BASE_KC_RPRN: return 20;
-    case C_BASE_KC_SEMICOLON: return 20;
-    case C_BASE_KC_SLASH: return 20;
-    case C_BASE_KC_UNDS: return 20;
-    case C_OSM_LEFT_A: return 22;
-    case C_OSM_LEFT_C: return 12;
-    case C_OSM_LEFT_CS: return 22;
-    case C_OSM_LEFT_S: return 12;
-    case C_OSM_RIGHT_A: return 22;
-    case C_OSM_RIGHT_C: return 12;
-    case C_OSM_RIGHT_CS: return 22;
-    case C_OSM_RIGHT_S: return 12;
     default:
         return COMBO_TERM;
     }
@@ -67,6 +17,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
             switch (keycode) {
             case _HANDLER__TAP_C_CKC_Z: tap_code16(C(KC_Z)); return false;
             case _HANDLER__TAP_C_CKC_W: tap_code16(C(KC_W)); return false;
+            case _HANDLER__TAP_C_ALGRKC_DQUO: tap_code16(ALGR(KC_DQUO)); return false;
             default:
                 break;
             }
@@ -101,8 +52,6 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-    case LT(_TABNAV,KC_TAB): return true;
-    case LT(_FN,KC_BSPC): return true;
     case LT(_NAV2,_TAP_C_CKC_Z): return true;
     default:
         // Do not select the hold action when another key is pressed.
@@ -113,14 +62,7 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
 bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
     if (!layer_state_is(_BASE)) {
         switch (combo_index) {
-        case C_OSM_LEFT_C: return false;
-        case C_OSM_LEFT_S: return false;
-        case C_OSM_LEFT_A: return false;
-        case C_OSM_LEFT_CS: return false;
-        case C_OSM_RIGHT_C: return false;
-        case C_OSM_RIGHT_S: return false;
-        case C_OSM_RIGHT_A: return false;
-        case C_OSM_RIGHT_CS: return false;
+        
         }
     }
 
