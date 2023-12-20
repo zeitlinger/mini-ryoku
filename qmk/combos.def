@@ -1,4 +1,4 @@
-// file is generated from https://github.com/zeitlinger/keyboard/blob/aed755aef124f3c28a99b4553e018a8a5b1f327f/README.md using https://github.com/zeitlinger/keyboard/blob/aed755aef124f3c28a99b4553e018a8a5b1f327f/generateKeyboard.kt
+// file is generated from https://github.com/zeitlinger/keyboard/blob/c7f0d2ea0a664e2737413506ddd5453d6a22fb92/README.md using https://github.com/zeitlinger/keyboard/blob/c7f0d2ea0a664e2737413506ddd5453d6a22fb92/generateKeyboard.kt
 COMB(C_BASE_AKC_F7                      , A(KC_F7)                           , KC_B, KC_G)
 COMB(C_BASE_DOT_SPC                     , DOT_SPC                            , KC_L, QK_ALT_REPEAT_KEY)
 COMB(C_BASE_KC_ENT                      , KC_ENT                             , QK_ALT_REPEAT_KEY, QK_REPEAT_KEY)
@@ -8,12 +8,12 @@ COMB(C_BASE_KC_J                        , KC_J                               , K
 COMB(C_BASE_KC_K                        , KC_K                               , KC_D, KC_G)
 COMB(C_BASE_KC_LGUI                     , KC_LGUI                            , KC_B, KC_D)
 COMB(C_BASE_KC_Q                        , KC_Q                               , KC_B, KC_C)
+COMB(C_BASE_KC_TAB                      , KC_TAB                             , OSL(_LEADER), QK_REPEAT_KEY)
 COMB(C_BASE_KC_V                        , KC_V                               , KC_M, KC_W)
 COMB(C_BASE_KC_X                        , KC_X                               , KC_C, KC_D)
 COMB(C_BASE_KC_Z                        , KC_Z                               , KC_F, KC_M)
 COMB(C_BASE_ONE_SHOT_MOUSE              , ONE_SHOT_MOUSE                     , KC_P, QK_REPEAT_KEY)
 COMB(C_BASE_OSL_LEADER                  , OSL(_LEADER)                       , KC_H, KC_R)
-COMB(C_BASE_QK_CAPS_WORD_TOGGLE         , QK_CAPS_WORD_TOGGLE                , OSL(_LEADER), QK_REPEAT_KEY)
 COMB(C_BASE_RCSKC_F                     , RCS(KC_F)                          , KC_B, KC_H)
 SUBS(C_BASE_AY                          , "ay"                               , KC_N, KC_P)
 SUBS(C_BASE_BR                          , "br"                               , KC_B, KC_R)

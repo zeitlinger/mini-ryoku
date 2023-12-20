@@ -1,6 +1,6 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/aed755aef124f3c28a99b4553e018a8a5b1f327f/README.md using https://github.com/zeitlinger/keyboard/blob/aed755aef124f3c28a99b4553e018a8a5b1f327f/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/c7f0d2ea0a664e2737413506ddd5453d6a22fb92/README.md using https://github.com/zeitlinger/keyboard/blob/c7f0d2ea0a664e2737413506ddd5453d6a22fb92/generateKeyboard.kt
  */
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
@@ -15,8 +15,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     if (record->tap.count) {
         if (record->event.pressed) {
             switch (keycode) {
-            case _HANDLER__TAP_C_CKC_Z: tap_code16(C(KC_Z)); return false;
-            case _HANDLER__TAP_C_ALGRKC_DQUO: tap_code16(ALGR(KC_DQUO)); return false;
+            
             default:
                 break;
             }
@@ -41,7 +40,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-    case LT(_NAV2,_TAP_C_CKC_Z): return true;
+    
     default:
         // Do not select the hold action when another key is pressed.
         return false;
