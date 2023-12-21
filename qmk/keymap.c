@@ -88,52 +88,34 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             add_oneshot_mods(MOD_BIT(KC_LSFT));
         }
         return false;
-    case _HANDLER_LEADER_LEFT_ALT:
+    case OSL(_BRIGHT):
         if (record->event.pressed) {
-            add_mods(MOD_BIT(KC_LALT));
-            set_oneshot_layer(_BASEMODSRIGHT, ONESHOT_START);
-        } else {
-            clear_oneshot_layer_state(ONESHOT_PRESSED);
+            switch (record->event.key.col) {
+            case 1:
+                set_oneshot_mods(MOD_BIT(KC_LALT));
+                break;
+            case 2:
+                set_oneshot_mods(MOD_BIT(KC_LCTL));
+                break;
+            case 3:
+                set_oneshot_mods(MOD_BIT(KC_LSFT));
+                break;
+            }
         }
-        return false;
-    case _HANDLER_LEADER_LEFT_CTL:
+        return true;
+    case OSL(_BLEFT):
         if (record->event.pressed) {
-            add_mods(MOD_BIT(KC_LCTL));
-            set_oneshot_layer(_BASEMODSRIGHT, ONESHOT_START);
-        } else {
-            clear_oneshot_layer_state(ONESHOT_PRESSED);
-        }
-        return false;
-    case _HANDLER_LEADER_LEFT_SFT:
-        if (record->event.pressed) {
-            add_mods(MOD_BIT(KC_LSFT));
-            set_oneshot_layer(_BASEMODSRIGHT, ONESHOT_START);
-        } else {
-            clear_oneshot_layer_state(ONESHOT_PRESSED);
-        }
-        return false;
-    case _HANDLER_LEADER_RIGHT_ALT:
-        if (record->event.pressed) {
-            add_mods(MOD_BIT(KC_LALT));
-            set_oneshot_layer(_BASEMODSLEFT, ONESHOT_START);
-        } else {
-            clear_oneshot_layer_state(ONESHOT_PRESSED);
-        }
-        return false;
-    case _HANDLER_LEADER_RIGHT_CTL:
-        if (record->event.pressed) {
-            add_mods(MOD_BIT(KC_LCTL));
-            set_oneshot_layer(_BASEMODSLEFT, ONESHOT_START);
-        } else {
-            clear_oneshot_layer_state(ONESHOT_PRESSED);
-        }
-        return false;
-    case _HANDLER_LEADER_RIGHT_SFT:
-        if (record->event.pressed) {
-            add_mods(MOD_BIT(KC_LSFT));
-            set_oneshot_layer(_BASEMODSLEFT, ONESHOT_START);
-        } else {
-            clear_oneshot_layer_state(ONESHOT_PRESSED);
+            switch (record->event.key.col) {
+            case 7:
+                set_oneshot_mods(MOD_BIT(KC_LSFT));
+                break;
+            case 8:
+                set_oneshot_mods(MOD_BIT(KC_LCTL));
+                break;
+            case 9:
+                set_oneshot_mods(MOD_BIT(KC_LALT));
+                break;
+            }
         }
         return false;
     default:
