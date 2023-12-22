@@ -2,13 +2,13 @@
 
 // Configure the global tapping term (default: 200ms)
 #define TAPPING_TERM 170
-#define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
+//#define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
 
 #define EXTRA_SHORT_COMBOS
 #define COMBO_STRICT_TIMER
 #define COMBO_TERM 50        // how quickly all combo keys must be pressed in succession to trigger
 #define COMBO_TERM_PER_COMBO
-#define COMBO_SHOULD_TRIGGER
+//#define COMBO_SHOULD_TRIGGER
 
 #define MK_3_SPEED
 #define MK_MOMENTARY_ACCEL
