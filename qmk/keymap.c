@@ -14,12 +14,46 @@
 // #include "masks/crkbd.h"
 
 #include "g/keymap_combo.h"
+#include "casemodes.h"
 #include "generated.c"
 
 bool is_window_switcher_active = false;
 bool is_tab_switcher_active = false;
 bool is_one_shot_mouse_active = false;
 
+bool process_xcase(uint16_t keycode, keyrecord_t *record) {
+    if (record->tap.count && record->event.pressed) {
+        switch (keycode) {
+        case _HANDLER_CAPS_WORDS:
+            enable_caps_word();
+            return false;
+        case _HANDLER_SNAKE_CASE:
+            enable_xcase_with(KC_UNDS);
+            return false;
+        case _HANDLER_SCREAMING_SNAKE_CASE:
+            enable_xcase_with(KC_UNDS);
+            enable_caps_word();
+            return false;
+        case _HANDLER_CAMEL_CASE:
+            enable_xcase_with(OSM(MOD_LSFT));
+            return false;
+        case _HANDLER_PASCAL_CASE:
+            enable_xcase_with(OSM(MOD_LSFT));
+            add_oneshot_mods(MOD_BIT(KC_LSFT));
+            return false;
+        case _HANDLER_SLASH_CASE:
+            enable_xcase_with(KC_SLASH);
+            return false;
+        case _HANDLER_DOT_CASE:
+            enable_xcase_with(KC_DOT);
+            return false;
+        case _HANDLER_KEBAP_CASE:
+            enable_xcase_with(KC_MINS);
+            return false;
+        }
+    }
+    return true;
+}
 bool process_switcher(uint16_t keycode, keyrecord_t *record) {
     if (record->tap.count && record->event.pressed) {
         bool switch_window = keycode == _HANDLER_NEXT_WINDOW;
@@ -54,6 +88,9 @@ bool process_switcher(uint16_t keycode, keyrecord_t *record) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!process_switcher(keycode, record)) {
+        return false;
+    }
+    if (!process_xcase(keycode, record)) {
         return false;
     }
     if (!process_record_generated(keycode, record)) {

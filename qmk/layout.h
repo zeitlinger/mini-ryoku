@@ -3,10 +3,10 @@
 
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/06e23997730fc3780f053124f64d4d34e3babaf9/README.md using https://github.com/zeitlinger/keyboard/blob/06e23997730fc3780f053124f64d4d34e3babaf9/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
  */
 
-#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/06e23997730fc3780f053124f64d4d34e3babaf9/README.md"
+#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md"
 
 #define _BASE 0
 #define _LEADER 1
@@ -29,7 +29,15 @@ enum custom_keycodes {
 	NEXT_WINDOW,
     ONE_SHOT_MOUSE,
     DOT_SPC,
-    PRINT_VERSION
+    PRINT_VERSION,
+    CAPS_WORDS,
+    SNAKE_CASE,
+    SCREAMING_SNAKE_CASE,
+    CAMEL_CASE,
+    PASCAL_CASE,
+    SLASH_CASE,
+    DOT_CASE,
+    KEBAP_CASE
 };
 
 #define _HANDLER_NEXT_TAB NEXT_TAB
@@ -37,6 +45,14 @@ enum custom_keycodes {
 #define _HANDLER_ONE_SHOT_MOUSE ONE_SHOT_MOUSE
 #define _HANDLER_DOT_SPC DOT_SPC
 #define _HANDLER_PRINT_VERSION PRINT_VERSION
+#define _HANDLER_CAPS_WORDS CAPS_WORDS
+#define _HANDLER_SNAKE_CASE SNAKE_CASE
+#define _HANDLER_SCREAMING_SNAKE_CASE SCREAMING_SNAKE_CASE
+#define _HANDLER_CAMEL_CASE CAMEL_CASE
+#define _HANDLER_PASCAL_CASE PASCAL_CASE
+#define _HANDLER_SLASH_CASE SLASH_CASE
+#define _HANDLER_DOT_CASE DOT_CASE
+#define _HANDLER_KEBAP_CASE KEBAP_CASE
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_BASE] = LAYOUT_split_3x5_2(
@@ -92,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_PARNUM] = LAYOUT_split_3x5_2(
             KC_NO, KC_LPRN, KC_RPRN, KC_NO, KC_NO, KC_NO, KC_4, KC_5, KC_6, KC_NO,
             KC_DLR, OSM(MOD_LALT), OSM(MOD_LCTL), OSM(MOD_LSFT), KC_NO, KC_NO, KC_0, KC_1, KC_2, KC_3,
-            KC_NO, KC_LABK, KC_RABK, KC_AT, KC_NO, KC_NO, KC_7, KC_8, KC_9, KC_NO,
+            KC_NO, KC_NO, KC_NO, KC_AT, KC_NO, KC_NO, KC_7, KC_8, KC_9, KC_NO,
                             KC_NO, TG(_PARNUM), KC_NO, KC_NO),
 	[_CURBRA] = LAYOUT_split_3x5_2(
             KC_NO, KC_LCBR, KC_RCBR, KC_NO, KC_NO, KC_NO, KC_NO, KC_LEFT_BRACKET, KC_RIGHT_BRACKET, KC_NO,
@@ -110,8 +126,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
                             KC_NO, TG(_DEBUG), KC_NO, KC_NO),
 	[_UMLAUT] = LAYOUT_split_3x5_2(
-            KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, ALGR(KC_P), ALGR(KC_Y), KC_NO,
-            KC_NO, KC_NO, KC_NO, QK_CAPS_WORD_TOGGLE, KC_NO, KC_NO, KC_COLN, ALGR(KC_Q), KC_UNDS, ALGR(KC_TILD),
-            KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_AMPR, ALGR(KC_CIRC), KC_PERC, ALGR(KC_S),
+            KC_NO, PASCAL_CASE, SCREAMING_SNAKE_CASE, KC_NO, KC_NO, KC_NO, KC_NO, ALGR(KC_P), ALGR(KC_Y), KC_NO,
+            SLASH_CASE, CAMEL_CASE, SNAKE_CASE, CAPS_WORDS, KC_NO, KC_NO, KC_COLN, ALGR(KC_Q), KC_UNDS, ALGR(KC_TILD),
+            DOT_CASE, KC_NO, KEBAP_CASE, KC_NO, KC_NO, KC_NO, KC_AMPR, ALGR(KC_CIRC), KC_PERC, ALGR(KC_S),
                             KC_NO, TG(_UMLAUT), KC_NO, KC_NO),
 };
