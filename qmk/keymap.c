@@ -20,30 +20,8 @@ bool is_window_switcher_active = false;
 bool is_tab_switcher_active = false;
 bool is_one_shot_mouse_active = false;
 
-void disable_switcher() {
-    if (is_window_switcher_active) {
-        unregister_code(KC_LALT);
-        is_window_switcher_active = false;
-    }
-    if (is_tab_switcher_active) {
-        unregister_code(KC_LCTL);
-        is_tab_switcher_active = false;
-    }
-}
-
 bool process_switcher(uint16_t keycode, keyrecord_t *record) {
-    if (record->tap.count && record->event.pressed) {
-        if (is_window_switcher_active || is_tab_switcher_active) {
-            if (keycode == TG(_SWITCH)) {
-                disable_switcher();
-                layer_off(_SWITCH);
-                return false;
-            }
-        } else {
-            layer_off(_SWITCH);
-            return true;
-        }
-
+    if (record->tap.count && record->event.pressed && get_highest_layer(layer_state) == _SWITCH) {
         bool switch_window = keycode == _HANDLER_NEXT_WINDOW;
         bool switch_tab = keycode == _HANDLER_NEXT_TAB;
 
@@ -69,6 +47,24 @@ bool process_switcher(uint16_t keycode, keyrecord_t *record) {
             }
             tap_code16(KC_TAB);
             return false;
+        }
+
+        if (is_window_switcher_active || is_tab_switcher_active) {
+            if (keycode == TG(_SWITCH)) {
+                if (is_window_switcher_active) {
+                    unregister_code(KC_LALT);
+                    is_window_switcher_active = false;
+                }
+                if (is_tab_switcher_active) {
+                    unregister_code(KC_LCTL);
+                    is_tab_switcher_active = false;
+                }
+                layer_off(_SWITCH);
+                return false;
+            }
+        } else {
+            layer_off(_SWITCH);
+            return true;
         }
     }
     return true;
@@ -153,6 +149,5 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         is_one_shot_mouse_active = false;
         break;
     }
-    disable_switcher();
     return state;
 }
