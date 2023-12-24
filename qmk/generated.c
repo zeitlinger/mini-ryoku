@@ -1,11 +1,11 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/94e1da3ac87ca29749269656ce4fb67d47af9234/README.md using https://github.com/zeitlinger/keyboard/blob/94e1da3ac87ca29749269656ce4fb67d47af9234/generateKeyboard.kt
  */
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     switch(index) {
-    case C_BASE_KC_K: return 120;
+    
     default:
         return COMBO_TERM;
     }

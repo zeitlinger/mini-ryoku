@@ -3,10 +3,10 @@
 
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/94e1da3ac87ca29749269656ce4fb67d47af9234/README.md using https://github.com/zeitlinger/keyboard/blob/94e1da3ac87ca29749269656ce4fb67d47af9234/generateKeyboard.kt
  */
 
-#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md"
+#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/94e1da3ac87ca29749269656ce4fb67d47af9234/README.md"
 
 #define _BASE 0
 #define _LEADER 1
@@ -62,9 +62,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_B, KC_C, KC_G, KC_D, KC_NO, KC_NO, KC_N, QK_REPEAT_KEY, QK_ALT_REPEAT_KEY, KC_F,
                             MO(_SHORT), KC_SPC, KC_E, KC_NO),
 	[_LEADER] = LAYOUT_split_3x5_2(
-            KC_NO, TG(_MEDIA), TG(_MOUSE), KC_NO, KC_NO, KC_NO, KC_NO, OSL(_SHORT), KC_LGUI, KC_NO,
+            KC_NO, OSL(_UMLAUT), KC_V, KC_Z, KC_NO, KC_NO, TG(_MEDIA), OSL(_SHORT), KC_X, KC_NO,
             OSL(_FN), OSL(_BRIGHT), OSL(_BRIGHT), OSL(_BRIGHT), KC_NO, KC_NO, ALGR(KC_QUOTE), OSL(_BLEFT), OSL(_BLEFT), OSL(_BLEFT),
-            KC_NO, OSL(_SMILE), OSL(_UMLAUT), TG(_NAV), KC_NO, KC_NO, KC_NO, KC_COMMA, KC_DOT, KC_NO,
+            TG(_MOUSE), KC_J, KC_K, TG(_NAV), KC_NO, KC_NO, OSL(_SMILE), KC_COMMA, KC_DOT, KC_Q,
                             KC_NO, OSL(_PARNUM), OSL(_CURBRA), KC_NO),
 	[_BLEFT] = LAYOUT_split_3x5_2(
             KC_NO, KC_W, KC_M, KC_P, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
@@ -110,12 +110,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_NO, KC_LPRN, KC_RPRN, KC_NO, KC_NO, KC_NO, KC_4, KC_5, KC_6, KC_NO,
             KC_DLR, OSM(MOD_LALT), OSM(MOD_LCTL), OSM(MOD_LSFT), KC_NO, KC_NO, KC_0, KC_1, KC_2, KC_3,
             KC_NO, KC_NO, KC_NO, KC_AT, KC_NO, KC_NO, KC_7, KC_8, KC_9, KC_NO,
-                            KC_NO, TG(_PARNUM), KC_NO, KC_NO),
+                            KC_NO, TG(_PARNUM), KC_LGUI, KC_NO),
 	[_CURBRA] = LAYOUT_split_3x5_2(
             KC_NO, KC_LCBR, KC_RCBR, KC_NO, KC_NO, KC_NO, KC_NO, KC_LEFT_BRACKET, KC_RIGHT_BRACKET, KC_NO,
             KC_HASH, OSM(MOD_LALT), OSM(MOD_LCTL), OSM(MOD_LSFT), KC_NO, KC_NO, KC_SEMICOLON, KC_MINUS, KC_EXLM, KC_QUES,
             KC_NO, KC_PIPE, KC_ASTR, KC_PLUS, KC_NO, KC_NO, ALGR(KC_GRV), KC_EQUAL, KC_BACKSLASH, KC_SLASH,
-                            KC_NO, TG(_CURBRA), KC_NO, KC_NO),
+                            KC_NO, KC_NO, KC_NO, KC_NO),
 	[_MEDIA] = LAYOUT_split_3x5_2(
             KC_NO, KC_NO, KC_MUTE, KC_PSCR, KC_NO, KC_NO, KC_NO, KC_BRID, KC_BRIU, KC_NO,
             KC_NO, KC_NO, KC_VOLD, KC_VOLU, KC_NO, KC_NO, KC_NO, PRINT_VERSION, KC_NO, KC_NO,
