@@ -3,10 +3,10 @@
 
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/f5004853c9b05c371739f45d3f1511d687dc46f7/README.md using https://github.com/zeitlinger/keyboard/blob/f5004853c9b05c371739f45d3f1511d687dc46f7/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/994f1e50a2881e88aabbcbeb02ea549a09718ceb/README.md using https://github.com/zeitlinger/keyboard/blob/994f1e50a2881e88aabbcbeb02ea549a09718ceb/generateKeyboard.kt
  */
 
-#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/f5004853c9b05c371739f45d3f1511d687dc46f7/README.md"
+#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/994f1e50a2881e88aabbcbeb02ea549a09718ceb/README.md"
 
 #define _BASE 0
 #define _LEADER 1
@@ -30,6 +30,7 @@ enum custom_keycodes {
 	NEXT_WINDOW,
     ONE_SHOT_MOUSE,
     DOT_SPC,
+    N_APOS,
     PRINT_VERSION,
     CAPS_WORDS,
     SNAKE_CASE,
@@ -45,6 +46,7 @@ enum custom_keycodes {
 #define _HANDLER_NEXT_WINDOW NEXT_WINDOW
 #define _HANDLER_ONE_SHOT_MOUSE ONE_SHOT_MOUSE
 #define _HANDLER_DOT_SPC DOT_SPC
+#define _HANDLER_N_APOS N_APOS
 #define _HANDLER_PRINT_VERSION PRINT_VERSION
 #define _HANDLER_CAPS_WORDS CAPS_WORDS
 #define _HANDLER_SNAKE_CASE SNAKE_CASE

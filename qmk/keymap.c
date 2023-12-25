@@ -131,6 +131,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             add_oneshot_mods(MOD_BIT(KC_LSFT));
         }
         return false;
+    case _HANDLER_N_APOS:
+        if (record->event.pressed) {
+            SEND_STRING("n'");
+        }
+        return false;
     case OSL(_BRIGHT):
         if (record->event.pressed) {
             switch (record->event.key.col) {
