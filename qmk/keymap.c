@@ -69,7 +69,7 @@ bool process_switcher(uint16_t keycode, keyrecord_t *record) {
             if (!is_window_switcher_active) {
                 is_window_switcher_active = true;
                 register_code(KC_LALT);
-                if (layer_state_is(_LEADER)) {
+                if (layer_state_is(_LEADER) || layer_state_is(_MOUSE)) {
                     layer_on(_SWITCH);
                 }
             }
@@ -81,7 +81,7 @@ bool process_switcher(uint16_t keycode, keyrecord_t *record) {
             if (!is_tab_switcher_active) {
                 is_tab_switcher_active = true;
                 register_code(KC_LCTL);
-                if (layer_state_is(_LEADER)) {
+                if (layer_state_is(_LEADER) || layer_state_is(_MOUSE)) {
                     layer_on(_SWITCH);
                 }
             }
