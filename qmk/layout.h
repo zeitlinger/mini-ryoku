@@ -3,10 +3,10 @@
 
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/56e19cc4d6b9be98dac268070be09a96e9a5aa74/README.md using https://github.com/zeitlinger/keyboard/blob/56e19cc4d6b9be98dac268070be09a96e9a5aa74/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
  */
 
-#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/56e19cc4d6b9be98dac268070be09a96e9a5aa74/README.md"
+#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md"
 
 #define _BASE 0
 #define _LEADER 1
@@ -38,7 +38,17 @@ enum custom_keycodes {
     PASCAL_CASE,
     SLASH_CASE,
     DOT_CASE,
-    KEBAP_CASE
+    KEBAP_CASE,
+    _LAYER_UMLAUT,
+    _LAYER_MEDIA,
+    _LAYER_SHORT,
+    _LAYER_FN,
+    _LAYER_BRIGHT,
+    _LAYER_BLEFT,
+    _LAYER_NAV,
+    _LAYER_SMILE,
+    _LAYER_PARNUM,
+    _LAYER_CURBRA
 };
 
 #define _HANDLER_NEXT_TAB NEXT_TAB
@@ -55,6 +65,16 @@ enum custom_keycodes {
 #define _HANDLER_SLASH_CASE SLASH_CASE
 #define _HANDLER_DOT_CASE DOT_CASE
 #define _HANDLER_KEBAP_CASE KEBAP_CASE
+#define _HANDLER__LAYER_UMLAUT _LAYER_UMLAUT
+#define _HANDLER__LAYER_MEDIA _LAYER_MEDIA
+#define _HANDLER__LAYER_SHORT _LAYER_SHORT
+#define _HANDLER__LAYER_FN _LAYER_FN
+#define _HANDLER__LAYER_BRIGHT _LAYER_BRIGHT
+#define _HANDLER__LAYER_BLEFT _LAYER_BLEFT
+#define _HANDLER__LAYER_NAV _LAYER_NAV
+#define _HANDLER__LAYER_SMILE _LAYER_SMILE
+#define _HANDLER__LAYER_PARNUM _LAYER_PARNUM
+#define _HANDLER__LAYER_CURBRA _LAYER_CURBRA
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_BASE] = LAYOUT_split_3x5_2(
@@ -63,27 +83,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_B, KC_C, KC_G, KC_D, KC_NO, KC_NO, KC_N, QK_REPEAT_KEY, QK_ALT_REPEAT_KEY, KC_F,
                             MO(_SHORT), KC_SPC, KC_E, KC_NO),
 	[_LEADER] = LAYOUT_split_3x5_2(
-            KC_NO, OSL(_UMLAUT), KC_V, KC_Q, KC_NO, KC_NO, TG(_MEDIA), OSL(_SHORT), ALGR(KC_QUOTE), KC_NO,
-            OSL(_FN), OSL(_BRIGHT), OSL(_BRIGHT), OSL(_BRIGHT), KC_NO, KC_NO, KC_MINUS, OSL(_BLEFT), OSL(_BLEFT), OSL(_BLEFT),
-            KC_Z, KC_J, KC_K, TG(_NAV), KC_NO, KC_NO, OSL(_SMILE), KC_COMMA, KC_DOT, KC_X,
-                            KC_NO, OSL(_PARNUM), OSL(_CURBRA), KC_NO),
+            KC_NO, _LAYER_UMLAUT, KC_V, KC_Q, KC_NO, KC_NO, _LAYER_MEDIA, _LAYER_SHORT, ALGR(KC_QUOTE), KC_NO,
+            _LAYER_FN, _LAYER_BRIGHT, _LAYER_BRIGHT, _LAYER_BRIGHT, KC_NO, KC_NO, KC_MINUS, _LAYER_BLEFT, _LAYER_BLEFT, _LAYER_BLEFT,
+            KC_Z, KC_J, KC_K, _LAYER_NAV, KC_NO, KC_NO, _LAYER_SMILE, KC_COMMA, KC_DOT, KC_X,
+                            KC_NO, _LAYER_PARNUM, _LAYER_CURBRA, KC_NO),
 	[_BLEFT] = LAYOUT_split_3x5_2(
-            KC_NO, KC_W, KC_M, KC_P, KC_NO, KC_NO, TG(_MEDIA), OSL(_SHORT), ALGR(KC_QUOTE), KC_NO,
+            KC_NO, KC_W, KC_M, KC_P, KC_NO, KC_NO, _LAYER_MEDIA, _LAYER_SHORT, ALGR(KC_QUOTE), KC_NO,
             KC_R, KC_S, KC_T, KC_H, KC_NO, KC_NO, KC_INS, OSM(MOD_LSFT), OSM(MOD_LCTL), OSM(MOD_LALT),
-            KC_B, KC_C, KC_G, KC_D, KC_NO, KC_NO, OSL(_SMILE), KC_COMMA, KC_DOT, KC_X,
+            KC_B, KC_C, KC_G, KC_D, KC_NO, KC_NO, _LAYER_SMILE, KC_COMMA, KC_DOT, KC_X,
                             KC_NO, KC_SPC, KC_ENT, KC_NO),
 	[_BRIGHT] = LAYOUT_split_3x5_2(
-            KC_NO, OSL(_UMLAUT), KC_V, KC_Q, KC_NO, KC_NO, KC_Y, KC_O, KC_U, KC_NO,
-            OSL(_FN), OSM(MOD_LALT), OSM(MOD_LCTL), OSM(MOD_LSFT), KC_NO, KC_NO, KC_E, KC_A, KC_I, KC_L,
-            KC_Z, KC_J, KC_K, TG(_NAV), KC_NO, KC_NO, KC_N, KC_COMMA, KC_DOT, KC_F,
-                            KC_NO, OSL(_PARNUM), OSL(_CURBRA), KC_NO),
+            KC_NO, _LAYER_UMLAUT, KC_V, KC_Q, KC_NO, KC_NO, KC_Y, KC_O, KC_U, KC_NO,
+            _LAYER_FN, OSM(MOD_LALT), OSM(MOD_LCTL), OSM(MOD_LSFT), KC_NO, KC_NO, KC_E, KC_A, KC_I, KC_L,
+            KC_Z, KC_J, KC_K, _LAYER_NAV, KC_NO, KC_NO, KC_N, KC_COMMA, KC_DOT, KC_F,
+                            KC_NO, _LAYER_PARNUM, _LAYER_CURBRA, KC_NO),
 	[_FN] = LAYOUT_split_3x5_2(
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_F4, KC_F5, KC_F6, KC_NO,
             KC_NO, OSM(MOD_LALT), OSM(MOD_LCTL), OSM(MOD_LSFT), KC_NO, KC_NO, KC_F10, KC_F1, KC_F2, KC_F3,
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_F7, KC_F8, KC_F9, KC_F11,
                             KC_NO, TG(_FN), KC_F12, KC_NO),
 	[_MOUSE] = LAYOUT_split_3x5_2(
-            KC_NO, KC_BTN3, KC_BTN2, KC_BTN1, KC_NO, KC_NO, KC_NO, OSL(_SHORT), KC_BTN3, KC_NO,
+            KC_NO, KC_BTN3, KC_BTN2, KC_BTN1, KC_NO, KC_NO, KC_NO, _LAYER_SHORT, KC_BTN3, KC_NO,
             MO(_MOUSE2), KC_ACL0, KC_ACL1, KC_ACL2, KC_NO, KC_NO, KC_MS_L, KC_MS_U, KC_MS_D, KC_MS_R,
             KC_NO, OSM(MOD_LALT), OSM(MOD_LCTL), OSM(MOD_LSFT), KC_NO, KC_NO, KC_BTN2, KC_NO, KC_NO, KC_NO,
                             MO(_SHORT), TG(_MOUSE), KC_BTN1, KC_NO),
