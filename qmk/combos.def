@@ -1,4 +1,4 @@
-// file is generated from https://github.com/zeitlinger/keyboard/blob/56e19cc4d6b9be98dac268070be09a96e9a5aa74/README.md using https://github.com/zeitlinger/keyboard/blob/56e19cc4d6b9be98dac268070be09a96e9a5aa74/generateKeyboard.kt
+// file is generated from https://github.com/zeitlinger/keyboard/blob/287d39613716b82049d0982a132c6cac6e532745/README.md using https://github.com/zeitlinger/keyboard/blob/287d39613716b82049d0982a132c6cac6e532745/generateKeyboard.kt
 COMB(C_BASE_AKC_F7                      , A(KC_F7)                           , KC_B, KC_T)
 COMB(C_BASE_CKC_C                       , C(KC_C)                            , KC_B, KC_G)
 COMB(C_BASE_CKC_V                       , C(KC_V)                            , KC_B, KC_D)
@@ -14,7 +14,7 @@ COMB(C_BASE_ONE_SHOT_MOUSE              , ONE_SHOT_MOUSE                     , K
 COMB(C_BASE_RCSKC_F                     , RCS(KC_F)                          , KC_C, KC_G)
 COMB(C_BASE_RCSKC_V                     , RCS(KC_V)                          , KC_B, KC_H)
 COMB(C_BASE_TG_MOUSE                    , TG(_MOUSE)                         , KC_M, KC_W)
-SUBS(C_BASE_AY                          , "ay"                               , KC_N, OSL(_LEADER))
+SUBS(C_BASE_AY                          , "ay"                               , KC_N, _LAYER_LEADER)
 SUBS(C_BASE_BR                          , "br"                               , KC_B, KC_R)
 SUBS(C_BASE_FL                          , "fl"                               , KC_F, KC_L)
 SUBS(C_BASE_ING                         , "ing"                              , KC_A, QK_REPEAT_KEY)
@@ -22,7 +22,7 @@ SUBS(C_BASE_ION                         , "ion"                              , K
 SUBS(C_BASE_KN                          , "kn"                               , KC_NO, KC_R)
 SUBS(C_BASE_NK                          , "nk"                               , KC_L, KC_NO)
 SUBS(C_BASE_NV                          , "nv"                               , KC_M, KC_T)
-SUBS(C_BASE_NY                          , "ny"                               , KC_Y, OSL(_LEADER))
+SUBS(C_BASE_NY                          , "ny"                               , KC_Y, _LAYER_LEADER)
 SUBS(C_BASE_OA                          , "oa"                               , KC_A, KC_O)
 SUBS(C_BASE_PH                          , "ph"                               , KC_H, KC_P)
 SUBS(C_BASE_QU                          , "qu"                               , KC_G, KC_T)

@@ -93,9 +93,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!process_xcase(keycode, record)) {
         return false;
     }
-    if (!process_record_generated(keycode, record)) {
-        return false;
-    }
 
     switch (keycode) {
     case _HANDLER_ONE_SHOT_MOUSE:
@@ -130,7 +127,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             SEND_STRING("n'");
         }
         return false;
-    case OSL(_BRIGHT):
+    case _HANDLER__LAYER_BRIGHT:
         if (record->event.pressed) {
             switch (record->event.key.col) {
             case 1:
@@ -144,24 +141,28 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 break;
             }
         }
-        return true;
-    case OSL(_BLEFT):
+        break;
+    case _HANDLER__LAYER_BLEFT:
         if (record->event.pressed) {
             switch (record->event.key.col) {
-            case 7:
+            case 2:
                 set_oneshot_mods(MOD_BIT(KC_LSFT));
                 break;
-            case 8:
+            case 3:
                 set_oneshot_mods(MOD_BIT(KC_LCTL));
                 break;
-            case 9:
+            case 4:
                 set_oneshot_mods(MOD_BIT(KC_LALT));
                 break;
             }
         }
-        return false;
+        break;
     default:
         break;
+    }
+
+    if (!process_record_generated(keycode, record)) {
+        return false;
     }
 
     return true;
@@ -183,3 +184,4 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     }
     return state;
 }
+

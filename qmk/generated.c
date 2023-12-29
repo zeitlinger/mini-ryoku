@@ -1,6 +1,6 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/56e19cc4d6b9be98dac268070be09a96e9a5aa74/README.md using https://github.com/zeitlinger/keyboard/blob/56e19cc4d6b9be98dac268070be09a96e9a5aa74/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/287d39613716b82049d0982a132c6cac6e532745/README.md using https://github.com/zeitlinger/keyboard/blob/287d39613716b82049d0982a132c6cac6e532745/generateKeyboard.kt
  */
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
@@ -11,30 +11,61 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     }
 }
 
-void layer_off_key(uint16_t keycode) {
-    switch (keycode) {
-    case C(KC_C): if (layer_state_is(_SHORT)) { layer_off(_SHORT); } break;
-    case C(KC_V): if (layer_state_is(_SHORT)) { layer_off(_SHORT); } break;
-    case C(KC_W): if (layer_state_is(_SHORT)) { layer_off(_SHORT); } break;
-    case C(KC_X): if (layer_state_is(_SHORT)) { layer_off(_SHORT); } break;
-    case C(KC_Z): if (layer_state_is(_SHORT)) { layer_off(_SHORT); } break;
-    case KC_PSCR: if (layer_state_is(_MEDIA)) { layer_off(_MEDIA); } break;
-    case PRINT_VERSION: if (layer_state_is(_MEDIA)) { layer_off(_MEDIA); } break;
-    case RCS(KC_V): if (layer_state_is(_SHORT)) { layer_off(_SHORT); } break;
-    case RCS(KC_Z): if (layer_state_is(_SHORT)) { layer_off(_SHORT); } break;
-    }
+int auto_layer_off = -1;
+int auto_layer_on = -1;
+
+int layer_off_key(uint16_t keycode) {
+    if (keycode == C(KC_W) && layer_state_is(_NAV)) { return _NAV; } 
+    if (keycode == C(KC_Z) && layer_state_is(_NAV)) { return _NAV; } 
+    if (keycode == RCS(KC_Z) && layer_state_is(_NAV)) { return _NAV; } 
+    if (keycode == RCS(KC_V) && layer_state_is(_NAV)) { return _NAV; } 
+    if (keycode == C(KC_X) && layer_state_is(_NAV)) { return _NAV; } 
+    if (keycode == C(KC_C) && layer_state_is(_NAV)) { return _NAV; } 
+    if (keycode == C(KC_V) && layer_state_is(_NAV)) { return _NAV; } 
+    if (keycode == C(KC_W) && layer_state_is(_SHORT)) { return _SHORT; } 
+    if (keycode == C(KC_Z) && layer_state_is(_SHORT)) { return _SHORT; } 
+    if (keycode == RCS(KC_Z) && layer_state_is(_SHORT)) { return _SHORT; } 
+    if (keycode == RCS(KC_V) && layer_state_is(_SHORT)) { return _SHORT; } 
+    if (keycode == C(KC_X) && layer_state_is(_SHORT)) { return _SHORT; } 
+    if (keycode == C(KC_C) && layer_state_is(_SHORT)) { return _SHORT; } 
+    if (keycode == C(KC_V) && layer_state_is(_SHORT)) { return _SHORT; } 
+    if (keycode == KC_PSCR && layer_state_is(_MEDIA)) { return _MEDIA; } 
+    if (keycode == PRINT_VERSION && layer_state_is(_MEDIA)) { return _MEDIA; } 
+    if (layer_state_is(_LEADER)) { return _LEADER; } 
+    if (layer_state_is(_BLEFT)) { return _BLEFT; } 
+    if (layer_state_is(_BRIGHT)) { return _BRIGHT; } 
+    if (layer_state_is(_FN)) { return _FN; } 
+    if (layer_state_is(_PARNUM)) { return _PARNUM; } 
+    if (layer_state_is(_CURBRA)) { return _CURBRA; } 
+    if (layer_state_is(_UMLAUT)) { return _UMLAUT; } 
+    return -1;
 }
 
 bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     if (record->tap.count) {
         if (record->event.pressed) {
             switch (keycode) {
-            
+            case _HANDLER__LAYER_LEADER: auto_layer_on = _LAYER_LEADER; return false;
+            case _HANDLER__LAYER_UMLAUT: auto_layer_on = _LAYER_UMLAUT; return false;
+            case _HANDLER__LAYER_FN: auto_layer_on = _LAYER_FN; return false;
+            case _HANDLER__LAYER_BRIGHT: auto_layer_on = _LAYER_BRIGHT; return false;
+            case _HANDLER__LAYER_BLEFT: auto_layer_on = _LAYER_BLEFT; return false;
+            case _HANDLER__LAYER_PARNUM: auto_layer_on = _LAYER_PARNUM; return false;
+            case _HANDLER__LAYER_CURBRA: auto_layer_on = _LAYER_CURBRA; return false;
+            case _HANDLER__LAYER_SHORT: auto_layer_on = _LAYER_SHORT; return false;
             default:
                 break;
             }
+            auto_layer_off = layer_off_key(keycode);
         } else {
-            layer_off_key(keycode);
+            if (auto_layer_off >= 0) {
+                layer_off(auto_layer_off);
+                auto_layer_off = -1;
+            }
+             if (auto_layer_on >= 0) {
+                layer_on(auto_layer_on);
+                auto_layer_on = -1;
+            }
         }
     } else {
         if (record->event.pressed) {

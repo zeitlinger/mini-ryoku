@@ -3,10 +3,10 @@
 
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/287d39613716b82049d0982a132c6cac6e532745/README.md using https://github.com/zeitlinger/keyboard/blob/287d39613716b82049d0982a132c6cac6e532745/generateKeyboard.kt
  */
 
-#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md"
+#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/287d39613716b82049d0982a132c6cac6e532745/README.md"
 
 #define _BASE 0
 #define _LEADER 1
@@ -45,7 +45,8 @@ enum custom_keycodes {
     _LAYER_BRIGHT,
     _LAYER_BLEFT,
     _LAYER_PARNUM,
-    _LAYER_CURBRA
+    _LAYER_CURBRA,
+    _LAYER_SHORT
 };
 
 #define _HANDLER_NEXT_TAB NEXT_TAB
@@ -69,13 +70,14 @@ enum custom_keycodes {
 #define _HANDLER__LAYER_BLEFT _LAYER_BLEFT
 #define _HANDLER__LAYER_PARNUM _LAYER_PARNUM
 #define _HANDLER__LAYER_CURBRA _LAYER_CURBRA
+#define _HANDLER__LAYER_SHORT _LAYER_SHORT
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_BASE] = LAYOUT_split_3x5_2(
             KC_NO, KC_W, KC_M, KC_P, KC_NO, KC_NO, KC_Y, KC_O, KC_U, KC_NO,
             KC_R, KC_S, KC_T, KC_H, KC_NO, KC_NO, _LAYER_LEADER, KC_A, KC_I, KC_L,
             KC_B, KC_C, KC_G, KC_D, KC_NO, KC_NO, KC_N, QK_REPEAT_KEY, QK_ALT_REPEAT_KEY, KC_F,
-                            MO(_SHORT), KC_SPC, KC_E, KC_NO),
+                            TG(_SHORT), KC_SPC, KC_E, KC_NO),
 	[_LEADER] = LAYOUT_split_3x5_2(
             KC_NO, _LAYER_UMLAUT, KC_V, KC_Q, KC_NO, KC_NO, TG(_MEDIA), TG(_SHORT), ALGR(KC_QUOTE), KC_NO,
             _LAYER_FN, _LAYER_BRIGHT, _LAYER_BRIGHT, _LAYER_BRIGHT, KC_NO, KC_NO, KC_MINUS, _LAYER_BLEFT, _LAYER_BLEFT, _LAYER_BLEFT,
@@ -97,25 +99,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_F7, KC_F8, KC_F9, KC_F11,
                             KC_NO, TG(_FN), KC_F12, KC_NO),
 	[_MOUSE] = LAYOUT_split_3x5_2(
-            KC_NO, KC_BTN3, KC_BTN2, KC_BTN1, KC_NO, KC_NO, KC_NO, OSL(_SHORT), KC_BTN3, KC_NO,
+            KC_NO, KC_BTN3, KC_BTN2, KC_BTN1, KC_NO, KC_NO, KC_NO, _LAYER_SHORT, KC_BTN3, KC_NO,
             MO(_MOUSE2), KC_ACL0, KC_ACL1, KC_ACL2, KC_NO, KC_NO, KC_MS_L, KC_MS_U, KC_MS_D, KC_MS_R,
             KC_NO, OSM(MOD_LALT), OSM(MOD_LCTL), OSM(MOD_LSFT), KC_NO, KC_NO, KC_BTN2, KC_NO, KC_NO, KC_NO,
-                            MO(_SHORT), TG(_MOUSE), KC_BTN1, KC_NO),
+                            _LAYER_SHORT, TG(_MOUSE), KC_BTN1, KC_NO),
 	[_MOUSE2] = LAYOUT_split_3x5_2(
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_WH_L, KC_WH_U, KC_WH_D, KC_WH_R,
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
                             KC_NO, KC_NO, KC_NO, KC_NO),
 	[_NAV] = LAYOUT_split_3x5_2(
-            KC_NO, C(KC_W), C(KC_Z), RCS(KC_Z), KC_NO, KC_NO, KC_ESC, OSL(_SHORT), KC_INS, KC_NO,
+            KC_NO, C(KC_W), C(KC_Z), RCS(KC_Z), KC_NO, KC_NO, KC_ESC, TG(_SHORT), KC_INS, KC_NO,
             MO(_NAV2), OSM(MOD_LALT), OSM(MOD_LCTL), OSM(MOD_LSFT), KC_NO, KC_NO, KC_LEFT, KC_UP, KC_DOWN, KC_RIGHT,
             RCS(KC_V), C(KC_X), C(KC_C), C(KC_V), KC_NO, KC_NO, KC_ENT, KC_BSPC, KC_DEL, KC_ESC,
-                            MO(_SHORT), TG(_NAV), KC_TAB, KC_NO),
+                            TG(_SHORT), TG(_NAV), KC_TAB, KC_NO),
 	[_SHORT] = LAYOUT_split_3x5_2(
             KC_NO, C(KC_W), C(KC_Z), RCS(KC_Z), KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
             LCA(KC_LEFT_BRACKET), NEXT_TAB, NEXT_WINDOW, LCA(KC_RIGHT_BRACKET), KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
             RCS(KC_V), C(KC_X), C(KC_C), C(KC_V), KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-                            KC_NO, TG(_SHORT), KC_NO, KC_NO),
+                            TG(_SHORT), TG(_SHORT), KC_NO, KC_NO),
 	[_NAV2] = LAYOUT_split_3x5_2(
             KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
             KC_NO, OSM(MOD_LALT), OSM(MOD_LCTL), OSM(MOD_LSFT), KC_NO, KC_NO, KC_HOME, KC_PGUP, KC_PGDN, KC_END,
