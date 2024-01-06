@@ -1,6 +1,6 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/287d39613716b82049d0982a132c6cac6e532745/README.md using https://github.com/zeitlinger/keyboard/blob/287d39613716b82049d0982a132c6cac6e532745/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/3d057e242b439e68786afdde33bc3c270ed6210a/README.md using https://github.com/zeitlinger/keyboard/blob/3d057e242b439e68786afdde33bc3c270ed6210a/generateKeyboard.kt
  */
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
@@ -12,16 +12,8 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
 }
 
 int auto_layer_off = -1;
-int auto_layer_on = -1;
 
 int layer_off_key(uint16_t keycode) {
-    if (keycode == C(KC_W) && layer_state_is(_NAV)) { return _NAV; } 
-    if (keycode == C(KC_Z) && layer_state_is(_NAV)) { return _NAV; } 
-    if (keycode == RCS(KC_Z) && layer_state_is(_NAV)) { return _NAV; } 
-    if (keycode == RCS(KC_V) && layer_state_is(_NAV)) { return _NAV; } 
-    if (keycode == C(KC_X) && layer_state_is(_NAV)) { return _NAV; } 
-    if (keycode == C(KC_C) && layer_state_is(_NAV)) { return _NAV; } 
-    if (keycode == C(KC_V) && layer_state_is(_NAV)) { return _NAV; } 
     if (keycode == C(KC_W) && layer_state_is(_SHORT)) { return _SHORT; } 
     if (keycode == C(KC_Z) && layer_state_is(_SHORT)) { return _SHORT; } 
     if (keycode == RCS(KC_Z) && layer_state_is(_SHORT)) { return _SHORT; } 
@@ -42,29 +34,21 @@ int layer_off_key(uint16_t keycode) {
 }
 
 bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
+    if (record->event.pressed) {
+        auto_layer_off = layer_off_key(keycode);
+    } else {
+        if (auto_layer_off >= 0) {
+            layer_off(auto_layer_off);
+            auto_layer_off = -1;
+        }
+    }
+
     if (record->tap.count) {
         if (record->event.pressed) {
             switch (keycode) {
-            case _HANDLER__LAYER_LEADER: auto_layer_on = _LAYER_LEADER; return false;
-            case _HANDLER__LAYER_UMLAUT: auto_layer_on = _LAYER_UMLAUT; return false;
-            case _HANDLER__LAYER_FN: auto_layer_on = _LAYER_FN; return false;
-            case _HANDLER__LAYER_BRIGHT: auto_layer_on = _LAYER_BRIGHT; return false;
-            case _HANDLER__LAYER_BLEFT: auto_layer_on = _LAYER_BLEFT; return false;
-            case _HANDLER__LAYER_PARNUM: auto_layer_on = _LAYER_PARNUM; return false;
-            case _HANDLER__LAYER_CURBRA: auto_layer_on = _LAYER_CURBRA; return false;
-            case _HANDLER__LAYER_SHORT: auto_layer_on = _LAYER_SHORT; return false;
+            
             default:
                 break;
-            }
-            auto_layer_off = layer_off_key(keycode);
-        } else {
-            if (auto_layer_off >= 0) {
-                layer_off(auto_layer_off);
-                auto_layer_off = -1;
-            }
-             if (auto_layer_on >= 0) {
-                layer_on(auto_layer_on);
-                auto_layer_on = -1;
             }
         }
     } else {

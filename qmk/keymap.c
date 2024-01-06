@@ -127,32 +127,32 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             SEND_STRING("n'");
         }
         return false;
-    case _HANDLER__LAYER_BRIGHT:
+    case TG(_BRIGHT):
         if (record->event.pressed) {
             switch (record->event.key.col) {
             case 1:
-                set_oneshot_mods(MOD_BIT(KC_LALT));
+                add_oneshot_mods(MOD_BIT(KC_LALT));
                 break;
             case 2:
-                set_oneshot_mods(MOD_BIT(KC_LCTL));
+                add_oneshot_mods(MOD_BIT(KC_LCTL));
                 break;
             case 3:
-                set_oneshot_mods(MOD_BIT(KC_LSFT));
+                add_oneshot_mods(MOD_BIT(KC_LSFT));
                 break;
             }
         }
         break;
-    case _HANDLER__LAYER_BLEFT:
+    case TG(_BLEFT):
         if (record->event.pressed) {
             switch (record->event.key.col) {
             case 2:
-                set_oneshot_mods(MOD_BIT(KC_LSFT));
+                add_oneshot_mods(MOD_BIT(KC_LSFT));
                 break;
             case 3:
-                set_oneshot_mods(MOD_BIT(KC_LCTL));
+                add_oneshot_mods(MOD_BIT(KC_LCTL));
                 break;
             case 4:
-                set_oneshot_mods(MOD_BIT(KC_LALT));
+                add_oneshot_mods(MOD_BIT(KC_LALT));
                 break;
             }
         }
