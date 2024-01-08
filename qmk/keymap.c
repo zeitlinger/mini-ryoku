@@ -55,7 +55,7 @@ bool process_xcase(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 bool process_switcher(uint16_t keycode, keyrecord_t *record) {
-    if (record->tap.count && record->event.pressed) {
+    if (record->event.pressed) {
         bool switch_window = keycode == _HANDLER_NEXT_WINDOW;
         bool switch_tab = keycode == _HANDLER_NEXT_TAB;
 
