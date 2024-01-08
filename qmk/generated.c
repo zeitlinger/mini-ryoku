@@ -1,6 +1,6 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/2515047148d4650b2578f909659ad896a2285806/README.md using https://github.com/zeitlinger/keyboard/blob/2515047148d4650b2578f909659ad896a2285806/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/92c2ebf715c8ae509deb9633d6fa711ffb8c07a8/README.md using https://github.com/zeitlinger/keyboard/blob/92c2ebf715c8ae509deb9633d6fa711ffb8c07a8/generateKeyboard.kt
  */
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
@@ -11,8 +11,8 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     }
 }
 
-#define ALL_ONESHOT_MASK 0xFF
-int oneshot_mask = ALL_ONESHOT_MASK;
+#define ALL_ONESHOT_MASK ~0
+layer_state_t oneshot_mask = ALL_ONESHOT_MASK;
 
 void add_layer(uint8_t layer) {
     layer_on(layer);
