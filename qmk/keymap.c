@@ -21,8 +21,8 @@ bool is_window_switcher_active = false;
 bool is_tab_switcher_active = false;
 bool is_one_shot_mouse_active = false;
 
-bool process_xcase(uint16_t keycode, keyrecord_t *record) {
-    if (record->tap.count && record->event.pressed) {
+bool process_xcase_activation(uint16_t keycode, keyrecord_t *record) {
+    if (record->event.pressed) {
         switch (keycode) {
         case _HANDLER_CAPS_WORDS:
             enable_caps_word();
@@ -90,11 +90,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!process_record_generated(keycode, record)) {
         return false;
     }
+    if (!process_case_modes(keycode, record)) {
+        return false;
+    }
 
     if (!process_switcher(keycode, record)) {
         return false;
     }
-    if (!process_xcase(keycode, record)) {
+    if (!process_xcase_activation(keycode, record)) {
         return false;
     }
 
