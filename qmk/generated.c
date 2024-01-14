@@ -1,6 +1,6 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/92c2ebf715c8ae509deb9633d6fa711ffb8c07a8/README.md using https://github.com/zeitlinger/keyboard/blob/92c2ebf715c8ae509deb9633d6fa711ffb8c07a8/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/bfe70b8ea9158dd7e6e8d68fcece79acf2b8f1d7/README.md using https://github.com/zeitlinger/keyboard/blob/bfe70b8ea9158dd7e6e8d68fcece79acf2b8f1d7/generateKeyboard.kt
  */
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
@@ -14,8 +14,8 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
 #define ALL_ONESHOT_MASK ~0
 layer_state_t oneshot_mask = ALL_ONESHOT_MASK;
 
-void add_layer(uint8_t layer) {
-    layer_on(layer);
+void toggle_layer(uint8_t layer) {
+    layer_invert(layer);
     oneshot_mask |= (1 << layer);
 }
 
@@ -64,22 +64,22 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     if (record->tap.count) {
         if (record->event.pressed) {
             switch (keycode) {
-            case _HANDLER_L_LEADER: add_layer(_LEADER); return false;
-            case _HANDLER_L_MOUSE: add_layer(_MOUSE); return false;
-            case _HANDLER_L_SHORT: add_layer(_SHORT); return false;
-            case _HANDLER_L_UMLAUT: add_layer(_UMLAUT); return false;
-            case _HANDLER_L_MEDIA: add_layer(_MEDIA); return false;
-            case _HANDLER_L_FN: add_layer(_FN); return false;
-            case _HANDLER_A_RIGHT: add_layer(_RIGHT); add_oneshot_mods(MOD_BIT(KC_LALT)); return false;
-            case _HANDLER_C_RIGHT: add_layer(_RIGHT); add_oneshot_mods(MOD_BIT(KC_LCTL)); return false;
-            case _HANDLER_S_RIGHT: add_layer(_RIGHT); add_oneshot_mods(MOD_BIT(KC_LSFT)); return false;
-            case _HANDLER_S_LEFT: add_layer(_LEFT); add_oneshot_mods(MOD_BIT(KC_LSFT)); return false;
-            case _HANDLER_C_LEFT: add_layer(_LEFT); add_oneshot_mods(MOD_BIT(KC_LCTL)); return false;
-            case _HANDLER_A_LEFT: add_layer(_LEFT); add_oneshot_mods(MOD_BIT(KC_LALT)); return false;
-            case _HANDLER_L_NAV: add_layer(_NAV); return false;
-            case _HANDLER_L_SMILE: add_layer(_SMILE); return false;
-            case _HANDLER_L_PARNUM: add_layer(_PARNUM); return false;
-            case _HANDLER_L_CURBRA: add_layer(_CURBRA); return false;
+            case _HANDLER_L_LEADER: toggle_layer(_LEADER); return false;
+            case _HANDLER_L_MOUSE: toggle_layer(_MOUSE); return false;
+            case _HANDLER_L_SHORT: toggle_layer(_SHORT); return false;
+            case _HANDLER_L_UMLAUT: toggle_layer(_UMLAUT); return false;
+            case _HANDLER_L_MEDIA: toggle_layer(_MEDIA); return false;
+            case _HANDLER_L_FN: toggle_layer(_FN); return false;
+            case _HANDLER_A_RIGHT: toggle_layer(_RIGHT); add_oneshot_mods(MOD_BIT(KC_LALT)); return false;
+            case _HANDLER_C_RIGHT: toggle_layer(_RIGHT); add_oneshot_mods(MOD_BIT(KC_LCTL)); return false;
+            case _HANDLER_S_RIGHT: toggle_layer(_RIGHT); add_oneshot_mods(MOD_BIT(KC_LSFT)); return false;
+            case _HANDLER_S_LEFT: toggle_layer(_LEFT); add_oneshot_mods(MOD_BIT(KC_LSFT)); return false;
+            case _HANDLER_C_LEFT: toggle_layer(_LEFT); add_oneshot_mods(MOD_BIT(KC_LCTL)); return false;
+            case _HANDLER_A_LEFT: toggle_layer(_LEFT); add_oneshot_mods(MOD_BIT(KC_LALT)); return false;
+            case _HANDLER_L_NAV: toggle_layer(_NAV); return false;
+            case _HANDLER_L_SMILE: toggle_layer(_SMILE); return false;
+            case _HANDLER_L_PARNUM: toggle_layer(_PARNUM); return false;
+            case _HANDLER_L_CURBRA: toggle_layer(_CURBRA); return false;
             default:
                 break;
             }

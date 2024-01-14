@@ -87,6 +87,10 @@ bool process_switcher(uint16_t keycode, keyrecord_t *record) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (!process_record_generated(keycode, record)) {
+        return false;
+    }
+
     if (!process_switcher(keycode, record)) {
         return false;
     }
@@ -129,10 +133,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
     default:
         break;
-    }
-
-    if (!process_record_generated(keycode, record)) {
-        return false;
     }
 
     return true;
