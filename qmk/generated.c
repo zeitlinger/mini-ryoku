@@ -1,6 +1,6 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/e4f333d79b761d67039d9fd45c579abe11c53f11/README.md using https://github.com/zeitlinger/keyboard/blob/e4f333d79b761d67039d9fd45c579abe11c53f11/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/8fa2ca682ec3d5537c5b847e484dbdae73e85c0a/README.md using https://github.com/zeitlinger/keyboard/blob/8fa2ca682ec3d5537c5b847e484dbdae73e85c0a/generateKeyboard.kt
  */
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
@@ -51,14 +51,11 @@ void press_normal_layer(uint16_t keycode, uint8_t layer) {
         layer_and(oneshot_mask);
         oneshot_mask = ALL_ONESHOT_MASK;
     }
-    if (is_layer_off_key(keycode, layer)) {
-        layer_off(layer);
-    }
 }
 
 bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
+    uint8_t layer = get_highest_layer(layer_state);
     if (record->event.pressed) {
-        uint8_t layer = get_highest_layer(layer_state);
         if (is_oneshot_layer(layer)) {
             layer_state_t new_mask = oneshot_mask & ~(1 << layer);
             if (new_mask == oneshot_mask) {
@@ -70,6 +67,8 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
         } else {
             press_normal_layer(keycode, layer);
         }
+    } else if (is_layer_off_key(keycode, layer)) {
+        layer_off(layer);
     }
 
     if (record->tap.count) {

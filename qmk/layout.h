@@ -3,10 +3,10 @@
 
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/e4f333d79b761d67039d9fd45c579abe11c53f11/README.md using https://github.com/zeitlinger/keyboard/blob/e4f333d79b761d67039d9fd45c579abe11c53f11/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/8fa2ca682ec3d5537c5b847e484dbdae73e85c0a/README.md using https://github.com/zeitlinger/keyboard/blob/8fa2ca682ec3d5537c5b847e484dbdae73e85c0a/generateKeyboard.kt
  */
 
-#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/e4f333d79b761d67039d9fd45c579abe11c53f11/README.md"
+#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/8fa2ca682ec3d5537c5b847e484dbdae73e85c0a/README.md"
 
 #define _BASE 0
 #define _LEADER 1
@@ -127,7 +127,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_NAV] = LAYOUT_split_3x5_2(
             KC_NO, C(KC_W), C(KC_Z), RCS(KC_Z), KC_NO, KC_NO, KC_ESC, L_SHORT, KC_INS, KC_NO,
             MO(_NAV2), OSM(MOD_LALT), OSM(MOD_LCTL), OSM(MOD_LSFT), KC_NO, KC_NO, KC_LEFT, KC_UP, KC_DOWN, KC_RIGHT,
-            RCS(KC_V), C(KC_X), C(KC_C), C(KC_V), KC_NO, KC_NO, KC_ENT, KC_BSPC, KC_DEL, KC_ESC,
+            RCS(KC_V), C(KC_X), C(KC_C), C(KC_V), KC_NO, KC_NO, KC_ENT, KC_BSPC, KC_DEL, KC_SPC,
                             L_SHORT, L_NAV, KC_TAB, KC_NO),
 	[_SHORT] = LAYOUT_split_3x5_2(
             KC_NO, C(KC_W), C(KC_Z), RCS(KC_Z), KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
