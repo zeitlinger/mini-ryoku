@@ -102,6 +102,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
 
     switch (keycode) {
+    #ifdef _MOUSE
     case _HANDLER_ONE_SHOT_MOUSE:
         if (record->event.pressed) {
             layer_on(_MOUSE);
@@ -118,6 +119,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         }
         break;
+    #endif
     case _HANDLER_PRINT_VERSION:
         if (record->event.pressed) {
             SEND_STRING(VERSION_STRING);

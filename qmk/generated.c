@@ -1,6 +1,6 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/8fa2ca682ec3d5537c5b847e484dbdae73e85c0a/README.md using https://github.com/zeitlinger/keyboard/blob/8fa2ca682ec3d5537c5b847e484dbdae73e85c0a/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/aptmak.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
  */
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
@@ -20,28 +20,13 @@ void toggle_layer(uint8_t layer) {
 }
 
 bool is_layer_off_key(uint16_t keycode, uint8_t layer) {
-    if (keycode == C(KC_W) && layer == _SHORT) return true;
-    if (keycode == C(KC_Z) && layer == _SHORT) return true;
-    if (keycode == RCS(KC_Z) && layer == _SHORT) return true;
-    if (keycode == RCS(KC_V) && layer == _SHORT) return true;
-    if (keycode == C(KC_X) && layer == _SHORT) return true;
-    if (keycode == C(KC_C) && layer == _SHORT) return true;
-    if (keycode == C(KC_V) && layer == _SHORT) return true;
-    if (keycode == KC_PSCR && layer == _MEDIA) return true;
-    if (keycode == PRINT_VERSION && layer == _MEDIA) return true;
-    if (keycode == KC_MUTE && layer == _MEDIA) return true;
+    
     return false;
 }
 
 bool is_oneshot_layer(uint8_t layer) {
     switch (layer) {
-    case _LEADER: return true;
-    case _LEFT: return true;
-    case _RIGHT: return true;
-    case _FN: return true;
-    case _PARNUM: return true;
-    case _CURBRA: return true;
-    case _UMLAUT: return true;
+    
     }
     return false;
 }
@@ -74,7 +59,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     if (record->tap.count) {
         if (record->event.pressed) {
             switch (keycode) {
-            
+            case _HANDLER__TAP_C_ALGRKC_QUOTE: tap_code16(ALGR(KC_QUOTE)); return false;
             default:
                 break;
             }
@@ -82,22 +67,8 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     } else {
         if (record->event.pressed) {
             switch (keycode) {
-            case _HANDLER_L_LEADER: toggle_layer(_LEADER); return false;
-            case _HANDLER_L_MOUSE: toggle_layer(_MOUSE); return false;
-            case _HANDLER_L_SHORT: toggle_layer(_SHORT); return false;
-            case _HANDLER_L_UMLAUT: toggle_layer(_UMLAUT); return false;
-            case _HANDLER_L_MEDIA: toggle_layer(_MEDIA); return false;
-            case _HANDLER_L_FN: toggle_layer(_FN); return false;
-            case _HANDLER_A_RIGHT: toggle_layer(_RIGHT); add_oneshot_mods(MOD_BIT(KC_LALT)); return false;
-            case _HANDLER_C_RIGHT: toggle_layer(_RIGHT); add_oneshot_mods(MOD_BIT(KC_LCTL)); return false;
-            case _HANDLER_S_RIGHT: toggle_layer(_RIGHT); add_oneshot_mods(MOD_BIT(KC_LSFT)); return false;
-            case _HANDLER_S_LEFT: toggle_layer(_LEFT); add_oneshot_mods(MOD_BIT(KC_LSFT)); return false;
-            case _HANDLER_C_LEFT: toggle_layer(_LEFT); add_oneshot_mods(MOD_BIT(KC_LCTL)); return false;
-            case _HANDLER_A_LEFT: toggle_layer(_LEFT); add_oneshot_mods(MOD_BIT(KC_LALT)); return false;
             case _HANDLER_L_NAV: toggle_layer(_NAV); return false;
-            case _HANDLER_L_SMILE: toggle_layer(_SMILE); return false;
-            case _HANDLER_L_PARNUM: toggle_layer(_PARNUM); return false;
-            case _HANDLER_L_CURBRA: toggle_layer(_CURBRA); return false;
+            case _HANDLER_L_SYM: toggle_layer(_SYM); return false;
             default:
                 break;
             }
@@ -114,7 +85,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-    
+    case LT(_FN,_TAP_C_ALGRKC_QUOTE): return true;
     default:
         // Do not select the hold action when another key is pressed.
         return false;
