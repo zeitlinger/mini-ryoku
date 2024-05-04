@@ -40,10 +40,10 @@ enum custom_keycodes {
 #define _HANDLER_NEXT_WINDOW SFT_T(NEXT_WINDOW)
 #define _HANDLER_ONE_SHOT_MOUSE SFT_T(ONE_SHOT_MOUSE)
 #define _HANDLER_PRINT_VERSION PRINT_VERSION
-#define _HANDLER_CAPS_WORDS CAPS_WORDS
-#define _HANDLER_SNAKE_CASE SNAKE_CASE
+#define _HANDLER_CAPS_WORDS SFT_T(CAPS_WORDS)
+#define _HANDLER_SNAKE_CASE CTL_T(SNAKE_CASE)
 #define _HANDLER_SCREAMING_SNAKE_CASE SCREAMING_SNAKE_CASE
-#define _HANDLER_CAMEL_CASE CAMEL_CASE
+#define _HANDLER_CAMEL_CASE ALT_T(CAMEL_CASE)
 #define _HANDLER_PASCAL_CASE PASCAL_CASE
 #define _HANDLER_SLASH_CASE SLASH_CASE
 #define _HANDLER_DOT_CASE DOT_CASE
@@ -87,9 +87,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                 KC_7,                 KC_8,                 KC_9,                KC_NO,
                                            KC_NO,                KC_NO,                KC_NO,                KC_NO),
 	[_FN] = LAYOUT_split_3x5_2(
-                           KC_NO,           CAMEL_CASE,           SNAKE_CASE,           KEBAP_CASE,                KC_NO,                KC_NO,                KC_F4,                KC_F5,                KC_F6,               KC_F11,
-                      SLASH_CASE,              KC_LALT,              KC_LCTL,              KC_LSFT,              KC_CAPS,                KC_NO,               KC_F10,                KC_F1,                KC_F2,                KC_F3,
-                        DOT_CASE,          PASCAL_CASE, SCREAMING_SNAKE_CASE,           CAPS_WORDS,                KC_NO,                KC_NO,                KC_F7,                KC_F8,                KC_F9,               KC_F12,
+                           KC_NO,          PASCAL_CASE, SCREAMING_SNAKE_CASE,                KC_NO,                KC_NO,                KC_NO,                KC_F4,                KC_F5,                KC_F6,               KC_F11,
+                      SLASH_CASE,    ALT_T(CAMEL_CASE),    CTL_T(SNAKE_CASE),    SFT_T(CAPS_WORDS),                KC_NO,                KC_NO,               KC_F10,                KC_F1,                KC_F2,                KC_F3,
+                        DOT_CASE,              KC_CAPS,           KEBAP_CASE,                KC_NO,                KC_NO,                KC_NO,                KC_F7,                KC_F8,                KC_F9,               KC_F12,
                                            KC_NO,                KC_NO,                KC_NO,                KC_NO),
 	[_MOUSE] = LAYOUT_split_3x5_2(
                            KC_NO,              KC_BTN3,              KC_BTN2,              KC_BTN1,                KC_NO,                KC_NO,                KC_NO,                KC_NO,              KC_BTN3,                KC_NO,
