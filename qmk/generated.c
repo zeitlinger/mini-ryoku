@@ -67,7 +67,6 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     } else {
         if (record->event.pressed) {
             switch (keycode) {
-            case _HANDLER_L_MOUSE2: toggle_layer(_MOUSE2); return false;
             case _HANDLER_L_MOUSE: toggle_layer(_MOUSE); return false;
             default:
                 break;

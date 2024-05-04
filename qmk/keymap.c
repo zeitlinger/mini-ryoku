@@ -125,29 +125,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             SEND_STRING(VERSION_STRING);
         }
         return false;
+    #ifdef _HANDLER_DOT_SPC
     case _HANDLER_DOT_SPC:
         if (record->event.pressed) {
             SEND_STRING(". ");
             add_oneshot_mods(MOD_BIT(KC_LSFT));
         }
         return false;
+    #endif
+    #ifdef _HANDLER_N_APOS
     case _HANDLER_N_APOS:
         if (record->event.pressed) {
             SEND_STRING("n'");
         }
         return false;
-    case _HANDLER_TOGGLE_RIGHT_MODS:
-        if (record->tap.count && record->event.pressed) {
-            layer_on(_RIGHTMODS);
-            return false;
-        }
-        break;
-    case _HANDLER_TOGGLE_LEFT_MODS:
-        if (record->tap.count && record->event.pressed) {
-            layer_on(_LEFTMODS);
-            return false;
-        }
-        break;
+    #endif
     default:
         break;
     }
