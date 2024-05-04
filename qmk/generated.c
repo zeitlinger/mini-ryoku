@@ -26,7 +26,8 @@ bool is_layer_off_key(uint16_t keycode, uint8_t layer) {
 
 bool is_oneshot_layer(uint8_t layer) {
     switch (layer) {
-    
+    case _LEFTMODS: return true;
+    case _RIGHTMODS: return true;
     }
     return false;
 }
@@ -59,7 +60,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     if (record->tap.count) {
         if (record->event.pressed) {
             switch (keycode) {
-            case _HANDLER__TAP_C_ALGRKC_QUOTE: tap_code16(ALGR(KC_QUOTE)); return false;
+            case _HANDLER__TAP_C_LCAKC_RIGHT_BRACKET: tap_code16(LCA(KC_RIGHT_BRACKET)); return false;
             default:
                 break;
             }
@@ -67,8 +68,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     } else {
         if (record->event.pressed) {
             switch (keycode) {
-            case _HANDLER_L_NAV: toggle_layer(_NAV); return false;
-            case _HANDLER_L_SYM: toggle_layer(_SYM); return false;
+            
             default:
                 break;
             }
@@ -85,7 +85,8 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-    case LT(_FN,_TAP_C_ALGRKC_QUOTE): return true;
+    case LT(_R,TOGGLE_RIGHT_MODS): return true;
+    case LT(_L,TOGGLE_LEFT_MODS): return true;
     default:
         // Do not select the hold action when another key is pressed.
         return false;

@@ -101,29 +101,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
     }
 
-    if (record->event.pressed) {
-        switch (get_highest_layer(layer_state)) {
-        case _BASE:
-            if (get_mods() & MOD_BIT(KC_LSFT)) {
-                switch (keycode) {
-                case KC_H:
-                }
-            }
-        case _LEFT:
-        case _RIGHT:
-            switch (keycode) {
-            case OSM(MOD_LALT):
-            case OSM(MOD_LCTL):
-            case OSM(MOD_LSFT):
-                break:
-            }
-            layer_off(_LEFT);
-            layer_off(_RIGHT);
-            break;
-        }
-        break;
-    }
-
     switch (keycode) {
     #ifdef _MOUSE
     case _HANDLER_ONE_SHOT_MOUSE:
@@ -159,15 +136,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             SEND_STRING("n'");
         }
         return false;
-    case LSFT_T(KC_R):
+    case _HANDLER_TOGGLE_RIGHT_MODS:
         if (record->tap.count && record->event.pressed) {
-            layer_on(_RIGHT);
+            layer_on(_RIGHTMODS);
             return false;
         }
         break;
-    case RSFT_T(KC_L):
+    case _HANDLER_TOGGLE_LEFT_MODS:
         if (record->tap.count && record->event.pressed) {
-            layer_on(_LEFT);
+            layer_on(_LEFTMODS);
             return false;
         }
         break;
