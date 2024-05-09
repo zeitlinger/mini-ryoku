@@ -54,12 +54,12 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_BASE] = LAYOUT_split_3x5_2(
-                            KC_J,                 KC_G,                 KC_M,                 KC_P, KC_NO, KC_NO,       LT(_FN,KC_DOT), LT(_SYM,_TAP_C_ALGRKC_QUOTE),             KC_COMMA,                 KC_X,
+                            KC_J,                 KC_G,                 KC_M,              KC_DQUO, KC_NO, KC_NO,       LT(_FN,KC_DOT), LT(_SYM,_TAP_C_ALGRKC_QUOTE),             KC_COMMA,                 KC_X,
                             KC_R,                 KC_S,                 KC_N,                 KC_D, KC_NO, KC_NO,                 KC_A,                 KC_E,                 KC_I,                 KC_H,
                       MO(_RIGHT),                 KC_F,                 KC_L,                 KC_C, KC_NO, KC_NO,                 KC_U,                 KC_O,                 KC_Y,            MO(_LEFT),
                                         MO(_NAV),                 KC_T,               KC_SPC,             MO(_NUM)),
 	[_LEFT] = LAYOUT_split_3x5_2(
-                         S(KC_J),              S(KC_G),              S(KC_M),              S(KC_P), KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
+                         S(KC_J),              S(KC_G),              S(KC_M),           S(KC_DQUO), KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                          S(KC_R),              S(KC_S),              S(KC_N),              S(KC_D), KC_NO, KC_NO, SFT_T(ONE_SHOT_MOUSE),              KC_LCTL,              KC_LALT,                KC_NO,
                            KC_NO,              S(KC_F),              S(KC_L),              S(KC_C), KC_NO, KC_NO,              KC_DQUO,              KC_EXLM,       ALGR(KC_QUOTE),                KC_NO,
                                            KC_NO,              S(KC_T),                KC_NO,                KC_NO),
