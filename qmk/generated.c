@@ -60,6 +60,9 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
         if (record->event.pressed) {
             switch (keycode) {
             case _HANDLER__TAP_C_ALGRKC_QUOTE: tap_code16(ALGR(KC_QUOTE)); return false;
+            case _HANDLER__TAP_C_CKC_X: tap_code16(C(KC_X)); return false;
+            case _HANDLER__TAP_C_CKC_C: tap_code16(C(KC_C)); return false;
+            case _HANDLER__TAP_C_CKC_V: tap_code16(C(KC_V)); return false;
             default:
                 break;
             }
@@ -67,13 +70,23 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     } else {
         if (record->event.pressed) {
             switch (keycode) {
-            case _HANDLER_L_MOUSE: toggle_layer(_MOUSE); return false;
+            case _HANDLER_L_MOUSE: toggle_layer(_MOUSE); return false;case SFT_T(KC_DQUO): layer_on(_LMODS); add_mods(MOD_BIT(KC_LSFT)); return false;
+            case CTL_T(KC_EXLM): layer_on(_LMODS); add_mods(MOD_BIT(KC_LCTL)); return false;
+            case ALT_T(_TAP_C_ALGRKC_QUOTE): layer_on(_LMODS); add_mods(MOD_BIT(KC_LALT)); return false;
+            case ALT_T(_TAP_C_CKC_X): layer_on(_RMODS); add_mods(MOD_BIT(KC_LALT)); return false;
+            case CTL_T(_TAP_C_CKC_C): layer_on(_RMODS); add_mods(MOD_BIT(KC_LCTL)); return false;
+            case SFT_T(_TAP_C_CKC_V): layer_on(_RMODS); add_mods(MOD_BIT(KC_LSFT)); return false;
             default:
                 break;
             }
         } else {
             switch (keycode) {
-            
+            case SFT_T(KC_DQUO): layer_off(_LMODS); del_mods(MOD_BIT(KC_LSFT)); return false;
+            case CTL_T(KC_EXLM): layer_off(_LMODS); del_mods(MOD_BIT(KC_LCTL)); return false;
+            case ALT_T(_TAP_C_ALGRKC_QUOTE): layer_off(_LMODS); del_mods(MOD_BIT(KC_LALT)); return false;
+            case ALT_T(_TAP_C_CKC_X): layer_off(_RMODS); del_mods(MOD_BIT(KC_LALT)); return false;
+            case CTL_T(_TAP_C_CKC_C): layer_off(_RMODS); del_mods(MOD_BIT(KC_LCTL)); return false;
+            case SFT_T(_TAP_C_CKC_V): layer_off(_RMODS); del_mods(MOD_BIT(KC_LSFT)); return false;
             default:
                 break;
             }
