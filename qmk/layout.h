@@ -43,15 +43,13 @@ enum custom_keycodes {
     _RMODS_A,
     _RMODS_C,
     _RMODS_S,
-    _TAP_C_CKC_X,
-    _TAP_C_CKC_C,
+    _TAP_C_CKC_W,
     _TAP_C_CKC_V,
-    _TAP_C_RCSKC_V,
     L_MOUSE
 };
 
-#define _HANDLER_NEXT_TAB NEXT_TAB
-#define _HANDLER_NEXT_WINDOW NEXT_WINDOW
+#define _HANDLER_NEXT_TAB CTL_T(NEXT_TAB)
+#define _HANDLER_NEXT_WINDOW SFT_T(NEXT_WINDOW)
 #define _HANDLER_ONE_SHOT_MOUSE ONE_SHOT_MOUSE
 #define _HANDLER_PRINT_VERSION PRINT_VERSION
 #define _HANDLER_CAPS_WORDS CAPS_WORDS
@@ -69,10 +67,8 @@ enum custom_keycodes {
 #define _HANDLER__RMODS_A _RMODS_A
 #define _HANDLER__RMODS_C _RMODS_C
 #define _HANDLER__RMODS_S _RMODS_S
-#define _HANDLER__TAP_C_CKC_X _TAP_C_CKC_X
-#define _HANDLER__TAP_C_CKC_C _TAP_C_CKC_C
+#define _HANDLER__TAP_C_CKC_W ALT_T(_TAP_C_CKC_W)
 #define _HANDLER__TAP_C_CKC_V LT(_CS,_TAP_C_CKC_V)
-#define _HANDLER__TAP_C_RCSKC_V _TAP_C_RCSKC_V
 #define _HANDLER_L_MOUSE L_MOUSE
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -103,8 +99,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                            KC_NO,                KC_NO,               KC_SPC,             MO(_NUM)),
 	[_NAV] = LAYOUT_split_3x5_2(
                       MO(_MEDIA),                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,               KC_ESC,              KC_LGUI,               KC_INS,                KC_NO,
-                       MO(_NAV2),              C(KC_W),             NEXT_TAB,          NEXT_WINDOW, KC_NO, KC_NO,              KC_LEFT,                KC_UP,              KC_DOWN,             KC_RIGHT,
-                         C(KC_Z),  ALT_T(_TAP_C_CKC_X),  CTL_T(_TAP_C_CKC_C), LT(_CS,_TAP_C_CKC_V), KC_NO, KC_NO,               KC_ENT,              KC_BSPC,               KC_DEL,               KC_SPC,
+                       MO(_NAV2),  ALT_T(_TAP_C_CKC_W),      CTL_T(NEXT_TAB),   SFT_T(NEXT_WINDOW), KC_NO, KC_NO,              KC_LEFT,                KC_UP,              KC_DOWN,             KC_RIGHT,
+                         C(KC_Z),              C(KC_X),              C(KC_C), LT(_CS,_TAP_C_CKC_V), KC_NO, KC_NO,               KC_ENT,              KC_BSPC,               KC_DEL,               KC_SPC,
                                            KC_NO,                KC_NO,               KC_TAB,                KC_NO),
 	[_NAV2] = LAYOUT_split_3x5_2(
                            KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,

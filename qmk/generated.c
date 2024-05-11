@@ -60,10 +60,8 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
         if (record->event.pressed) {
             switch (keycode) {
             case _HANDLER__TAP_C_ALGRKC_QUOTE: tap_code16(ALGR(KC_QUOTE)); return false;
-            case _HANDLER__TAP_C_CKC_X: tap_code16(C(KC_X)); return false;
-            case _HANDLER__TAP_C_CKC_C: tap_code16(C(KC_C)); return false;
+            case _HANDLER__TAP_C_CKC_W: tap_code16(C(KC_W)); return false;
             case _HANDLER__TAP_C_CKC_V: tap_code16(C(KC_V)); return false;
-            case _HANDLER__TAP_C_RCSKC_V: tap_code16(RCS(KC_V)); return false;
             default:
                 break;
             }
