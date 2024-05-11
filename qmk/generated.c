@@ -63,6 +63,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
             case _HANDLER__TAP_C_CKC_X: tap_code16(C(KC_X)); return false;
             case _HANDLER__TAP_C_CKC_C: tap_code16(C(KC_C)); return false;
             case _HANDLER__TAP_C_CKC_V: tap_code16(C(KC_V)); return false;
+            case _HANDLER__TAP_C_RCSKC_V: tap_code16(RCS(KC_V)); return false;
             default:
                 break;
             }
@@ -70,23 +71,24 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     } else {
         if (record->event.pressed) {
             switch (keycode) {
-            case _HANDLER_L_MOUSE: toggle_layer(_MOUSE); return false;case KC_LSFT: layer_on(_LMODS); add_mods(MOD_BIT(KC_LSFT)); return false;
-            case KC_LCTL: layer_on(_LMODS); add_mods(MOD_BIT(KC_LCTL)); return false;
-            case KC_LALT: layer_on(_LMODS); add_mods(MOD_BIT(KC_LALT)); return false;
-            case ALT_T(_TAP_C_CKC_X): layer_on(_RMODS); add_mods(MOD_BIT(KC_LALT)); return false;
-            case CTL_T(_TAP_C_CKC_C): layer_on(_RMODS); add_mods(MOD_BIT(KC_LCTL)); return false;
-            case SFT_T(_TAP_C_CKC_V): layer_on(_RMODS); add_mods(MOD_BIT(KC_LSFT)); return false;
+            case _HANDLER_L_MOUSE: toggle_layer(_MOUSE); return false;
+            case _LMODS_S: layer_on(_LMODS); add_mods(MOD_BIT(KC_LSFT)); return false;
+            case _LMODS_C: layer_on(_LMODS); add_mods(MOD_BIT(KC_LCTL)); return false;
+            case _LMODS_A: layer_on(_LMODS); add_mods(MOD_BIT(KC_LALT)); return false;
+            case _RMODS_A: layer_on(_RMODS); add_mods(MOD_BIT(KC_LALT)); return false;
+            case _RMODS_C: layer_on(_RMODS); add_mods(MOD_BIT(KC_LCTL)); return false;
+            case _RMODS_S: layer_on(_RMODS); add_mods(MOD_BIT(KC_LSFT)); return false;
             default:
                 break;
             }
         } else {
             switch (keycode) {
-            case KC_LSFT: layer_off(_LMODS); del_mods(MOD_BIT(KC_LSFT)); return false;
-            case KC_LCTL: layer_off(_LMODS); del_mods(MOD_BIT(KC_LCTL)); return false;
-            case KC_LALT: layer_off(_LMODS); del_mods(MOD_BIT(KC_LALT)); return false;
-            case ALT_T(_TAP_C_CKC_X): layer_off(_RMODS); del_mods(MOD_BIT(KC_LALT)); return false;
-            case CTL_T(_TAP_C_CKC_C): layer_off(_RMODS); del_mods(MOD_BIT(KC_LCTL)); return false;
-            case SFT_T(_TAP_C_CKC_V): layer_off(_RMODS); del_mods(MOD_BIT(KC_LSFT)); return false;
+            case _LMODS_S: layer_off(_LMODS); del_mods(MOD_BIT(KC_LSFT)); return false;
+            case _LMODS_C: layer_off(_LMODS); del_mods(MOD_BIT(KC_LCTL)); return false;
+            case _LMODS_A: layer_off(_LMODS); del_mods(MOD_BIT(KC_LALT)); return false;
+            case _RMODS_A: layer_off(_RMODS); del_mods(MOD_BIT(KC_LALT)); return false;
+            case _RMODS_C: layer_off(_RMODS); del_mods(MOD_BIT(KC_LCTL)); return false;
+            case _RMODS_S: layer_off(_RMODS); del_mods(MOD_BIT(KC_LSFT)); return false;
             default:
                 break;
             }
@@ -101,6 +103,7 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     case LT(_FN,KC_DQUO): return true;
     case LT(_RIGHT,KC_COMMA): return true;
     case LT(_LEFT,KC_DOT): return true;
+    case LT(_CS,_TAP_C_CKC_V): return true;
     case LT(_FN,KC_SEMICOLON): return true;
     default:
         // Do not select the hold action when another key is pressed.
