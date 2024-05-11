@@ -71,12 +71,12 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_BASE] = LAYOUT_split_3x5_2(
-                          KC_ESC,                 KC_W,                 KC_M,               KC_TAB, KC_NO, KC_NO,              KC_LGUI, LT(_SYM,_TAP_C_ALGRKC_QUOTE),      LT(_FN,KC_DQUO),                KC_NO,
+                          KC_ESC,                 KC_W,                 KC_M,               KC_F13, KC_NO, KC_NO,              KC_LGUI, LT(_SYM,_TAP_C_ALGRKC_QUOTE),      LT(_FN,KC_DQUO),                KC_NO,
                             KC_S,                 KC_C,                 KC_N,                 KC_T, KC_NO, KC_NO,                 KC_A,                 KC_E,                 KC_I,                 KC_H,
              LT(_RIGHT,KC_COMMA),                 KC_F,                 KC_L,                 KC_D, KC_NO, KC_NO,                 KC_U,                 KC_O,                 KC_Y,     LT(_LEFT,KC_DOT),
                                         MO(_NAV),                 KC_R,               KC_SPC,             MO(_NUM)),
 	[_LEFT] = LAYOUT_split_3x5_2(
-                       S(KC_ESC),              S(KC_W),              S(KC_M),            S(KC_TAB), KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
+                       S(KC_ESC),              S(KC_W),              S(KC_M),            S(KC_F13), KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                          S(KC_S),              S(KC_C),              S(KC_N),              S(KC_T), KC_NO, KC_NO,           ALGR(KC_Q),           ALGR(KC_S),                KC_NO,                KC_NO,
                          KC_LABK,              S(KC_F),              S(KC_L),              S(KC_D), KC_NO, KC_NO, SFT_T(_TAP_C_ALGRKC_Y), CTL_T(_TAP_C_ALGRKC_P), ALT_T(ONE_SHOT_MOUSE),                KC_NO,
                                      S(MO(_NAV)),              S(KC_R),               KC_SPC,                KC_NO),
@@ -86,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            KC_NO,             _RMODS_A,             _RMODS_C,             _RMODS_S, KC_NO, KC_NO,              S(KC_U),              S(KC_O),              S(KC_Y),              KC_RABK,
                                            KC_NO,                KC_NO,            S(KC_SPC),          S(MO(_NUM))),
 	[_LMODS] = LAYOUT_split_3x5_2(
-                          KC_ESC,                 KC_W,                 KC_M,               KC_TAB, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
+                          KC_ESC,                 KC_W,                 KC_M,               KC_F13, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                             KC_S,                 KC_C,                 KC_N,                 KC_T, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                         KC_COMMA,                 KC_F,                 KC_L,                 KC_D, KC_NO, KC_NO,              KC_LSFT,              KC_LCTL,              KC_LALT,                KC_NO,
                                         MO(_NAV),                 KC_R,                KC_NO,                KC_NO),

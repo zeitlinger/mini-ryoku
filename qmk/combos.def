@@ -1,6 +1,6 @@
 // file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/handsdown-vb.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
 COMB(C_BASE_KC_B                        , KC_B                               , KC_C, KC_W)
-COMB(C_BASE_KC_G                        , KC_G                               , KC_T, KC_TAB)
+COMB(C_BASE_KC_G                        , KC_G                               , KC_F13, KC_T)
 COMB(C_BASE_KC_J                        , KC_J                               , KC_I, LT(_FN,KC_DQUO))
 COMB(C_BASE_KC_K                        , KC_K                               , KC_D, KC_T)
 COMB(C_BASE_KC_P                        , KC_P                               , KC_C, KC_F)
