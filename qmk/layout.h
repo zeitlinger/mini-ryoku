@@ -3,10 +3,10 @@
 
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/handsdown-gold.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/handsdown-vb.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
  */
 
-#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/uncommitted changes/handsdown-gold.md"
+#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/uncommitted changes/handsdown-vb.md"
 
 #define _BASE 0
 #define _LEFT 1
@@ -63,25 +63,25 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_BASE] = LAYOUT_split_3x5_2(
-                          KC_F13,                 KC_G,                 KC_M,           MO(_MEDIA), KC_NO, KC_NO,            MO(_CASE), LT(_SYM,_TAP_C_ALGRKC_QUOTE),      LT(_FN,KC_DQUO),               KC_F14,
-                            KC_R,                 KC_S,                 KC_N,                 KC_D, KC_NO, KC_NO,                 KC_A,                 KC_E,                 KC_I,                 KC_H,
-             LT(_RIGHT,KC_COMMA),                 KC_F,                 KC_L,                 KC_C, KC_NO, KC_NO,                 KC_U,                 KC_O,                 KC_Y,     LT(_LEFT,KC_DOT),
-                                        MO(_NAV),                 KC_T,               KC_SPC,             MO(_NUM)),
+                          KC_F13,                 KC_W,                 KC_M,           MO(_MEDIA), KC_NO, KC_NO,            MO(_CASE), LT(_SYM,_TAP_C_ALGRKC_QUOTE),      LT(_FN,KC_DQUO),               KC_F14,
+                            KC_S,                 KC_C,                 KC_N,                 KC_T, KC_NO, KC_NO,                 KC_A,                 KC_E,                 KC_I,                 KC_H,
+             LT(_RIGHT,KC_COMMA),                 KC_F,                 KC_L,                 KC_D, KC_NO, KC_NO,                 KC_U,                 KC_O,                 KC_Y,     LT(_LEFT,KC_DOT),
+                                        MO(_NAV),                 KC_R,               KC_SPC,             MO(_NUM)),
 	[_LEFT] = LAYOUT_split_3x5_2(
-                       S(KC_F13),              S(KC_G),              S(KC_M),        S(MO(_MEDIA)), KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
-                         S(KC_R),              S(KC_S),              S(KC_N),              S(KC_D), KC_NO, KC_NO,       ONE_SHOT_MOUSE,                KC_NO,                KC_NO,                KC_NO,
-                         KC_LABK,              S(KC_F),              S(KC_L),              S(KC_C), KC_NO, KC_NO,              KC_LSFT,              KC_LCTL,              KC_LALT,                KC_NO,
-                                     S(MO(_NAV)),              S(KC_T),               KC_SPC,                KC_NO),
+                       S(KC_F13),              S(KC_W),              S(KC_M),        S(MO(_MEDIA)), KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
+                         S(KC_S),              S(KC_C),              S(KC_N),              S(KC_T), KC_NO, KC_NO,       ONE_SHOT_MOUSE,                KC_NO,                KC_NO,                KC_NO,
+                         KC_LABK,              S(KC_F),              S(KC_L),              S(KC_D), KC_NO, KC_NO,              KC_LSFT,              KC_LCTL,              KC_LALT,                KC_NO,
+                                     S(MO(_NAV)),              S(KC_R),               KC_SPC,                KC_NO),
 	[_RIGHT] = LAYOUT_split_3x5_2(
                            KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,         S(MO(_CASE)),              KC_EXLM,              KC_QUES,            S(KC_F14),
                            KC_NO,                KC_NO,             NEXT_TAB,          NEXT_WINDOW, KC_NO, KC_NO,              S(KC_A),              S(KC_E),              S(KC_I),              S(KC_H),
                            KC_NO,  ALT_T(_TAP_C_CKC_X),  CTL_T(_TAP_C_CKC_C),  SFT_T(_TAP_C_CKC_V), KC_NO, KC_NO,              S(KC_U),              S(KC_O),              S(KC_Y),              KC_RABK,
                                            KC_NO,                KC_NO,            S(KC_SPC),          S(MO(_NUM))),
 	[_LMODS] = LAYOUT_split_3x5_2(
-                          KC_F13,                 KC_G,                 KC_M,                KC_NO, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
-                            KC_R,                 KC_S,                 KC_N,                 KC_D, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
-                           KC_NO,                 KC_F,                 KC_L,                 KC_C, KC_NO, KC_NO,              KC_LSFT,              KC_LCTL,              KC_LALT,                KC_NO,
-                                        MO(_NAV),                 KC_T,                KC_NO,                KC_NO),
+                          KC_F13,                 KC_W,                 KC_M,                KC_NO, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
+                            KC_S,                 KC_C,                 KC_N,                 KC_T, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
+                           KC_NO,                 KC_F,                 KC_L,                 KC_D, KC_NO, KC_NO,              KC_LSFT,              KC_LCTL,              KC_LALT,                KC_NO,
+                                        MO(_NAV),                 KC_R,                KC_NO,                KC_NO),
 	[_RMODS] = LAYOUT_split_3x5_2(
                            KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,               KC_F14,
                            KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,                 KC_A,                 KC_E,                 KC_I,                 KC_H,
