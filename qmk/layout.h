@@ -37,18 +37,20 @@ enum custom_keycodes {
     DOT_CASE,
     KEBAP_CASE,
     _TAP_C_ALGRKC_QUOTE,
+    _TAP_C_ALGRSKC_QUOTE,
     _TAP_C_ALGRKC_Y,
     _TAP_C_ALGRKC_P,
     _RMODS_A,
     _RMODS_C,
     _RMODS_S,
-    _TAP_C_CKC_W,
+    _TAP_C_CKC_X,
+    _TAP_C_CKC_C,
     _TAP_C_CKC_V,
     L_MOUSE
 };
 
-#define _HANDLER_NEXT_TAB CTL_T(NEXT_TAB)
-#define _HANDLER_NEXT_WINDOW SFT_T(NEXT_WINDOW)
+#define _HANDLER_NEXT_TAB NEXT_TAB
+#define _HANDLER_NEXT_WINDOW NEXT_WINDOW
 #define _HANDLER_ONE_SHOT_MOUSE ALT_T(ONE_SHOT_MOUSE)
 #define _HANDLER_PRINT_VERSION PRINT_VERSION
 #define _HANDLER_CAPS_WORDS CAPS_WORDS
@@ -60,23 +62,25 @@ enum custom_keycodes {
 #define _HANDLER_DOT_CASE DOT_CASE
 #define _HANDLER_KEBAP_CASE KEBAP_CASE
 #define _HANDLER__TAP_C_ALGRKC_QUOTE LT(_SYM,_TAP_C_ALGRKC_QUOTE)
+#define _HANDLER__TAP_C_ALGRSKC_QUOTE LT(_FN,_TAP_C_ALGRSKC_QUOTE)
 #define _HANDLER__TAP_C_ALGRKC_Y _TAP_C_ALGRKC_Y
 #define _HANDLER__TAP_C_ALGRKC_P _TAP_C_ALGRKC_P
 #define _HANDLER__RMODS_A _RMODS_A
 #define _HANDLER__RMODS_C _RMODS_C
 #define _HANDLER__RMODS_S _RMODS_S
-#define _HANDLER__TAP_C_CKC_W ALT_T(_TAP_C_CKC_W)
-#define _HANDLER__TAP_C_CKC_V LT(_CS,_TAP_C_CKC_V)
+#define _HANDLER__TAP_C_CKC_X _TAP_C_CKC_X
+#define _HANDLER__TAP_C_CKC_C _TAP_C_CKC_C
+#define _HANDLER__TAP_C_CKC_V _TAP_C_CKC_V
 #define _HANDLER_L_MOUSE L_MOUSE
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_BASE] = LAYOUT_split_3x5_2(
-                          KC_ESC,                 KC_W,                 KC_M,               KC_F13, KC_NO, KC_NO,              KC_LGUI, LT(_SYM,_TAP_C_ALGRKC_QUOTE),      LT(_FN,KC_DQUO),                KC_NO,
+                          KC_ESC,                 KC_W,                 KC_M,               KC_SPC, KC_NO, KC_NO,              KC_LGUI, LT(_SYM,_TAP_C_ALGRKC_QUOTE), LT(_FN,_TAP_C_ALGRSKC_QUOTE),                KC_NO,
                             KC_S,                 KC_C,                 KC_N,                 KC_T, KC_NO, KC_NO,                 KC_A,                 KC_E,                 KC_I,                 KC_H,
              LT(_RIGHT,KC_COMMA),                 KC_F,                 KC_L,                 KC_D, KC_NO, KC_NO,                 KC_U,                 KC_O,                 KC_Y,     LT(_LEFT,KC_DOT),
                                         MO(_NAV),                 KC_R,               KC_SPC,             MO(_NUM)),
 	[_LEFT] = LAYOUT_split_3x5_2(
-                       S(KC_ESC),              S(KC_W),              S(KC_M),            S(KC_F13), KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
+                       S(KC_ESC),              S(KC_W),              S(KC_M),            S(KC_SPC), KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                          S(KC_S),              S(KC_C),              S(KC_N),              S(KC_T), KC_NO, KC_NO,           ALGR(KC_Q),           ALGR(KC_S),                KC_NO,                KC_NO,
                          KC_LABK,              S(KC_F),              S(KC_L),              S(KC_D), KC_NO, KC_NO, SFT_T(_TAP_C_ALGRKC_Y), CTL_T(_TAP_C_ALGRKC_P), ALT_T(ONE_SHOT_MOUSE),                KC_NO,
                                      S(MO(_NAV)),              S(KC_R),               KC_SPC,                KC_NO),
@@ -86,19 +90,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            KC_NO,             _RMODS_A,             _RMODS_C,             _RMODS_S, KC_NO, KC_NO,              S(KC_U),              S(KC_O),              S(KC_Y),              KC_RABK,
                                            KC_NO,                KC_NO,            S(KC_SPC),          S(MO(_NUM))),
 	[_LMODS] = LAYOUT_split_3x5_2(
-                          KC_ESC,                 KC_W,                 KC_M,               KC_F13, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
+                          KC_ESC,                 KC_W,                 KC_M,               KC_SPC, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                             KC_S,                 KC_C,                 KC_N,                 KC_T, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                         KC_COMMA,                 KC_F,                 KC_L,                 KC_D, KC_NO, KC_NO,              KC_LSFT,              KC_LCTL,              KC_LALT,                KC_NO,
                                         MO(_NAV),                 KC_R,                KC_NO,                KC_NO),
 	[_RMODS] = LAYOUT_split_3x5_2(
-                           KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,              KC_LGUI,       ALGR(KC_QUOTE),              KC_DQUO,                KC_NO,
+                           KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,              KC_LGUI,       ALGR(KC_QUOTE),    ALGR(S(KC_QUOTE)),                KC_NO,
                            KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,                 KC_A,                 KC_E,                 KC_I,                 KC_H,
                            KC_NO,              KC_LALT,              KC_LCTL,              KC_LSFT, KC_NO, KC_NO,                 KC_U,                 KC_O,                 KC_Y,               KC_DOT,
                                            KC_NO,                KC_NO,               KC_SPC,             MO(_NUM)),
 	[_NAV] = LAYOUT_split_3x5_2(
-                           KC_NO,           MO(_MEDIA),                KC_NO,                KC_NO, KC_NO, KC_NO,                KC_NO,               KC_ESC,               KC_INS,                KC_NO,
-                       MO(_NAV2),  ALT_T(_TAP_C_CKC_W),      CTL_T(NEXT_TAB),   SFT_T(NEXT_WINDOW), KC_NO, KC_NO,              KC_LEFT,                KC_UP,              KC_DOWN,             KC_RIGHT,
-                         C(KC_Z),              C(KC_X),              C(KC_C), LT(_CS,_TAP_C_CKC_V), KC_NO, KC_NO,               KC_ENT,              KC_BSPC,               KC_DEL,               KC_SPC,
+                           KC_NO,           MO(_MEDIA),              MO(_CS),                KC_NO, KC_NO, KC_NO,                KC_NO,               KC_ESC,               KC_INS,                KC_NO,
+                       MO(_NAV2),  ALT_T(_TAP_C_CKC_X),  CTL_T(_TAP_C_CKC_C),  SFT_T(_TAP_C_CKC_V), KC_NO, KC_NO,              KC_LEFT,                KC_UP,              KC_DOWN,             KC_RIGHT,
+                         C(KC_Z),              C(KC_W),             NEXT_TAB,          NEXT_WINDOW, KC_NO, KC_NO,               KC_ENT,              KC_BSPC,               KC_DEL,               KC_SPC,
                                            KC_NO,                KC_NO,               KC_TAB,                KC_NO),
 	[_NAV2] = LAYOUT_split_3x5_2(
                            KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
