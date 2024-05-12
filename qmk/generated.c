@@ -31,6 +31,9 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
             case SFT_T(_TAP_C_ALGRKC_Y): layer_on(_LMODS); add_mods(MOD_BIT(KC_LSFT)); return false;
             case CTL_T(_TAP_C_ALGRKC_P): layer_on(_LMODS); add_mods(MOD_BIT(KC_LCTL)); return false;
             case ALT_T(KC_LSFT): layer_on(_LMODS); add_mods(MOD_BIT(KC_LALT)); return false;
+            case _LMODS_S: layer_on(_LMODS); add_mods(MOD_BIT(KC_LSFT)); return false;
+            case _LMODS_C: layer_on(_LMODS); add_mods(MOD_BIT(KC_LCTL)); return false;
+            case _LMODS_A: layer_on(_LMODS); add_mods(MOD_BIT(KC_LALT)); return false;
             case _RMODS_A: layer_on(_RMODS); add_mods(MOD_BIT(KC_LALT)); return false;
             case _RMODS_C: layer_on(_RMODS); add_mods(MOD_BIT(KC_LCTL)); return false;
             case _RMODS_S: layer_on(_RMODS); add_mods(MOD_BIT(KC_LSFT)); return false;
@@ -42,6 +45,9 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
             case SFT_T(_TAP_C_ALGRKC_Y): layer_off(_LMODS); del_mods(MOD_BIT(KC_LSFT)); return false;
             case CTL_T(_TAP_C_ALGRKC_P): layer_off(_LMODS); del_mods(MOD_BIT(KC_LCTL)); return false;
             case ALT_T(KC_LSFT): layer_off(_LMODS); del_mods(MOD_BIT(KC_LALT)); return false;
+            case _LMODS_S: layer_off(_LMODS); del_mods(MOD_BIT(KC_LSFT)); return false;
+            case _LMODS_C: layer_off(_LMODS); del_mods(MOD_BIT(KC_LCTL)); return false;
+            case _LMODS_A: layer_off(_LMODS); del_mods(MOD_BIT(KC_LALT)); return false;
             case _RMODS_A: layer_off(_RMODS); del_mods(MOD_BIT(KC_LALT)); return false;
             case _RMODS_C: layer_off(_RMODS); del_mods(MOD_BIT(KC_LCTL)); return false;
             case _RMODS_S: layer_off(_RMODS); del_mods(MOD_BIT(KC_LSFT)); return false;

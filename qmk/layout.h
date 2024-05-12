@@ -40,6 +40,9 @@ enum custom_keycodes {
     S_COMMA,
     _TAP_C_ALGRKC_Y,
     _TAP_C_ALGRKC_P,
+    _LMODS_S,
+    _LMODS_C,
+    _LMODS_A,
     _RMODS_A,
     _RMODS_C,
     _RMODS_S,
@@ -65,6 +68,9 @@ enum custom_keycodes {
 #define _HANDLER_S_COMMA S_COMMA
 #define _HANDLER__TAP_C_ALGRKC_Y _TAP_C_ALGRKC_Y
 #define _HANDLER__TAP_C_ALGRKC_P _TAP_C_ALGRKC_P
+#define _HANDLER__LMODS_S _LMODS_S
+#define _HANDLER__LMODS_C _LMODS_C
+#define _HANDLER__LMODS_A _LMODS_A
 #define _HANDLER__RMODS_A _RMODS_A
 #define _HANDLER__RMODS_C _RMODS_C
 #define _HANDLER__RMODS_S _RMODS_S
