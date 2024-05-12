@@ -27,7 +27,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     } else {
         if (record->event.pressed) {
             switch (keycode) {
-            case _HANDLER_L_MOUSE: toggle_layer(_MOUSE); return false;
+            case _HANDLER_L_MOUSE: layer_invert(_MOUSE); return false;
             case SFT_T(_TAP_C_ALGRKC_Y): layer_on(_LMODS); add_mods(MOD_BIT(KC_LSFT)); return false;
             case CTL_T(_TAP_C_ALGRKC_P): layer_on(_LMODS); add_mods(MOD_BIT(KC_LCTL)); return false;
             case ALT_T(KC_LSFT): layer_on(_LMODS); add_mods(MOD_BIT(KC_LALT)); return false;
