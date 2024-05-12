@@ -8,6 +8,7 @@ COMB(C_BASE_KC_Q                        , KC_Q                               , K
 COMB(C_BASE_KC_V                        , KC_V                               , KC_L, KC_N)
 COMB(C_BASE_KC_X                        , KC_X                               , KC_M, KC_N)
 COMB(C_BASE_KC_Z                        , KC_Z                               , KC_S, LT(_RIGHT,KC_COMMA))
+COMB(C_BASE_ONE_SHOT_MOUSE              , ONE_SHOT_MOUSE                     , LT(_FN,_TAP_C_ALGRSKC_QUOTE), LT(_SYM,_TAP_C_ALGRKC_QUOTE))
 COMB(C_NAV_RCSKC_V                      , RCS(KC_V)                          , NEXT_WINDOW, SFT_T(_TAP_C_CKC_V))
 COMB(C_NAV_RCSKC_Z                      , RCS(KC_Z)                          , C(KC_Z), MO(_NAV2))
 SUBS(C_BASE_AU                          , "au"                               , KC_A, KC_U)
