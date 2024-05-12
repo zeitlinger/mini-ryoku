@@ -27,6 +27,7 @@ enum custom_keycodes {
 	NEXT_TAB = SAFE_RANGE,
 	NEXT_WINDOW,
     ONE_SHOT_MOUSE,
+    DOT_SPC,
     PRINT_VERSION,
     CAPS_WORDS,
     SNAKE_CASE,
@@ -37,7 +38,6 @@ enum custom_keycodes {
     DOT_CASE,
     KEBAP_CASE,
     _TAP_C_ALGRKC_QUOTE,
-    _TAP_C_ALGRSKC_QUOTE,
     _TAP_C_ALGRKC_Y,
     _TAP_C_ALGRKC_P,
     _RMODS_A,
@@ -52,6 +52,7 @@ enum custom_keycodes {
 #define _HANDLER_NEXT_TAB NEXT_TAB
 #define _HANDLER_NEXT_WINDOW NEXT_WINDOW
 #define _HANDLER_ONE_SHOT_MOUSE ONE_SHOT_MOUSE
+#define _HANDLER_DOT_SPC DOT_SPC
 #define _HANDLER_PRINT_VERSION PRINT_VERSION
 #define _HANDLER_CAPS_WORDS CAPS_WORDS
 #define _HANDLER_SNAKE_CASE SNAKE_CASE
@@ -61,8 +62,7 @@ enum custom_keycodes {
 #define _HANDLER_SLASH_CASE SLASH_CASE
 #define _HANDLER_DOT_CASE DOT_CASE
 #define _HANDLER_KEBAP_CASE KEBAP_CASE
-#define _HANDLER__TAP_C_ALGRKC_QUOTE LT(_SYM,_TAP_C_ALGRKC_QUOTE)
-#define _HANDLER__TAP_C_ALGRSKC_QUOTE LT(_FN,_TAP_C_ALGRSKC_QUOTE)
+#define _HANDLER__TAP_C_ALGRKC_QUOTE LT(_FN,_TAP_C_ALGRKC_QUOTE)
 #define _HANDLER__TAP_C_ALGRKC_Y _TAP_C_ALGRKC_Y
 #define _HANDLER__TAP_C_ALGRKC_P _TAP_C_ALGRKC_P
 #define _HANDLER__RMODS_A _RMODS_A
@@ -75,19 +75,19 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_BASE] = LAYOUT_split_3x5_2(
-                          KC_ESC,                 KC_W,                 KC_M,               KC_SPC, KC_NO, KC_NO,              KC_LGUI, LT(_SYM,_TAP_C_ALGRKC_QUOTE), LT(_FN,_TAP_C_ALGRSKC_QUOTE),                KC_NO,
+                          KC_ESC,                 KC_W,                 KC_M,               KC_SPC, KC_NO, KC_NO,              KC_LGUI, LT(_SYM,QK_REPEAT_KEY), LT(_FN,_TAP_C_ALGRKC_QUOTE),                KC_NO,
                             KC_S,                 KC_C,                 KC_N,                 KC_T, KC_NO, KC_NO,                 KC_A,                 KC_E,                 KC_I,                 KC_H,
              LT(_RIGHT,KC_COMMA),                 KC_F,                 KC_L,                 KC_D, KC_NO, KC_NO,                 KC_U,                 KC_O,                 KC_Y,     LT(_LEFT,KC_DOT),
                                         MO(_NAV),                 KC_R,               KC_SPC,             MO(_NUM)),
 	[_LEFT] = LAYOUT_split_3x5_2(
                        S(KC_ESC),              S(KC_W),              S(KC_M),            S(KC_SPC), KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                          S(KC_S),              S(KC_C),              S(KC_N),              S(KC_T), KC_NO, KC_NO,           ALGR(KC_Q),           ALGR(KC_S),                KC_NO,                KC_NO,
-                         KC_LABK,              S(KC_F),              S(KC_L),              S(KC_D), KC_NO, KC_NO, SFT_T(_TAP_C_ALGRKC_Y), CTL_T(_TAP_C_ALGRKC_P),       ALT_T(KC_LSFT),                KC_NO,
+                         KC_UNDS,              S(KC_F),              S(KC_L),              S(KC_D), KC_NO, KC_NO, SFT_T(_TAP_C_ALGRKC_Y), CTL_T(_TAP_C_ALGRKC_P),       ALT_T(KC_LSFT),                KC_NO,
                                      S(MO(_NAV)),              S(KC_R),               KC_SPC,                KC_NO),
 	[_RIGHT] = LAYOUT_split_3x5_2(
-                           KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,           S(KC_LGUI),              KC_EXLM,              KC_QUES,                KC_NO,
+                           KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,           S(KC_LGUI),              KC_EXLM,    ALGR(S(KC_QUOTE)),                KC_NO,
                            KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,              S(KC_A),              S(KC_E),              S(KC_I),              S(KC_H),
-                           KC_NO,             _RMODS_A,             _RMODS_C,             _RMODS_S, KC_NO, KC_NO,              S(KC_U),              S(KC_O),              S(KC_Y),              KC_RABK,
+                           KC_NO,             _RMODS_A,             _RMODS_C,             _RMODS_S, KC_NO, KC_NO,              S(KC_U),              S(KC_O),              S(KC_Y),              KC_QUES,
                                            KC_NO,                KC_NO,            S(KC_SPC),          S(MO(_NUM))),
 	[_LMODS] = LAYOUT_split_3x5_2(
                           KC_ESC,                 KC_W,                 KC_M,               KC_SPC, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
@@ -95,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                         KC_COMMA,                 KC_F,                 KC_L,                 KC_D, KC_NO, KC_NO,              KC_LSFT,              KC_LCTL,              KC_LALT,                KC_NO,
                                         MO(_NAV),                 KC_R,                KC_NO,                KC_NO),
 	[_RMODS] = LAYOUT_split_3x5_2(
-                           KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,              KC_LGUI,       ALGR(KC_QUOTE),    ALGR(S(KC_QUOTE)),                KC_NO,
+                           KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,              KC_LGUI,        QK_REPEAT_KEY,       ALGR(KC_QUOTE),                KC_NO,
                            KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,                 KC_A,                 KC_E,                 KC_I,                 KC_H,
                            KC_NO,              KC_LALT,              KC_LCTL,              KC_LSFT, KC_NO, KC_NO,                 KC_U,                 KC_O,                 KC_Y,               KC_DOT,
                                            KC_NO,                KC_NO,               KC_SPC,             MO(_NUM)),
@@ -110,14 +110,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                                            KC_NO,                KC_NO,                KC_NO,                KC_NO),
 	[_SYM] = LAYOUT_split_3x5_2(
-                           KC_NO,              KC_AMPR,              KC_ASTR,                KC_NO, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
-                           KC_AT,              KC_HASH,              KC_COLN,              KC_UNDS, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
-                         KC_PERC,                KC_NO,                KC_NO,        ALGR(KC_TILD), KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
-                                   ALGR(KC_CIRC),              KC_LPRN,              KC_RPRN,              KC_PIPE),
+                           KC_NO,              KC_LABK,              KC_RABK,                KC_NO, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
+                           KC_AT,              KC_LPRN,              KC_RPRN,              KC_ASTR, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
+                         KC_PERC,              KC_AMPR,              KC_HASH,        ALGR(KC_TILD), KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
+                                   ALGR(KC_CIRC),              KC_COLN,              KC_PLUS,              KC_PIPE),
 	[_NUM] = LAYOUT_split_3x5_2(
-                           KC_NO,              KC_PLUS,                 KC_9,                KC_NO, KC_NO, KC_NO,                KC_NO,             KC_MINUS,             KC_EQUAL,         KC_BACKSLASH,
+                           KC_NO,         KC_BACKSLASH,                 KC_9,                KC_NO, KC_NO, KC_NO,                KC_NO,              KC_LCBR,              KC_RCBR,                KC_NO,
                             KC_4,          ALT_T(KC_3),          CTL_T(KC_2),          SFT_T(KC_1), KC_NO, KC_NO,        SFT_T(KC_DLR), CTL_T(KC_LEFT_BRACKET), ALT_T(KC_RIGHT_BRACKET),         KC_SEMICOLON,
-                            KC_8,                 KC_7,                 KC_6,                 KC_5, KC_NO, KC_NO,         ALGR(KC_GRV),              KC_LCBR,              KC_RCBR,             KC_SLASH,
+                            KC_8,                 KC_7,                 KC_6,                 KC_5, KC_NO, KC_NO,         ALGR(KC_GRV),             KC_MINUS,             KC_EQUAL,             KC_SLASH,
                                            KC_NO,                 KC_0,                KC_NO,                KC_NO),
 	[_FN] = LAYOUT_split_3x5_2(
                            KC_NO,               KC_F10,                KC_F9,                KC_NO, KC_NO, KC_NO,              KC_LSFT,              KC_LCTL,                KC_NO,              QK_BOOT,
