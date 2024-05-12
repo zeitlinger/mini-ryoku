@@ -14,5 +14,6 @@ COMB(C_BASE_S_COMMA                     , S_COMMA                            , K
 COMB(C_NAV_RCSKC_V                      , RCS(KC_V)                          , NEXT_WINDOW, SFT_T(_TAP_C_CKC_V))
 COMB(C_NAV_RCSKC_Z                      , RCS(KC_Z)                          , C(KC_Z), MO(_NAV2))
 SUBS(C_BASE_AU                          , "au"                               , KC_A, KC_U)
+SUBS(C_BASE_BL                          , "bl"                               , KC_C, KC_M)
 SUBS(C_BASE_EO                          , "eo"                               , KC_E, KC_O)
 SUBS(C_BASE_UA                          , "ua"                               , KC_A, KC_LGUI)
