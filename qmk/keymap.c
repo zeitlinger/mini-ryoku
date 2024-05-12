@@ -133,10 +133,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
         return false;
     #endif
-    #ifdef _HANDLER_N_APOS
-    case _HANDLER_N_APOS:
+    #ifdef _HANDLER_S_COMMA
+    case _HANDLER_S_COMMA:
         if (record->event.pressed) {
-            SEND_STRING("n'");
+            SEND_STRING("s,");
         }
         return false;
     #endif
