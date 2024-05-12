@@ -1,4 +1,4 @@
-// file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/handsdown-vb.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
+// file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
 COMB(C_BASE_DOT_SPC                     , DOT_SPC                            , KC_E, LT(_SYM,QK_REPEAT_KEY))
 COMB(C_BASE_KC_B                        , KC_B                               , KC_C, KC_W)
 COMB(C_BASE_KC_G                        , KC_G                               , KC_SPC, KC_T)
