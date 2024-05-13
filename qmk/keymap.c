@@ -163,22 +163,3 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     }
     return state;
 }
-
-uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
-    switch (keycode) {
-        case KC_A: return KC_U;  // For "AU" bigram.
-        case KC_B: return KC_L;  // For "BL" bigram.
-        case KC_C: return KC_K;  // For "CK" bigram.
-        case KC_E: return KC_O;  // For "EO" bigram.
-        case KC_G: return KC_N;  // For "GN" bigram.
-        case KC_L: return KC_K;  // For "LK" bigram.
-        case KC_M: return KC_P;  // For "MP" bigram.
-        case KC_N: return KC_G;  // For "NG" bigram.
-        case KC_P: return KC_M;  // For "PM" bigram.
-        case KC_R: return KC_K;  // For "RK" bigram.
-        case KC_U: return KC_A;  // For "UA" bigram.
-    }
-
-    return KC_TRNS;
-}
-

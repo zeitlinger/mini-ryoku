@@ -1,10 +1,10 @@
 // file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
 COMB(C_BASE_DOT_SPC                     , DOT_SPC                            , KC_E, QK_REPEAT_KEY)
 COMB(C_BASE_KC_B                        , KC_B                               , KC_C, KC_W)
-COMB(C_BASE_KC_COMMA                    , KC_COMMA                           , KC_I, QK_ALT_REPEAT_KEY)
-COMB(C_BASE_KC_DOT                      , KC_DOT                             , KC_I, KC_Y)
+COMB(C_BASE_KC_COMMA                    , KC_COMMA                           , KC_I, KC_Y)
+COMB(C_BASE_KC_DOT                      , KC_DOT                             , KC_H, MO(_LEFT))
 COMB(C_BASE_KC_G                        , KC_G                               , KC_SPC, KC_T)
-COMB(C_BASE_KC_J                        , KC_J                               , KC_H, MO(_LEFT))
+COMB(C_BASE_KC_J                        , KC_J                               , KC_I, QK_ALT_REPEAT_KEY)
 COMB(C_BASE_KC_K                        , KC_K                               , KC_D, KC_T)
 COMB(C_BASE_KC_P                        , KC_P                               , KC_C, KC_F)
 COMB(C_BASE_KC_Q                        , KC_Q                               , KC_E, KC_O)

@@ -57,3 +57,21 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
         return false;
     }
 }
+
+uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
+    switch (keycode) {
+        case KC_A: return KC_U;
+        case KC_B: return KC_L;
+        case KC_C: return KC_K;
+        case KC_E: return KC_O;
+        case KC_G: return KC_N;
+        case KC_L: return KC_K;
+        case KC_M: return KC_P;
+        case KC_N: return KC_G;
+        case KC_P: return KC_M;
+        case KC_R: return KC_K;
+        case KC_U: return KC_A;
+    }
+
+    return KC_TRNS;
+}
