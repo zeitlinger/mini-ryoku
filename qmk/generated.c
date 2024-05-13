@@ -15,7 +15,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     if (record->tap.count) {
         if (record->event.pressed) {
             switch (keycode) {
-            case _HANDLER__TAP_C_CKC_W: tap_code16(C(KC_W)); return false;
+            
             default:
                 break;
             }
@@ -51,7 +51,6 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-    case LT(_NV2,_TAP_C_CKC_W): return true;
     case LT(_FN,KC_SEMICOLON): return true;
     default:
         // Do not select the hold action when another key is pressed.
