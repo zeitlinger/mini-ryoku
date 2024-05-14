@@ -23,6 +23,10 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     } else {
         if (record->event.pressed) {
             switch (keycode) {
+            case _HANDLER_ALT_REPEAT_KC_F: SEND_STRING("or"); return false;
+            case _HANDLER_ALT_REPEAT_KC_V: SEND_STRING("er"); return false;
+            case _HANDLER_ALT_REPEAT_KC_COMMA: SEND_STRING(" but"); return false;
+            case _HANDLER_ALT_REPEAT_KC_SPC: SEND_STRING("the"); return false;
             case _HANDLER_L_MOUSE: layer_invert(_MOUSE); return false;
             case _LMODS_S: layer_on(_LMODS); add_mods(MOD_BIT(KC_LSFT)); return false;
             case _LMODS_C: layer_on(_LMODS); add_mods(MOD_BIT(KC_LCTL)); return false;
@@ -64,9 +68,11 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         case KC_A: return KC_U;
         case KC_B: return KC_L;
         case KC_C: return KC_K;
+        case KC_COMMA: return ALT_REPEAT_KC_COMMA;
         case KC_D: return KC_G;
         case KC_DOT: return KC_SLASH;
         case KC_E: return KC_O;
+        case KC_F: return ALT_REPEAT_KC_F;
         case KC_G: return KC_L;
         case KC_L: return KC_K;
         case KC_M: return KC_P;
@@ -74,7 +80,9 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         case KC_P: return KC_M;
         case KC_R: return KC_K;
         case KC_S: return KC_P;
+        case KC_SPC: return ALT_REPEAT_KC_SPC;
         case KC_U: return KC_A;
+        case KC_V: return ALT_REPEAT_KC_V;
         case KC_W: return KC_S;
     }
 
