@@ -22,7 +22,7 @@ COMB(C_LEFT_SKC_Z                       , S(KC_Z)                            , K
 COMB(C_NAV_CKC_C                        , C(KC_C)                            , KC_LCTL, NEXT_TAB)
 COMB(C_NAV_CKC_V                        , C(KC_V)                            , KC_LSFT, NEXT_WINDOW)
 COMB(C_NAV_CKC_X                        , C(KC_X)                            , C(KC_W), KC_LALT)
-COMB(C_NAV_RCSKC_V                      , RCS(KC_V)                          , KC_LSFT, KC_NO)
+COMB(C_NAV_RCSKC_V                      , RCS(KC_V)                          , KC_LGUI, KC_LSFT)
 COMB(C_NAV_RCSKC_Z                      , RCS(KC_Z)                          , C(KC_Z), MO(_NAV2))
 COMB(C_RIGHT_SKC_J                      , S(KC_J)                            , ALGR(S(KC_QUOTE)), S(KC_I))
 COMB(C_RIGHT_SKC_Q                      , S(KC_Q)                            , S(KC_I), S(KC_Y))
