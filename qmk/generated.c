@@ -23,11 +23,11 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     } else {
         if (record->event.pressed) {
             switch (keycode) {
+            case _HANDLER_L_MOUSE: layer_invert(_MOUSE); return false;
             case _HANDLER_ALT_REPEAT_KC_F: SEND_STRING("or"); return false;
             case _HANDLER_ALT_REPEAT_KC_V: SEND_STRING("er"); return false;
-            case _HANDLER_ALT_REPEAT_KC_COMMA: SEND_STRING(" but"); return false;
             case _HANDLER_ALT_REPEAT_KC_SPC: SEND_STRING("the"); return false;
-            case _HANDLER_L_MOUSE: layer_invert(_MOUSE); return false;
+            case _HANDLER_ALT_REPEAT_KC_COMMA: SEND_STRING(" but"); return false;
             case _LMODS_S: layer_on(_LMODS); add_mods(MOD_BIT(KC_LSFT)); return false;
             case _LMODS_C: layer_on(_LMODS); add_mods(MOD_BIT(KC_LCTL)); return false;
             case _LMODS_A: layer_on(_LMODS); add_mods(MOD_BIT(KC_LALT)); return false;
