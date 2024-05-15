@@ -15,7 +15,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     if (record->tap.count) {
         if (record->event.pressed) {
             switch (keycode) {
-            
+            case _HANDLER__TAP_C_SKC_4: tap_code16(S(KC_4)); return false;
             default:
                 break;
             }
@@ -75,12 +75,12 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         case KC_E: return KC_O;
         case KC_F: return ALT_REPEAT_KC_F;
         case KC_G: return KC_L;
-        case KC_L: return KC_K;
+        case KC_L: return KC_L;
         case KC_M: return KC_P;
         case KC_N: return KC_G;
         case KC_P: return KC_M;
         case KC_R: return KC_K;
-        case KC_S: return KC_P;
+        case KC_S: return KC_S;
         case KC_SPC: return ALT_REPEAT_KC_SPC;
         case KC_T: return ALT_REPEAT_KC_T;
         case KC_U: return KC_A;
