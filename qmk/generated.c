@@ -25,6 +25,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
             switch (keycode) {
             case _HANDLER_L_MOUSE: layer_invert(_MOUSE); return false;
             case _HANDLER_ALT_REPEAT_KC_F: SEND_STRING("or"); return false;
+            case _HANDLER_ALT_REPEAT_KC_T: SEND_STRING("ion"); return false;
             case _HANDLER_ALT_REPEAT_KC_V: SEND_STRING("er"); return false;
             case _HANDLER_ALT_REPEAT_KC_SPC: SEND_STRING("the"); return false;
             case _HANDLER_ALT_REPEAT_KC_COMMA: SEND_STRING(" but"); return false;
@@ -81,6 +82,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         case KC_R: return KC_K;
         case KC_S: return KC_P;
         case KC_SPC: return ALT_REPEAT_KC_SPC;
+        case KC_T: return ALT_REPEAT_KC_T;
         case KC_U: return KC_A;
         case KC_V: return ALT_REPEAT_KC_V;
         case KC_W: return KC_S;
