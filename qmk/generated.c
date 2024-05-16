@@ -29,23 +29,6 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
             case _HANDLER_ALT_REPEAT_KC_V: SEND_STRING("er"); return false;
             case _HANDLER_ALT_REPEAT_KC_SPC: SEND_STRING("the"); return false;
             case _HANDLER_ALT_REPEAT_KC_COMMA: SEND_STRING(" but"); return false;
-            case _LMODS_S: layer_on(_LMODS); add_mods(MOD_BIT(KC_LSFT)); return false;
-            case _LMODS_C: layer_on(_LMODS); add_mods(MOD_BIT(KC_LCTL)); return false;
-            case _LMODS_A: layer_on(_LMODS); add_mods(MOD_BIT(KC_LALT)); return false;
-            case _RMODS_A: layer_on(_RMODS); add_mods(MOD_BIT(KC_LALT)); return false;
-            case _RMODS_C: layer_on(_RMODS); add_mods(MOD_BIT(KC_LCTL)); return false;
-            case _RMODS_S: layer_on(_RMODS); add_mods(MOD_BIT(KC_LSFT)); return false;
-            default:
-                break;
-            }
-        } else {
-            switch (keycode) {
-            case _LMODS_S: layer_off(_LMODS); del_mods(MOD_BIT(KC_LSFT)); return false;
-            case _LMODS_C: layer_off(_LMODS); del_mods(MOD_BIT(KC_LCTL)); return false;
-            case _LMODS_A: layer_off(_LMODS); del_mods(MOD_BIT(KC_LALT)); return false;
-            case _RMODS_A: layer_off(_RMODS); del_mods(MOD_BIT(KC_LALT)); return false;
-            case _RMODS_C: layer_off(_RMODS); del_mods(MOD_BIT(KC_LCTL)); return false;
-            case _RMODS_S: layer_off(_RMODS); del_mods(MOD_BIT(KC_LSFT)); return false;
             default:
                 break;
             }

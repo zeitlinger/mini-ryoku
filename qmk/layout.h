@@ -89,22 +89,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_LEFT] = LAYOUT_split_3x5_2(
                        S(KC_ESC),              S(KC_W),              S(KC_M),            S(KC_SPC), KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                          S(KC_S),              S(KC_C),              S(KC_N),              S(KC_T), KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
-                         KC_UNDS,              S(KC_F),              S(KC_L),              S(KC_D), KC_NO, KC_NO,             _LMODS_S,             _LMODS_C,             _LMODS_A,                KC_NO,
+                         KC_UNDS,              S(KC_F),              S(KC_L),              S(KC_D), KC_NO, KC_NO, LM(_LMODS, MOD_LSFT), LM(_LMODS, MOD_LCTL), LM(_LMODS, MOD_LALT),                KC_NO,
                                            KC_NO,              S(KC_R),               KC_SPC,                KC_NO),
 	[_RIGHT] = LAYOUT_split_3x5_2(
                            KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,           S(KC_LGUI),              DOT_SPC,    ALGR(S(KC_QUOTE)),                KC_NO,
                            KC_NO,                KC_NO,          MO(_UMLAUT),            MO(_CASE), KC_NO, KC_NO,              S(KC_A),              S(KC_E),              S(KC_I),              S(KC_H),
-                           KC_NO,             _RMODS_A,             _RMODS_C,             _RMODS_S, KC_NO, KC_NO,              S(KC_U),              S(KC_O),              S(KC_Y),              KC_QUES,
+                           KC_NO, LM(_RMODS, MOD_LALT), LM(_RMODS, MOD_LCTL), LM(_RMODS, MOD_LSFT), KC_NO, KC_NO,              S(KC_U),              S(KC_O),              S(KC_Y),              KC_QUES,
                                            KC_NO,                KC_NO,            S(KC_SPC),                KC_NO),
 	[_LMODS] = LAYOUT_split_3x5_2(
                           KC_ESC,                 KC_W,                 KC_M,               KC_SPC, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                             KC_S,                 KC_C,                 KC_N,                 KC_T, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
-                           KC_NO,                 KC_F,                 KC_L,                 KC_D, KC_NO, KC_NO,              KC_LSFT,              KC_LCTL,              KC_LALT,                KC_NO,
+                           KC_NO,                 KC_F,                 KC_L,                 KC_D, KC_NO, KC_NO, LM(_LMODS, MOD_LSFT), LM(_LMODS, MOD_LCTL), LM(_LMODS, MOD_LALT),                KC_NO,
                                            KC_NO,                 KC_R,                KC_NO,                KC_NO),
 	[_RMODS] = LAYOUT_split_3x5_2(
                            KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,              KC_LGUI,                KC_NO,    QK_ALT_REPEAT_KEY,                KC_NO,
                            KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,                 KC_A,                 KC_E,                 KC_I,                 KC_H,
-                           KC_NO,              KC_LALT,              KC_LCTL,              KC_LSFT, KC_NO, KC_NO,                 KC_U,                 KC_O,                 KC_Y,                KC_NO,
+                           KC_NO, LM(_RMODS, MOD_LALT), LM(_RMODS, MOD_LCTL), LM(_RMODS, MOD_LSFT), KC_NO, KC_NO,                 KC_U,                 KC_O,                 KC_Y,                KC_NO,
                                            KC_NO,                KC_NO,               KC_SPC,                KC_NO),
 	[_NAV] = LAYOUT_split_3x5_2(
                            KC_NO,                KC_NO,             A(KC_F7),              KC_LGUI, KC_NO, KC_NO,                KC_NO,               KC_ESC,               KC_INS,                KC_NO,
