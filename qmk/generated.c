@@ -61,7 +61,8 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         case KC_E: return KC_O;
         case KC_ENT: return ALT_REPEAT_KC_ENT;
         case KC_F: return KC_F;
-        case KC_G: return KC_L;
+        case KC_G: return KC_N;
+        case KC_K: return KC_N;
         case KC_L: return KC_L;
         case KC_M: return KC_B;
         case KC_N: return KC_G;
