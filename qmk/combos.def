@@ -28,5 +28,3 @@ COMB(SC_BASE_KC_Z                       , S(KC_Z)                            , S
 COMB(SC_BASE_ONE_SHOT_MOUSE             , S(ONE_SHOT_MOUSE)                  , DOT_SPC, S(QK_ALT_REPEAT_KEY))
 SUBS(C_BASE_ING                         , "ing"                              , KC_A, KC_U)
 SUBS(C_BASE_ION                         , "ion"                              , KC_A, KC_LGUI)
-SUBS(SC_BASE_ING                        , S("ing")                           , S(KC_A), S(KC_U))
-SUBS(SC_BASE_ION                        , S("ion")                           , S(KC_A), S(KC_LGUI))
