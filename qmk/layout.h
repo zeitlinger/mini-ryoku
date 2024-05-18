@@ -3,10 +3,10 @@
 
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/9d980dcf021396d58eb170a9a85caf919b1e3220/README.md using https://github.com/zeitlinger/keyboard/blob/9d980dcf021396d58eb170a9a85caf919b1e3220/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
  */
 
-#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/9d980dcf021396d58eb170a9a85caf919b1e3220/README.md"
+#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md"
 
 #define _BASE 0
 #define _LEFT 1
@@ -46,7 +46,6 @@ enum custom_keycodes {
     L_MOUSE,
     ALT_KC_D,
     ALT_KC_J,
-    ALT_KC_T,
     ALT_KC_V,
     ALT_KC_Z,
     ALT_KC_SPC,
@@ -77,7 +76,6 @@ enum custom_keycodes {
 #define _HANDLER_L_MOUSE L_MOUSE
 #define _HANDLER_ALT_KC_D ALT_KC_D
 #define _HANDLER_ALT_KC_J ALT_KC_J
-#define _HANDLER_ALT_KC_T ALT_KC_T
 #define _HANDLER_ALT_KC_V ALT_KC_V
 #define _HANDLER_ALT_KC_Z ALT_KC_Z
 #define _HANDLER_ALT_KC_SPC ALT_KC_SPC
