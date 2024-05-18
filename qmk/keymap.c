@@ -5,6 +5,26 @@
 
 #include QMK_KEYBOARD_H
 
+enum unicode_names {
+    UMLAUT_A,
+    UMLAUT_a,
+    UMLAUT_O,
+    UMLAUT_o,
+    UMLAUT_U,
+    UMLAUT_u,
+    UMLAUT_s
+};
+
+const uint32_t PROGMEM unicode_map[] = {
+    [UMLAUT_a]  = 0x00E4, // ä
+    [UMLAUT_A]  = 0x00C4, // Ä
+    [UMLAUT_o]  = 0x00F6, // ö
+    [UMLAUT_O]  = 0x00D6, // Ö
+    [UMLAUT_u]  = 0x00FC, // ü
+    [UMLAUT_U]  = 0x00DC, // Ü
+    [UMLAUT_s]  = 0x00DF // ß
+};
+
 #include "layout.h"
 
 /* for >34 key users, replace this line with an include statement for the mask file */
@@ -164,23 +184,3 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     }
     return state;
 }
-
-enum unicode_names {
-    UMLAUT_A,
-    UMLAUT_a,
-    UMLAUT_O,
-    UMLAUT_o,
-    UMLAUT_U,
-    UMLAUT_u,
-    UMLAUT_S
-};
-
-const uint32_t PROGMEM unicode_map[] = {
-    [UMLAUT_a]  = 0x00E4, // ä
-    [UMLAUT_A]  = 0x00C4, // Ä
-    [UMLAUT_o]  = 0x00F6, // ö
-    [UMLAUT_O]  = 0x00D6, // Ö
-    [UMLAUT_u]  = 0x00FC, // ü
-    [UMLAUT_U]  = 0x00DC, // Ü
-    [UMLAUT_S]  = 0x00DF // ß
-};
