@@ -39,7 +39,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
                 case KC_T: SEND_STRING("hat"); return false;
                 case KC_TAB: SEND_STRING("and"); return false;
                 case KC_W: SEND_STRING("hich"); return false;
-                case KC_X: SEND_STRING("es"); return false;
+                case KC_X: tap_code16(KC_T); return false;
                 case KC_Y: tap_code16(KC_I); return false;
                 }
             }
@@ -47,6 +47,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
             case _HANDLER_L_MOUSE: layer_invert(_MOUSE); return false;
             case _HANDLER_ALT_KC_D: SEND_STRING("oes"); return false;
             case _HANDLER_ALT_KC_J: SEND_STRING("ust"); return false;
+            case _HANDLER_ALT_KC_T: SEND_STRING("ion"); return false;
             case _HANDLER_ALT_KC_V: SEND_STRING("er"); return false;
             case _HANDLER_ALT_KC_Z: SEND_STRING("eitlinger"); return false;
             case _HANDLER_ALT_KC_SPC: SEND_STRING("the"); return false;
@@ -94,13 +95,13 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         case KC_R: return KC_K;
         case KC_S: return KC_P;
         case KC_SPC: return ALT_KC_SPC;
-        case KC_T: return KC_T;
+        case KC_T: return ALT_KC_T;
         case KC_TAB: return ALT_KC_TAB;
         case KC_TILD: return KC_SLASH;
         case KC_U: return KC_A;
         case KC_V: return ALT_KC_V;
         case KC_W: return KC_N;
-        case KC_X: return KC_T;
+        case KC_X: return KC_P;
         case KC_Z: return ALT_KC_Z;
     }
 
