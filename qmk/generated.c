@@ -31,6 +31,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
                 case KC_ENT: SEND_STRING("and"); return false;
                 case KC_G: tap_code16(KC_L); return false;
                 case KC_H: SEND_STRING("ave"); return false;
+                case KC_K: tap_code16(KC_S); return false;
                 case KC_L: SEND_STRING("ly"); return false;
                 case KC_M: SEND_STRING("ent"); return false;
                 case KC_N: tap_code16(KC_L); return false;
