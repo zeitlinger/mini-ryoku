@@ -37,7 +37,6 @@ enum custom_keycodes {
     SLASH_CASE,
     DOT_CASE,
     KEBAP_CASE,
-    OS_TOGG,
     _LMODS_S,
     _LMODS_C,
     _LMODS_A,
@@ -69,7 +68,6 @@ enum custom_keycodes {
 #define _HANDLER_SLASH_CASE SLASH_CASE
 #define _HANDLER_DOT_CASE DOT_CASE
 #define _HANDLER_KEBAP_CASE KEBAP_CASE
-#define _HANDLER_OS_TOGG OS_TOGG
 #define _HANDLER__LMODS_S _LMODS_S
 #define _HANDLER__LMODS_C _LMODS_C
 #define _HANDLER__LMODS_A _LMODS_A
