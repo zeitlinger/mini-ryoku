@@ -1,4 +1,4 @@
-// file is generated from https://github.com/zeitlinger/keyboard/blob/4c22621901ab3702823b4b81e2d8731b3aaafb14/README.md using https://github.com/zeitlinger/keyboard/blob/4c22621901ab3702823b4b81e2d8731b3aaafb14/generateKeyboard.kt
+// file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
 COMB(C_BASE_DOT_SPC                     , DOT_SPC                            , KC_O, MO(_RIGHT))
 COMB(C_BASE_KC_AMPR                     , KC_AMPR                            , KC_F, MO(_LEFT))
 COMB(C_BASE_KC_ASTR                     , KC_ASTR                            , KC_M, MO(_LEFT))
@@ -37,5 +37,5 @@ COMB(C_NAV_CKC_X                        , C(KC_X)                            , C
 COMB(C_NAV_KC_LGUI                      , KC_LGUI                            , A(KC_F7), KC_LCTL)
 COMB(C_NAV_RCSKC_F                      , RCS(KC_F)                          , C(KC_F), KC_LALT)
 COMB(C_NAV_RCSKC_V                      , RCS(KC_V)                          , KC_LSFT, RCS(KC_Z))
-SUBS(C_BASE_ING                         , "ing"                              , KC_A, KC_F13)
+SUBS(C_BASE_ING                         , "ing"                              , KC_A, KC_F14)
 SUBS(C_BASE_ION                         , "ion"                              , KC_A, KC_U)
