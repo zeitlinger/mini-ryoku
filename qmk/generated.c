@@ -42,6 +42,24 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
                 case KC_W: SEND_STRING("hich"); return false;
                 case KC_X: tap_code16(KC_T); return false;
                 case KC_Y: tap_code16(KC_I); return false;
+                case S(KC_B): SEND_STRING("ecauce"); return false;
+                case S(KC_COMMA): SEND_STRING(" and"); return false;
+                case S(KC_D): tap_code16(KC_V); return false;
+                case S(KC_DOT): SEND_STRING("./"); return false;
+                case S(KC_ENT): SEND_STRING("and"); return false;
+                case S(KC_G): tap_code16(KC_L); return false;
+                case S(KC_H): SEND_STRING("ave"); return false;
+                case S(KC_K): tap_code16(KC_S); return false;
+                case S(KC_L): SEND_STRING("ly"); return false;
+                case S(KC_M): SEND_STRING("ent"); return false;
+                case S(KC_N): tap_code16(KC_L); return false;
+                case S(KC_P): tap_code16(KC_S); return false;
+                case S(KC_SPC): SEND_STRING("and"); return false;
+                case S(KC_T): SEND_STRING("hat"); return false;
+                case S(KC_TAB): SEND_STRING("and"); return false;
+                case S(KC_W): SEND_STRING("hich"); return false;
+                case S(KC_X): tap_code16(KC_T); return false;
+                case S(KC_Y): tap_code16(KC_I); return false;
                 }
             }
             switch (keycode) {
@@ -105,6 +123,37 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         case KC_W: return KC_N;
         case KC_X: return KC_P;
         case KC_Z: return ALT_KC_Z;
+        case S(KC_A): return KC_U;
+        case S(KC_B): return KC_L;
+        case S(KC_C): return KC_K;
+        case S(KC_COMMA): return ALT_KC_COMMA;
+        case S(KC_D): return ALT_KC_D;
+        case S(KC_DOT): return KC_SLASH;
+        case S(KC_E): return KC_O;
+        case S(KC_ENT): return ALT_KC_ENT;
+        case S(KC_EQUAL): return KC_RABK;
+        case S(KC_F): return KC_F;
+        case S(KC_G): return KC_N;
+        case S(KC_J): return ALT_KC_J;
+        case S(KC_K): return KC_N;
+        case S(KC_L): return KC_L;
+        case S(KC_M): return KC_B;
+        case S(KC_MINUS): return KC_RABK;
+        case S(KC_N): return KC_G;
+        case S(KC_O): return KC_E;
+        case S(KC_P): return KC_L;
+        case S(KC_Q): return KC_U;
+        case S(KC_R): return KC_K;
+        case S(KC_S): return KC_P;
+        case S(KC_SPC): return ALT_KC_SPC;
+        case S(KC_T): return ALT_KC_T;
+        case S(KC_TAB): return ALT_KC_TAB;
+        case S(KC_TILD): return KC_SLASH;
+        case S(KC_U): return KC_A;
+        case S(KC_V): return ALT_KC_V;
+        case S(KC_W): return KC_N;
+        case S(KC_X): return KC_P;
+        case S(KC_Z): return ALT_KC_Z;
     }
 
     return KC_TRNS;
