@@ -80,10 +80,6 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-    case LT(_NUM,KC_0): return true;
-    case LT(_MED,DOT_SPC): return true;
-    case LT(_UML,KC_8): return true;
-    case LT(_CASE,KC_9): return true;
     case LT(_NUM,KC_SEMICOLON): return true;
     default:
         // Do not select the hold action when another key is pressed.
