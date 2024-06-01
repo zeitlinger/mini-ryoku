@@ -32,7 +32,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
                 case KC_G: tap_code16(KC_L); return false;
                 case KC_H: SEND_STRING("ave"); return false;
                 case KC_K: tap_code16(KC_S); return false;
-                case KC_L: SEND_STRING("ly"); return false;
+                case KC_L: tap_code16(KC_M); return false;
                 case KC_M: SEND_STRING("ent"); return false;
                 case KC_N: tap_code16(KC_K); return false;
                 case KC_P: tap_code16(KC_S); return false;
@@ -40,7 +40,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
                 case KC_T: SEND_STRING("hat"); return false;
                 case KC_TAB: SEND_STRING("and"); return false;
                 case KC_W: SEND_STRING("hich"); return false;
-                case KC_X: tap_code16(KC_T); return false;
+                case KC_X: tap_code16(KC_C); return false;
                 case KC_Y: tap_code16(KC_I); return false;
                 case KC_Z: tap_code16(KC_I); return false;
                 case S(KC_B): SEND_STRING("ecauce"); return false;
@@ -48,13 +48,13 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
                 case S(KC_G): tap_code16(KC_L); return false;
                 case S(KC_H): SEND_STRING("ave"); return false;
                 case S(KC_K): tap_code16(KC_S); return false;
-                case S(KC_L): SEND_STRING("ly"); return false;
+                case S(KC_L): tap_code16(KC_M); return false;
                 case S(KC_M): SEND_STRING("ent"); return false;
                 case S(KC_N): tap_code16(KC_K); return false;
                 case S(KC_P): tap_code16(KC_S); return false;
                 case S(KC_T): SEND_STRING("hat"); return false;
                 case S(KC_W): SEND_STRING("hich"); return false;
-                case S(KC_X): tap_code16(KC_T); return false;
+                case S(KC_X): tap_code16(KC_C); return false;
                 case S(KC_Y): tap_code16(KC_I); return false;
                 case S(KC_Z): tap_code16(KC_I); return false;
                 }
@@ -101,6 +101,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         case KC_EQUAL: return KC_RABK;
         case KC_F: return KC_F;
         case KC_G: return KC_N;
+        case KC_I: return KC_Z;
         case KC_J: return ALT_KC_J;
         case KC_K: return ALT_KC_K;
         case KC_L: return KC_L;
@@ -128,6 +129,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         case S(KC_E): return KC_O;
         case S(KC_F): return KC_F;
         case S(KC_G): return KC_N;
+        case S(KC_I): return KC_Z;
         case S(KC_J): return ALT_KC_J;
         case S(KC_K): return ALT_KC_K;
         case S(KC_L): return KC_L;

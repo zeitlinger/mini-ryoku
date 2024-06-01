@@ -6,7 +6,7 @@
 
 #define EXTRA_SHORT_COMBOS
 #define COMBO_STRICT_TIMER
-#define COMBO_TERM 30        // how quickly all combo keys must be pressed in succession to trigger
+#define COMBO_TERM 20        // how quickly all combo keys must be pressed in succession to trigger
 //#define COMBO_TERM_PER_COMBO
 //#define COMBO_SHOULD_TRIGGER
 
