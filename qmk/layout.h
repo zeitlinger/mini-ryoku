@@ -46,6 +46,7 @@ enum custom_keycodes {
     L_MOUSE,
     ALT_KC_D,
     ALT_KC_J,
+    ALT_KC_K,
     ALT_KC_T,
     ALT_KC_V,
     ALT_KC_Z,
@@ -77,6 +78,7 @@ enum custom_keycodes {
 #define _HANDLER_L_MOUSE L_MOUSE
 #define _HANDLER_ALT_KC_D ALT_KC_D
 #define _HANDLER_ALT_KC_J ALT_KC_J
+#define _HANDLER_ALT_KC_K ALT_KC_K
 #define _HANDLER_ALT_KC_T ALT_KC_T
 #define _HANDLER_ALT_KC_V ALT_KC_V
 #define _HANDLER_ALT_KC_Z ALT_KC_Z
