@@ -42,6 +42,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
                 case KC_W: SEND_STRING("hich"); return false;
                 case KC_X: tap_code16(KC_T); return false;
                 case KC_Y: tap_code16(KC_I); return false;
+                case KC_Z: tap_code16(KC_I); return false;
                 case S(KC_B): SEND_STRING("ecauce"); return false;
                 case S(KC_COMMA): SEND_STRING(" and"); return false;
                 case S(KC_D): tap_code16(KC_V); return false;
@@ -60,6 +61,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
                 case S(KC_W): SEND_STRING("hich"); return false;
                 case S(KC_X): tap_code16(KC_T); return false;
                 case S(KC_Y): tap_code16(KC_I); return false;
+                case S(KC_Z): tap_code16(KC_I); return false;
                 }
             }
             switch (keycode) {
@@ -83,7 +85,11 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-    case LT(_FN,KC_SEMICOLON): return true;
+    case LT(_NUM,KC_0): return true;
+    case LT(_MED,DOT_SPC): return true;
+    case LT(_UML,KC_8): return true;
+    case LT(_CASE,KC_9): return true;
+    case LT(_NUM,KC_SEMICOLON): return true;
     default:
         // Do not select the hold action when another key is pressed.
         return false;
