@@ -21,7 +21,6 @@
 #define _MOUSE2 10
 #define _CASE 11
 #define _MEDIA 12
-#define _UMLAUT 13
 
 enum custom_keycodes {
 	NEXT_TAB = SAFE_RANGE,
@@ -45,8 +44,8 @@ enum custom_keycodes {
     _RMODS_S,
     L_MOUSE,
     ALT_KC_D,
+    ALT_KC_H,
     ALT_KC_J,
-    ALT_KC_K,
     ALT_KC_T,
     ALT_KC_V,
     ALT_KC_Z,
@@ -77,8 +76,8 @@ enum custom_keycodes {
 #define _HANDLER__RMODS_S _RMODS_S
 #define _HANDLER_L_MOUSE L_MOUSE
 #define _HANDLER_ALT_KC_D ALT_KC_D
+#define _HANDLER_ALT_KC_H ALT_KC_H
 #define _HANDLER_ALT_KC_J ALT_KC_J
-#define _HANDLER_ALT_KC_K ALT_KC_K
 #define _HANDLER_ALT_KC_T ALT_KC_T
 #define _HANDLER_ALT_KC_V ALT_KC_V
 #define _HANDLER_ALT_KC_Z ALT_KC_Z
@@ -96,12 +95,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_LEFT] = LAYOUT_split_3x5_2(
                        S(KC_ESC),              S(KC_P),              S(KC_M),            S(KC_F15), KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                          S(KC_S),              S(KC_C),              S(KC_N),              S(KC_T), KC_NO, KC_NO,             MO(_NUM),           MO(_MEDIA),                KC_NO,                KC_NO,
-                          KC_F18,              S(KC_F),              S(KC_L),              S(KC_D), KC_NO, KC_NO, LM(_LMODS, MOD_LSFT), LM(_LMODS, MOD_LCTL), LM(_LMODS, MOD_LALT),                KC_NO,
+                    UM(UMLAUT_s),              S(KC_F),              S(KC_L),              S(KC_D), KC_NO, KC_NO, LM(_LMODS, MOD_LSFT), LM(_LMODS, MOD_LCTL), LM(_LMODS, MOD_LALT),                KC_NO,
                                            KC_NO,              S(KC_R),                KC_NO,                KC_NO),
 	[_RIGHT] = LAYOUT_split_3x5_2(
-                           KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,            S(KC_F16),     S(QK_REPEAT_KEY), S(QK_ALT_REPEAT_KEY),                KC_NO,
-                           KC_NO,                KC_NO,          MO(_UMLAUT),            MO(_CASE), KC_NO, KC_NO,              S(KC_A),              S(KC_E),              S(KC_I),              S(KC_H),
-                           KC_NO, LM(_RMODS, MOD_LALT), LM(_RMODS, MOD_LCTL), LM(_RMODS, MOD_LSFT), KC_NO, KC_NO,              S(KC_U),              S(KC_O),              S(KC_Y),               KC_F17,
+                           KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,            S(KC_F16), UP(UMLAUT_a, UMLAUT_A), UP(UMLAUT_o, UMLAUT_O),                KC_NO,
+                           KC_NO,                KC_NO,                KC_NO,            MO(_CASE), KC_NO, KC_NO,              S(KC_A),              S(KC_E),              S(KC_I),              S(KC_H),
+                           KC_NO, LM(_RMODS, MOD_LALT), LM(_RMODS, MOD_LCTL), LM(_RMODS, MOD_LSFT), KC_NO, KC_NO,              S(KC_U),              S(KC_O),              S(KC_Y), UP(UMLAUT_u, UMLAUT_U),
                                            KC_NO,                KC_NO,            S(KC_SPC),                KC_NO),
 	[_LMODS] = LAYOUT_split_3x5_2(
                           KC_ESC,                 KC_P,                 KC_M,               KC_F15, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
@@ -109,9 +108,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            KC_NO,                 KC_F,                 KC_L,                 KC_D, KC_NO, KC_NO, LM(_LMODS, MOD_LSFT), LM(_LMODS, MOD_LCTL), LM(_LMODS, MOD_LALT),                KC_NO,
                                            KC_NO,                 KC_R,                KC_NO,                KC_NO),
 	[_RMODS] = LAYOUT_split_3x5_2(
-                           KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,               KC_F16,        QK_REPEAT_KEY,    QK_ALT_REPEAT_KEY,                KC_NO,
+                           KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,               KC_F16, UP(UMLAUT_a, UMLAUT_A), UP(UMLAUT_o, UMLAUT_O),                KC_NO,
                            KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,                 KC_A,                 KC_E,                 KC_I,                 KC_H,
-                           KC_NO, LM(_RMODS, MOD_LALT), LM(_RMODS, MOD_LCTL), LM(_RMODS, MOD_LSFT), KC_NO, KC_NO,                 KC_U,                 KC_O,                 KC_Y,                KC_NO,
+                           KC_NO, LM(_RMODS, MOD_LALT), LM(_RMODS, MOD_LCTL), LM(_RMODS, MOD_LSFT), KC_NO, KC_NO,                 KC_U,                 KC_O,                 KC_Y, UP(UMLAUT_u, UMLAUT_U),
                                            KC_NO,                KC_NO,               KC_SPC,                KC_NO),
 	[_NAV] = LAYOUT_split_3x5_2(
                            KC_F4,              C(KC_F),             A(KC_F7),            RCS(KC_Z), KC_NO, KC_NO,                KC_NO,               KC_ESC,               KC_INS,                KC_NO,
@@ -152,10 +151,5 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          QK_BOOT,              KC_BRID,              KC_BRIU,              OS_TOGG, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                          KC_PSCR,              KC_VOLD,              KC_VOLU,              KC_MUTE, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                    PRINT_VERSION,              KC_MPRV,              KC_MNXT,              KC_MPLY, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
-                                           KC_NO,                KC_NO,                KC_NO,                KC_NO),
-	[_UMLAUT] = LAYOUT_split_3x5_2(
-                           KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
-                           KC_NO,                KC_NO,                KC_NO,              KC_LSFT, KC_NO, KC_NO, UP(UMLAUT_a, UMLAUT_A),         UM(UMLAUT_s),                KC_NO,                KC_NO,
-                           KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO, UP(UMLAUT_u, UMLAUT_U), UP(UMLAUT_o, UMLAUT_O),                KC_NO,                KC_NO,
                                            KC_NO,                KC_NO,                KC_NO,                KC_NO),
 };
