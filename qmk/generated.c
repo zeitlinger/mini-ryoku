@@ -15,9 +15,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     if (record->tap.count) {
         if (record->event.pressed) {
             switch (keycode) {
-            case _HANDLER__TAP_C_CKC_C: tap_code16(C(KC_C)); return false;
-            case _HANDLER__TAP_C_CKC_V: tap_code16(C(KC_V)); return false;
-            case _HANDLER__TAP_C_CKC_X: tap_code16(C(KC_X)); return false;
+            
             default:
                 break;
             }

@@ -42,9 +42,6 @@ enum custom_keycodes {
     _RMODS_A,
     _RMODS_C,
     _RMODS_S,
-    _TAP_C_CKC_C,
-    _TAP_C_CKC_V,
-    _TAP_C_CKC_X,
     L_MOUSE,
     ALT_KC_D,
     ALT_KC_H,
@@ -78,9 +75,6 @@ enum custom_keycodes {
 #define _HANDLER__RMODS_A _RMODS_A
 #define _HANDLER__RMODS_C _RMODS_C
 #define _HANDLER__RMODS_S _RMODS_S
-#define _HANDLER__TAP_C_CKC_C _TAP_C_CKC_C
-#define _HANDLER__TAP_C_CKC_V _TAP_C_CKC_V
-#define _HANDLER__TAP_C_CKC_X _TAP_C_CKC_X
 #define _HANDLER_L_MOUSE L_MOUSE
 #define _HANDLER_ALT_KC_D ALT_KC_D
 #define _HANDLER_ALT_KC_H ALT_KC_H
