@@ -42,10 +42,14 @@ enum custom_keycodes {
     _RMODS_A,
     _RMODS_C,
     _RMODS_S,
+    _TAP_C_CKC_C,
+    _TAP_C_CKC_V,
+    _TAP_C_CKC_X,
     L_MOUSE,
     ALT_KC_D,
     ALT_KC_H,
     ALT_KC_J,
+    ALT_KC_Q,
     ALT_KC_T,
     ALT_KC_V,
     ALT_KC_Z,
@@ -74,10 +78,14 @@ enum custom_keycodes {
 #define _HANDLER__RMODS_A _RMODS_A
 #define _HANDLER__RMODS_C _RMODS_C
 #define _HANDLER__RMODS_S _RMODS_S
+#define _HANDLER__TAP_C_CKC_C _TAP_C_CKC_C
+#define _HANDLER__TAP_C_CKC_V _TAP_C_CKC_V
+#define _HANDLER__TAP_C_CKC_X _TAP_C_CKC_X
 #define _HANDLER_L_MOUSE L_MOUSE
 #define _HANDLER_ALT_KC_D ALT_KC_D
 #define _HANDLER_ALT_KC_H ALT_KC_H
 #define _HANDLER_ALT_KC_J ALT_KC_J
+#define _HANDLER_ALT_KC_Q ALT_KC_Q
 #define _HANDLER_ALT_KC_T ALT_KC_T
 #define _HANDLER_ALT_KC_V ALT_KC_V
 #define _HANDLER_ALT_KC_Z ALT_KC_Z
@@ -94,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         MO(_NAV),                 KC_R,               KC_SPC,             OSL(_FN)),
 	[_LEFT] = LAYOUT_split_3x5_2(
                        S(KC_ESC),              S(KC_P),              S(KC_M),            S(KC_F15), KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
-                         S(KC_S),              S(KC_C),              S(KC_N),              S(KC_T), KC_NO, KC_NO,             MO(_NUM),           MO(_MEDIA),                KC_NO,                KC_NO,
+                         S(KC_S),              S(KC_C),              S(KC_N),              S(KC_T), KC_NO, KC_NO,           MO(_MEDIA),                KC_NO,                KC_NO,                KC_NO,
                     UM(UMLAUT_s),              S(KC_F),              S(KC_L),              S(KC_D), KC_NO, KC_NO, LM(_LMODS, MOD_LSFT), LM(_LMODS, MOD_LCTL), LM(_LMODS, MOD_LALT),                KC_NO,
                                            KC_NO,              S(KC_R),                KC_NO,                KC_NO),
 	[_RIGHT] = LAYOUT_split_3x5_2(
@@ -148,7 +156,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,             DOT_CASE,              KC_CAPS,           KEBAP_CASE,                KC_NO,
                                            KC_NO,                KC_NO,                KC_NO,                KC_NO),
 	[_MEDIA] = LAYOUT_split_3x5_2(
-                         QK_BOOT,              KC_BRID,              KC_BRIU,              OS_TOGG, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
+                         QK_BOOT,              KC_BRID,              KC_BRIU,                KC_NO, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                          KC_PSCR,              KC_VOLD,              KC_VOLU,              KC_MUTE, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                    PRINT_VERSION,              KC_MPRV,              KC_MNXT,              KC_MPLY, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                                            KC_NO,                KC_NO,                KC_NO,                KC_NO),

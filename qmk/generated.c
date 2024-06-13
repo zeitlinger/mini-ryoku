@@ -15,7 +15,9 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     if (record->tap.count) {
         if (record->event.pressed) {
             switch (keycode) {
-            
+            case _HANDLER__TAP_C_CKC_C: tap_code16(C(KC_C)); return false;
+            case _HANDLER__TAP_C_CKC_V: tap_code16(C(KC_V)); return false;
+            case _HANDLER__TAP_C_CKC_X: tap_code16(C(KC_X)); return false;
             default:
                 break;
             }
@@ -68,6 +70,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
             case _HANDLER_ALT_KC_D: SEND_STRING("oes"); return false;
             case _HANDLER_ALT_KC_H: SEND_STRING("ey"); return false;
             case _HANDLER_ALT_KC_J: SEND_STRING("ust"); return false;
+            case _HANDLER_ALT_KC_Q: SEND_STRING("ua"); return false;
             case _HANDLER_ALT_KC_T: SEND_STRING("ion"); return false;
             case _HANDLER_ALT_KC_V: SEND_STRING("er"); return false;
             case _HANDLER_ALT_KC_Z: SEND_STRING("eitlinger"); return false;
@@ -115,7 +118,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         case KC_N: return KC_G;
         case KC_O: return KC_E;
         case KC_P: return KC_L;
-        case KC_Q: return KC_U;
+        case KC_Q: return ALT_KC_Q;
         case KC_R: return KC_K;
         case KC_S: return KC_P;
         case KC_SPC: return ALT_KC_SPC;
@@ -143,7 +146,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         case S(KC_N): return KC_G;
         case S(KC_O): return KC_E;
         case S(KC_P): return KC_L;
-        case S(KC_Q): return KC_U;
+        case S(KC_Q): return ALT_KC_Q;
         case S(KC_R): return KC_K;
         case S(KC_S): return KC_P;
         case S(KC_T): return ALT_KC_T;
