@@ -5,7 +5,72 @@
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     switch(index) {
-    
+    case C_BASE_CAPS_WORDS: return 50;
+    case C_BASE_DOT_SPC: return 50;
+    case C_BASE_ING: return 25;
+    case C_BASE_ION: return 25;
+    case C_BASE_KC_0: return 50;
+    case C_BASE_KC_1: return 25;
+    case C_BASE_KC_2: return 25;
+    case C_BASE_KC_3: return 25;
+    case C_BASE_KC_4: return 25;
+    case C_BASE_KC_5: return 25;
+    case C_BASE_KC_6: return 25;
+    case C_BASE_KC_7: return 25;
+    case C_BASE_KC_8: return 25;
+    case C_BASE_KC_9: return 50;
+    case C_BASE_KC_AMPR: return 25;
+    case C_BASE_KC_ASTR: return 25;
+    case C_BASE_KC_AT: return 25;
+    case C_BASE_KC_B: return 25;
+    case C_BASE_KC_BACKSLASH: return 25;
+    case C_BASE_KC_CIRC: return 25;
+    case C_BASE_KC_COLN: return 25;
+    case C_BASE_KC_COMMA: return 25;
+    case C_BASE_KC_DLR: return 18;
+    case C_BASE_KC_DOT: return 25;
+    case C_BASE_KC_EXLM: return 25;
+    case C_BASE_KC_G: return 25;
+    case C_BASE_KC_HASH: return 25;
+    case C_BASE_KC_J: return 25;
+    case C_BASE_KC_K: return 25;
+    case C_BASE_KC_LABK: return 25;
+    case C_BASE_KC_LCBR: return 25;
+    case C_BASE_KC_PERC: return 25;
+    case C_BASE_KC_PIPE: return 25;
+    case C_BASE_KC_PLUS: return 25;
+    case C_BASE_KC_Q: return 25;
+    case C_BASE_KC_QUES: return 25;
+    case C_BASE_KC_QUOTE: return 25;
+    case C_BASE_KC_RABK: return 25;
+    case C_BASE_KC_RCBR: return 25;
+    case C_BASE_KC_TILD: return 25;
+    case C_BASE_KC_UNDS: return 25;
+    case C_BASE_KC_V: return 25;
+    case C_BASE_KC_W: return 25;
+    case C_BASE_KC_X: return 25;
+    case C_BASE_KC_Z: return 25;
+    case C_BASE_ONE_SHOT_MOUSE: return 25;
+    case C_NAV_CKC_A: return 50;
+    case C_NAV_CKC_C: return 50;
+    case C_NAV_CKC_D: return 50;
+    case C_NAV_CKC_N: return 50;
+    case C_NAV_CKC_R: return 50;
+    case C_NAV_CKC_V: return 50;
+    case C_NAV_CKC_X: return 50;
+    case C_NAV_CKC_Y: return 50;
+    case C_NAV_KC_LGUI: return 50;
+    case C_NAV_RCSKC_F: return 50;
+    case C_NAV_RCSKC_V: return 50;
+    case SC_BASE_KC_B: return 25;
+    case SC_BASE_KC_G: return 25;
+    case SC_BASE_KC_J: return 25;
+    case SC_BASE_KC_K: return 25;
+    case SC_BASE_KC_Q: return 25;
+    case SC_BASE_KC_V: return 25;
+    case SC_BASE_KC_W: return 25;
+    case SC_BASE_KC_X: return 25;
+    case SC_BASE_KC_Z: return 25;
     default:
         return COMBO_TERM;
     }
@@ -24,7 +89,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
         if (record->event.pressed) {
             if (get_repeat_key_count() > 0) {
                 switch (keycode) {
-                case KC_B: SEND_STRING("ecauce"); return false;
+                case KC_B: SEND_STRING("ecause"); return false;
                 case KC_COMMA: SEND_STRING(" and"); return false;
                 case KC_D: tap_code16(KC_V); return false;
                 case KC_DOT: SEND_STRING("./"); return false;
@@ -45,7 +110,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
                 case KC_X: tap_code16(KC_C); return false;
                 case KC_Y: tap_code16(KC_I); return false;
                 case KC_Z: tap_code16(KC_I); return false;
-                case S(KC_B): SEND_STRING("ecauce"); return false;
+                case S(KC_B): SEND_STRING("ecause"); return false;
                 case S(KC_D): tap_code16(KC_V); return false;
                 case S(KC_F): SEND_STRING("or"); return false;
                 case S(KC_G): tap_code16(KC_L); return false;

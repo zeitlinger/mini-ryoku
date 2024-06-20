@@ -46,6 +46,7 @@ COMB(C_BASE_ONE_SHOT_MOUSE              , ONE_SHOT_MOUSE                     , Q
 COMB(C_NAV_CKC_A                        , C(KC_A)                            , C(KC_W), KC_LALT)
 COMB(C_NAV_CKC_C                        , C(KC_C)                            , C(KC_W), NEXT_TAB)
 COMB(C_NAV_CKC_D                        , C(KC_D)                            , KC_LCTL, NEXT_TAB)
+COMB(C_NAV_CKC_N                        , C(KC_N)                            , C(KC_Z), MO(_NAV2))
 COMB(C_NAV_CKC_R                        , C(KC_R)                            , KC_LSFT, NEXT_WINDOW)
 COMB(C_NAV_CKC_V                        , C(KC_V)                            , NEXT_TAB, NEXT_WINDOW)
 COMB(C_NAV_CKC_X                        , C(KC_X)                            , C(KC_W), C(KC_Z))

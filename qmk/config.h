@@ -1,14 +1,11 @@
 #pragma once
 
 // Configure the global tapping term (default: 200ms)
-#define TAPPING_TERM 170
-//#define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
+#define TAPPING_TERM 200
+#define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
 
 #define EXTRA_SHORT_COMBOS
 #define COMBO_STRICT_TIMER
-#define COMBO_TERM 25        // how quickly all combo keys must be pressed in succession to trigger
-//#define COMBO_TERM_PER_COMBO
-//#define COMBO_SHOULD_TRIGGER
 
 #define UNICODE_SELECTED_MODES UNICODE_MODE_LINUX
 
