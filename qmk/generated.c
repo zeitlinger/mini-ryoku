@@ -5,7 +5,6 @@
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     switch(index) {
-    case C_BASE_DOT_SPC: return 50;
     case C_BASE_ING: return 25;
     case C_BASE_ION: return 25;
     case C_BASE_KC_0: return 50;
@@ -13,7 +12,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_BASE_KC_2: return 25;
     case C_BASE_KC_3: return 25;
     case C_BASE_KC_4: return 25;
-    case C_BASE_KC_5: return 25;
+    case C_BASE_KC_5: return 50;
     case C_BASE_KC_6: return 50;
     case C_BASE_KC_7: return 25;
     case C_BASE_KC_8: return 25;
@@ -128,6 +127,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
                 }
             }
             switch (keycode) {
+            case _HANDLER_L_NAV: layer_invert(_NAV); return false;
             case _HANDLER_L_MOUSE: layer_invert(_MOUSE); return false;
             case _HANDLER_ALT_KC_D: SEND_STRING("oes"); return false;
             case _HANDLER_ALT_KC_H: SEND_STRING("ey"); return false;
