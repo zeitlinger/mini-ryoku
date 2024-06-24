@@ -17,49 +17,29 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_BASE_KC_7: return 25;
     case C_BASE_KC_8: return 25;
     case C_BASE_KC_9: return 50;
-    case C_BASE_KC_AMPR: return 25;
-    case C_BASE_KC_ASTR: return 25;
-    case C_BASE_KC_AT: return 25;
     case C_BASE_KC_B: return 25;
-    case C_BASE_KC_BACKSLASH: return 25;
-    case C_BASE_KC_CIRC: return 25;
-    case C_BASE_KC_COLN: return 25;
     case C_BASE_KC_COMMA: return 25;
-    case C_BASE_KC_DLR: return 25;
     case C_BASE_KC_DOT: return 25;
-    case C_BASE_KC_EXLM: return 25;
     case C_BASE_KC_G: return 25;
-    case C_BASE_KC_HASH: return 25;
     case C_BASE_KC_J: return 25;
     case C_BASE_KC_K: return 25;
-    case C_BASE_KC_LABK: return 25;
-    case C_BASE_KC_LCBR: return 25;
-    case C_BASE_KC_PERC: return 25;
-    case C_BASE_KC_PIPE: return 25;
-    case C_BASE_KC_PLUS: return 25;
     case C_BASE_KC_Q: return 25;
-    case C_BASE_KC_QUES: return 25;
     case C_BASE_KC_QUOTE: return 25;
-    case C_BASE_KC_RABK: return 25;
-    case C_BASE_KC_RCBR: return 25;
-    case C_BASE_KC_TILD: return 25;
-    case C_BASE_KC_UNDS: return 25;
     case C_BASE_KC_V: return 25;
     case C_BASE_KC_W: return 25;
     case C_BASE_KC_X: return 25;
     case C_BASE_KC_Z: return 25;
     case C_BASE_ONE_SHOT_MOUSE: return 25;
     case C_NAV_CKC_A: return 50;
-    case C_NAV_CKC_C: return 50;
     case C_NAV_CKC_D: return 50;
+    case C_NAV_CKC_F: return 50;
+    case C_NAV_CKC_K: return 50;
     case C_NAV_CKC_N: return 50;
     case C_NAV_CKC_R: return 50;
-    case C_NAV_CKC_V: return 50;
-    case C_NAV_CKC_X: return 50;
     case C_NAV_CKC_Y: return 50;
-    case C_NAV_KC_LGUI: return 50;
     case C_NAV_RCSKC_F: return 50;
     case C_NAV_RCSKC_V: return 50;
+    case C_NAV__TAP_C_AKC_F7: return 50;
     case SC_BASE_KC_B: return 25;
     case SC_BASE_KC_G: return 25;
     case SC_BASE_KC_J: return 25;
@@ -78,7 +58,8 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     if (record->tap.count) {
         if (record->event.pressed) {
             switch (keycode) {
-            
+            case _HANDLER__TAP_C_CKC_X: tap_code16(C(KC_X)); return false;
+            case _HANDLER__TAP_C_AKC_F7: tap_code16(A(KC_F7)); return false;
             default:
                 break;
             }
@@ -150,6 +131,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
+    case LT(_NAV2,_TAP_C_CKC_X): return true;
     case LT(_NUM,KC_SEMICOLON): return true;
     default:
         // Do not select the hold action when another key is pressed.
