@@ -7,16 +7,6 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     switch(index) {
     case C_BASE_ING: return 25;
     case C_BASE_ION: return 25;
-    case C_BASE_KC_0: return 50;
-    case C_BASE_KC_1: return 25;
-    case C_BASE_KC_2: return 25;
-    case C_BASE_KC_3: return 25;
-    case C_BASE_KC_4: return 25;
-    case C_BASE_KC_5: return 50;
-    case C_BASE_KC_6: return 50;
-    case C_BASE_KC_7: return 25;
-    case C_BASE_KC_8: return 25;
-    case C_BASE_KC_9: return 50;
     case C_BASE_KC_B: return 25;
     case C_BASE_KC_COMMA: return 25;
     case C_BASE_KC_DOT: return 25;

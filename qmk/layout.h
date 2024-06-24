@@ -103,12 +103,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         TT(_NAV),                 KC_R,               KC_SPC,             OSL(_FN)),
 	[_LEFT] = LAYOUT_split_3x5_2(
                        S(KC_ESC),              S(KC_P),              S(KC_M),           S(KC_LGUI),                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
-                         S(KC_S),              S(KC_C),                 KC_9,                 KC_0,                KC_NO,                KC_NO,           MO(_MEDIA),                KC_NO,                KC_NO,                KC_NO,
+                         S(KC_S),              S(KC_C),                 KC_9,                 KC_0,                KC_NO,                KC_NO,                 KC_5,                 KC_6,           MO(_MEDIA),                KC_NO,
                     UM(UMLAUT_s),              S(KC_F),              S(KC_L),              S(KC_D),                KC_NO,                KC_NO, LM(_LMODS, MOD_LSFT), LM(_LMODS, MOD_LCTL), LM(_LMODS, MOD_LALT),                KC_NO,
-                                     S(TT(_NAV)),              S(KC_R),                 KC_7,                 KC_8),
+                                         DOT_SPC,              S(KC_R),                 KC_7,                 KC_8),
 	[_RIGHT] = LAYOUT_split_3x5_2(
                            KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,            S(KC_F16), UP(UMLAUT_a, UMLAUT_A), UP(UMLAUT_o, UMLAUT_O),                KC_NO,
-                           KC_NO,                KC_NO,                KC_NO,            MO(_CASE),                KC_NO,                KC_NO,              S(KC_A),              S(KC_E),              S(KC_I),              S(KC_H),
+                           KC_NO,            MO(_CASE),                 KC_9,                 KC_0,                KC_NO,                KC_NO,              S(KC_A),              S(KC_E),              S(KC_I),              S(KC_H),
                            KC_NO, LM(_RMODS, MOD_LALT), LM(_RMODS, MOD_LCTL), LM(_RMODS, MOD_LSFT),                KC_NO,                KC_NO,              S(KC_U),              S(KC_O),              S(KC_Y), UP(UMLAUT_u, UMLAUT_U),
                                             KC_1,                 KC_2,                 KC_3,                 KC_4),
 	[_LMODS] = LAYOUT_split_3x5_2(
