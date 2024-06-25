@@ -20,6 +20,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_BASE_KC_X: return 25;
     case C_BASE_KC_Z: return 25;
     case C_BASE_ONE_SHOT_MOUSE: return 25;
+    case C_NAV_AKC_F7: return 50;
     case C_NAV_CKC_A: return 50;
     case C_NAV_CKC_D: return 50;
     case C_NAV_CKC_F: return 50;
@@ -29,9 +30,6 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_NAV_CKC_Y: return 50;
     case C_NAV_RCSKC_F: return 50;
     case C_NAV_RCSKC_V: return 50;
-    case C_NAV__TAP_C_AKC_F7: return 50;
-    case C_NAV__TAP_C_CKC_E: return 50;
-    case C_NAV__TAP_C_RCSKC_N: return 50;
     case SC_BASE_KC_B: return 25;
     case SC_BASE_KC_G: return 25;
     case SC_BASE_KC_J: return 25;
@@ -51,9 +49,6 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
         if (record->event.pressed) {
             switch (keycode) {
             case _HANDLER__TAP_C_CKC_X: tap_code16(C(KC_X)); return false;
-            case _HANDLER__TAP_C_AKC_F7: tap_code16(A(KC_F7)); return false;
-            case _HANDLER__TAP_C_CKC_E: tap_code16(C(KC_E)); return false;
-            case _HANDLER__TAP_C_RCSKC_N: tap_code16(RCS(KC_N)); return false;
             default:
                 break;
             }
