@@ -43,7 +43,7 @@ enum custom_keycodes {
     _RMODS_A,
     _RMODS_C,
     _RMODS_S,
-    _TAP_C_CKC_X,
+    _TAP_C_CKC_C,
     L_NAV,
     L_MOUSE,
     ALT_KC_D,
@@ -78,7 +78,7 @@ enum custom_keycodes {
 #define _HANDLER__RMODS_A _RMODS_A
 #define _HANDLER__RMODS_C _RMODS_C
 #define _HANDLER__RMODS_S _RMODS_S
-#define _HANDLER__TAP_C_CKC_X LT(_NAV2,_TAP_C_CKC_X)
+#define _HANDLER__TAP_C_CKC_C LT(_NAV2,_TAP_C_CKC_C)
 #define _HANDLER_L_NAV L_NAV
 #define _HANDLER_L_MOUSE L_MOUSE
 #define _HANDLER_ALT_KC_D ALT_KC_D
@@ -103,12 +103,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                        S(KC_ESC),              S(KC_P),              S(KC_M),           S(KC_LGUI),                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                          S(KC_S),              S(KC_C),              S(KC_N),              S(KC_T),                KC_NO,                KC_NO,                 KC_5,                 KC_6,           MO(_MEDIA),                KC_NO,
                     UM(UMLAUT_s),              S(KC_F),              S(KC_L),              S(KC_D),                KC_NO,                KC_NO, LM(_LMODS, MOD_LSFT), LM(_LMODS, MOD_LCTL), LM(_LMODS, MOD_LALT),                KC_NO,
-                                         DOT_SPC,              S(KC_R),                 KC_7,                 KC_8),
+                                            KC_4,              S(KC_R),                 KC_7,                 KC_8),
 	[_RIGHT] = LAYOUT_split_3x5_2(
                            KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,            S(KC_F16), UP(UMLAUT_a, UMLAUT_A), UP(UMLAUT_o, UMLAUT_O),                KC_NO,
                            KC_NO,            MO(_CASE),                 KC_9,                 KC_0,                KC_NO,                KC_NO,              S(KC_A),              S(KC_E),              S(KC_I),              S(KC_H),
                            KC_NO, LM(_RMODS, MOD_LALT), LM(_RMODS, MOD_LCTL), LM(_RMODS, MOD_LSFT),                KC_NO,                KC_NO,              S(KC_U),              S(KC_O),              S(KC_Y), UP(UMLAUT_u, UMLAUT_U),
-                                            KC_1,                 KC_2,                 KC_3,                 KC_4),
+                                            KC_1,                 KC_2,               KC_SPC,                 KC_3),
 	[_LMODS] = LAYOUT_split_3x5_2(
                           KC_ESC,                 KC_P,                 KC_M,              KC_LGUI,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                             KC_S,                 KC_C,                 KC_N,                 KC_T,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
@@ -120,10 +120,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            KC_NO, LM(_RMODS, MOD_LALT), LM(_RMODS, MOD_LCTL), LM(_RMODS, MOD_LSFT),                KC_NO,                KC_NO,                 KC_U,                 KC_O,                 KC_Y, UP(UMLAUT_u, UMLAUT_U),
                                            KC_NO,                KC_NO,               KC_SPC,                KC_NO),
 	[_NAV] = LAYOUT_split_3x5_2(
-                          KC_SPC,              C(KC_C),              C(KC_V),            RCS(KC_Z),                KC_NO,                KC_NO,                KC_NO,               KC_ESC,               KC_INS,                KC_NO,
-            LT(_NAV2,_TAP_C_CKC_X),              KC_LALT,              KC_LCTL,              KC_LSFT,                KC_NO,                KC_NO,              KC_LEFT,                KC_UP,              KC_DOWN,             KC_RIGHT,
+                          KC_SPC,              C(KC_X),              C(KC_V),            RCS(KC_Z),                KC_NO,                KC_NO,                KC_NO,               KC_ESC,               KC_INS,                KC_NO,
+            LT(_NAV2,_TAP_C_CKC_C),              KC_LALT,              KC_LCTL,              KC_LSFT,                KC_NO,                KC_NO,              KC_LEFT,                KC_UP,              KC_DOWN,             KC_RIGHT,
                          C(KC_Z),              C(KC_W),             NEXT_TAB,          NEXT_WINDOW,                KC_NO,                KC_NO,               KC_ENT,              KC_BSPC,               KC_DEL,               KC_SPC,
-                                           L_NAV,                KC_NO,               KC_TAB,           CAPS_WORDS),
+                                           L_NAV,                KC_NO,               KC_TAB,            S(KC_TAB)),
 	[_NAV2] = LAYOUT_split_3x5_2(
                            KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                            KC_NO,              KC_LALT,              KC_LCTL,              KC_LSFT,                KC_NO,                KC_NO,              KC_HOME,              KC_PGUP,              KC_PGDN,               KC_END,

@@ -30,6 +30,9 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_NAV_CKC_Y: return 50;
     case C_NAV_RCSKC_F: return 50;
     case C_NAV_RCSKC_V: return 50;
+    case C_RIGHT_CAPS_WORDS: return 50;
+    case C_RIGHT_DOT_SPC: return 50;
+    case C_RIGHT_KC_DQUO: return 50;
     case SC_BASE_KC_B: return 25;
     case SC_BASE_KC_G: return 25;
     case SC_BASE_KC_J: return 25;
@@ -48,7 +51,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     if (record->tap.count) {
         if (record->event.pressed) {
             switch (keycode) {
-            case _HANDLER__TAP_C_CKC_X: tap_code16(C(KC_X)); return false;
+            case _HANDLER__TAP_C_CKC_C: tap_code16(C(KC_C)); return false;
             default:
                 break;
             }
@@ -120,7 +123,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-    case LT(_NAV2,_TAP_C_CKC_X): return true;
+    case LT(_NAV2,_TAP_C_CKC_C): return true;
     case LT(_NUM,KC_SEMICOLON): return true;
     default:
         // Do not select the hold action when another key is pressed.
