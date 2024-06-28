@@ -33,15 +33,24 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_RIGHT_CAPS_WORDS: return 50;
     case C_RIGHT_DOT_SPC: return 50;
     case C_RIGHT_KC_DQUO: return 50;
-    case SC_BASE_KC_B: return 25;
-    case SC_BASE_KC_G: return 25;
-    case SC_BASE_KC_J: return 25;
-    case SC_BASE_KC_K: return 25;
-    case SC_BASE_KC_Q: return 25;
-    case SC_BASE_KC_V: return 25;
-    case SC_BASE_KC_W: return 25;
-    case SC_BASE_KC_X: return 25;
-    case SC_BASE_KC_Z: return 25;
+    case DS_C_BASE_KC_B: return 50;
+    case DS_C_BASE_KC_G: return 50;
+    case DS_C_BASE_KC_J: return 50;
+    case DS_C_BASE_KC_K: return 50;
+    case DS_C_BASE_KC_Q: return 50;
+    case DS_C_BASE_KC_V: return 50;
+    case DS_C_BASE_KC_W: return 50;
+    case DS_C_BASE_KC_X: return 50;
+    case DS_C_BASE_KC_Z: return 50;
+    case S_C_BASE_KC_B: return 50;
+    case S_C_BASE_KC_G: return 50;
+    case S_C_BASE_KC_J: return 50;
+    case S_C_BASE_KC_K: return 50;
+    case S_C_BASE_KC_Q: return 50;
+    case S_C_BASE_KC_V: return 50;
+    case S_C_BASE_KC_W: return 50;
+    case S_C_BASE_KC_X: return 50;
+    case S_C_BASE_KC_Z: return 50;
     default:
         return COMBO_TERM;
     }
