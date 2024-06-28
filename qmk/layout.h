@@ -95,17 +95,17 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_BASE] = LAYOUT_split_3x5_2(
-                          KC_ESC,                 KC_P,                 KC_M,              KC_LGUI,                KC_NO,                KC_NO,               KC_F16,        QK_REPEAT_KEY,    QK_ALT_REPEAT_KEY,                KC_NO,
+                          KC_ESC,                 KC_P,                 KC_M,              KC_LGUI,                KC_NO,                KC_NO,               KC_F16,        QK_REPEAT_KEY,    QK_ALT_REPEAT_KEY,              QK_BOOT,
                             KC_S,                 KC_C,                 KC_N,                 KC_T,            OSL(_SYM),            OSL(_SYM),                 KC_A,                 KC_E,                 KC_I,                 KC_H,
                       MO(_RIGHT),                 KC_F,                 KC_L,                 KC_D,                KC_NO,                KC_NO,                 KC_U,                 KC_O,                 KC_Y,            MO(_LEFT),
-                                        TT(_NAV),                 KC_R,               KC_SPC,             OSL(_FN)),
+                                        MO(_NAV),                 KC_R,               KC_SPC,              MO(_FN)),
 	[_LEFT] = LAYOUT_split_3x5_2(
                        S(KC_ESC),              S(KC_P),              S(KC_M),           S(KC_LGUI),                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                          S(KC_S),              S(KC_C),              S(KC_N),              S(KC_T),                KC_NO,                KC_NO,                 KC_5,                 KC_6,           MO(_MEDIA),                KC_NO,
                     UM(UMLAUT_s),              S(KC_F),              S(KC_L),              S(KC_D),                KC_NO,                KC_NO, LM(_LMODS, MOD_LSFT), LM(_LMODS, MOD_LCTL), LM(_LMODS, MOD_LALT),                KC_NO,
                                             KC_4,              S(KC_R),                 KC_7,                 KC_8),
 	[_RIGHT] = LAYOUT_split_3x5_2(
-                           KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,            S(KC_F16), UP(UMLAUT_a, UMLAUT_A), UP(UMLAUT_o, UMLAUT_O),                KC_NO,
+                           KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,            S(KC_F16), UP(UMLAUT_a, UMLAUT_A), UP(UMLAUT_o, UMLAUT_O),           S(QK_BOOT),
                            KC_NO,            MO(_CASE),                 KC_9,                 KC_0,                KC_NO,                KC_NO,              S(KC_A),              S(KC_E),              S(KC_I),              S(KC_H),
                            KC_NO, LM(_RMODS, MOD_LALT), LM(_RMODS, MOD_LCTL), LM(_RMODS, MOD_LSFT),                KC_NO,                KC_NO,              S(KC_U),              S(KC_O),              S(KC_Y), UP(UMLAUT_u, UMLAUT_U),
                                             KC_1,                 KC_2,               KC_SPC,                 KC_3),
@@ -113,9 +113,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           KC_ESC,                 KC_P,                 KC_M,              KC_LGUI,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                             KC_S,                 KC_C,                 KC_N,                 KC_T,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                            KC_NO,                 KC_F,                 KC_L,                 KC_D,                KC_NO,                KC_NO, LM(_LMODS, MOD_LSFT), LM(_LMODS, MOD_LCTL), LM(_LMODS, MOD_LALT),                KC_NO,
-                                        TT(_NAV),                 KC_R,                KC_NO,                KC_NO),
+                                           KC_NO,                 KC_R,                KC_NO,                KC_NO),
 	[_RMODS] = LAYOUT_split_3x5_2(
-                           KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,               KC_F16, UP(UMLAUT_a, UMLAUT_A), UP(UMLAUT_o, UMLAUT_O),                KC_NO,
+                           KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,               KC_F16, UP(UMLAUT_a, UMLAUT_A), UP(UMLAUT_o, UMLAUT_O),              QK_BOOT,
                            KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                 KC_A,                 KC_E,                 KC_I,                 KC_H,
                            KC_NO, LM(_RMODS, MOD_LALT), LM(_RMODS, MOD_LCTL), LM(_RMODS, MOD_LSFT),                KC_NO,                KC_NO,                 KC_U,                 KC_O,                 KC_Y, UP(UMLAUT_u, UMLAUT_U),
                                            KC_NO,                KC_NO,               KC_SPC,                KC_NO),
