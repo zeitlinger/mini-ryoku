@@ -21,7 +21,8 @@
 #define _MOUSE2 10
 #define _CASE 11
 #define _MEDIA 12
-#define _SYM 13
+#define _SL 13
+#define _SR 14
 
 enum custom_keycodes {
 	NEXT_TAB = SAFE_RANGE,
@@ -96,9 +97,9 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_BASE] = LAYOUT_split_3x5_2(
                           KC_ESC,                 KC_P,                 KC_M,              KC_LGUI,                KC_NO,                KC_NO,               KC_F16,        QK_REPEAT_KEY,    QK_ALT_REPEAT_KEY,              QK_BOOT,
-                            KC_S,                 KC_C,                 KC_N,                 KC_T,            OSL(_SYM),            OSL(_SYM),                 KC_A,                 KC_E,                 KC_I,                 KC_H,
+                            KC_S,                 KC_C,                 KC_N,                 KC_T,             OSL(_SR),             OSL(_SL),                 KC_A,                 KC_E,                 KC_I,                 KC_H,
                       MO(_RIGHT),                 KC_F,                 KC_L,                 KC_D,                KC_NO,                KC_NO,                 KC_U,                 KC_O,                 KC_Y,            MO(_LEFT),
-                                        MO(_NAV),                 KC_R,               KC_SPC,              MO(_FN)),
+                                        MO(_NAV),                 KC_R,               KC_SPC,             OSL(_FN)),
 	[_LEFT] = LAYOUT_split_3x5_2(
                        S(KC_ESC),              S(KC_P),              S(KC_M),           S(KC_LGUI),                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                          S(KC_S),              S(KC_C),              S(KC_N),              S(KC_T),                KC_NO,                KC_NO,                 KC_5,                 KC_6,           MO(_MEDIA),                KC_NO,
@@ -159,9 +160,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          KC_PSCR,              KC_VOLD,              KC_VOLU,              KC_MUTE,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                    PRINT_VERSION,              KC_MPRV,              KC_MNXT,              KC_MPLY,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                                            KC_NO,                KC_NO,                KC_NO,                KC_NO),
-	[_SYM] = LAYOUT_split_3x5_2(
-                           KC_NO,              KC_PIPE,              KC_ASTR,                KC_NO,                KC_NO,                KC_NO,                KC_NO,              KC_LABK,              KC_RABK,                KC_NO,
-                          KC_DLR,              KC_HASH,                KC_AT,              KC_EXLM,                KC_NO,                KC_NO,              KC_UNDS,              KC_LCBR,              KC_RCBR,              KC_COLN,
-                           KC_NO,              KC_AMPR,              KC_CIRC,              KC_PERC,                KC_NO,                KC_NO,              KC_TILD,         KC_BACKSLASH,              KC_PLUS,              KC_QUES,
+	[_SL] = LAYOUT_split_3x5_2(
+                           KC_NO,              KC_PIPE,              KC_ASTR,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
+                          KC_DLR,              KC_HASH,                KC_AT,              KC_EXLM,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
+                           KC_NO,              KC_AMPR,              KC_CIRC,              KC_PERC,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
+                                           KC_NO,                KC_NO,                KC_NO,                KC_NO),
+	[_SR] = LAYOUT_split_3x5_2(
+                           KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,              KC_LABK,              KC_RABK,                KC_NO,
+                           KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,              KC_UNDS,              KC_LCBR,              KC_RCBR,              KC_COLN,
+                           KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,              KC_TILD,         KC_BACKSLASH,              KC_PLUS,              KC_QUES,
                                            KC_NO,                KC_NO,                KC_NO,                KC_NO),
 };
