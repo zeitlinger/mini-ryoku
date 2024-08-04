@@ -72,9 +72,9 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
             case KC_F10: tap_code16(KC_PIPE); return false;
             case KC_F9: tap_code16(KC_ASTR); return false;
             case KC_F4: tap_code16(KC_DLR); return false;
-            case KC_F3: tap_code16(KC_HASH); return false;
-            case KC_F2: tap_code16(KC_AT); return false;
-            case KC_F1: tap_code16(KC_EXLM); return false;
+            case ALT_T(KC_F3): tap_code16(KC_HASH); return false;
+            case CTL_T(KC_F2): tap_code16(KC_AT); return false;
+            case SFT_T(KC_F1): tap_code16(KC_EXLM); return false;
             case KC_F7: tap_code16(KC_AMPR); return false;
             case KC_F6: tap_code16(KC_CIRC); return false;
             case KC_F5: tap_code16(KC_PERC); return false;
