@@ -160,14 +160,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          KC_PSCR,              KC_VOLD,              KC_VOLU,              KC_MUTE, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                    PRINT_VERSION,              KC_MPRV,              KC_MNXT,              KC_MPLY, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                                            KC_NO,                KC_NO,                KC_NO,                KC_NO),
-	[_SL] = LAYOUT_split_3x5_2(
-                           KC_NO,              KC_PIPE,              KC_ASTR,                KC_NO, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
-                          KC_DLR,              KC_HASH,                KC_AT,              KC_EXLM, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
-                           KC_NO,              KC_AMPR,              KC_CIRC,              KC_PERC, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
-                                           KC_NO,                KC_NO,                KC_NO,                KC_NO),
-	[_SR] = LAYOUT_split_3x5_2(
-                           KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,                KC_NO,              KC_LABK,              KC_RABK,                KC_NO,
-                           KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,              KC_UNDS,              KC_LCBR,              KC_RCBR,              KC_COLN,
-                           KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,              KC_TILD,         KC_BACKSLASH,              KC_PLUS,              KC_QUES,
-                                           KC_NO,                KC_NO,                KC_NO,                KC_NO),
 };
