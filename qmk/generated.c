@@ -3,6 +3,8 @@
  * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
  */
 
+int alternateLayer = -1;
+
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     switch(index) {
     case C_BASE_ING: return 25;
@@ -57,6 +59,42 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
 }
 
 bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
+    if (!record->event.pressed) {
+        switch (keycode) {
+        case OSL(_FN): alternateLayer = _SL; break;
+        case OSL(_NAV): alternateLayer = _SR; break;
+        }
+    }
+    if (alternateLayer >= 0 && record->event.pressed) {
+        switch (alternateLayer) {
+        case _SL: 
+            switch (keycode) {
+            case KC_F10: tap_code16(KC_PIPE); return false;
+            case KC_F9: tap_code16(KC_ASTR); return false;
+            case KC_F4: tap_code16(KC_DLR); return false;
+            case KC_F3: tap_code16(KC_HASH); return false;
+            case KC_F2: tap_code16(KC_AT); return false;
+            case KC_F1: tap_code16(KC_EXLM); return false;
+            case KC_F7: tap_code16(KC_AMPR); return false;
+            case KC_F6: tap_code16(KC_CIRC); return false;
+            case KC_F5: tap_code16(KC_PERC); return false;
+            }
+        case _SR: 
+            switch (keycode) {
+            case KC_ESC: tap_code16(KC_LABK); return false;
+            case KC_INS: tap_code16(KC_RABK); return false;
+            case KC_LEFT: tap_code16(KC_UNDS); return false;
+            case KC_UP: tap_code16(KC_LCBR); return false;
+            case KC_DOWN: tap_code16(KC_RCBR); return false;
+            case KC_RIGHT: tap_code16(KC_COLN); return false;
+            case KC_ENT: tap_code16(KC_TILD); return false;
+            case KC_BSPC: tap_code16(KC_BACKSLASH); return false;
+            case KC_DEL: tap_code16(KC_PLUS); return false;
+            case KC_SPC: tap_code16(KC_QUES); return false;
+            }
+        }
+    }
+
     if (record->tap.count) {
         if (record->event.pressed) {
             switch (keycode) {
