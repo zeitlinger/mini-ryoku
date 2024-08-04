@@ -99,7 +99,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           KC_ESC,                 KC_P,                 KC_M,              KC_LGUI,                KC_NO,                KC_NO,               KC_F16,        QK_REPEAT_KEY,    QK_ALT_REPEAT_KEY,              QK_BOOT,
                             KC_S,                 KC_C,                 KC_N,                 KC_T,             OSL(_SR),             OSL(_SL),                 KC_A,                 KC_E,                 KC_I,                 KC_H,
                       MO(_RIGHT),                 KC_F,                 KC_L,                 KC_D,                KC_NO,                KC_NO,                 KC_U,                 KC_O,                 KC_Y,            MO(_LEFT),
-                                        MO(_NAV),                 KC_R,               KC_SPC,             OSL(_FN)),
+                                       OSL(_NAV),                 KC_R,               KC_SPC,             OSL(_FN)),
 	[_LEFT] = LAYOUT_split_3x5_2(
                        S(KC_ESC),              S(KC_P),              S(KC_M),           S(KC_LGUI),                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                          S(KC_S),              S(KC_C),              S(KC_N),              S(KC_T),                KC_NO,                KC_NO,                 KC_5,                 KC_6,           MO(_MEDIA),                KC_NO,
