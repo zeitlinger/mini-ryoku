@@ -49,23 +49,16 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
 bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     if (!record->event.pressed) {
         switch (keycode) {
-        case OSL(_NAV): alternateLayer = _CSE; break;
+        case OSL(_NAV): alternateLayer = _SC; break;
         case OSL(_FN): alternateLayer = _SYM; break;
         }
     }
     if (alternateLayer >= 0 && record->event.pressed) {
         switch (alternateLayer) {
-        case _CSE: 
+        case _SC: 
             switch (keycode) {
-            case KC_ESC: tap_code16(PASCAL_CASE); return false;
-            case KC_INS: tap_code16(SCREAMING_SNAKE_CASE); return false;
-            case KC_LEFT: tap_code16(SLASH_CASE); return false;
-            case KC_UP: tap_code16(CAMEL_CASE); return false;
-            case KC_DOWN: tap_code16(SNAKE_CASE); return false;
-            case KC_RIGHT: tap_code16(CAPS_WORDS); return false;
-            case KC_ENT: tap_code16(DOT_CASE); return false;
-            case KC_BSPC: tap_code16(KC_CAPS); return false;
-            case KC_DEL: tap_code16(KEBAP_CASE); return false;
+            case KC_UP: tap_code16(C(KC_LEFT_BRACKET)); return false;
+            case KC_DOWN: tap_code16(C(KC_RIGHT_BRACKET)); return false;
             case KC_SPC: tap_code16(DOT_SPC); return false;
             }
         case _SYM: 
