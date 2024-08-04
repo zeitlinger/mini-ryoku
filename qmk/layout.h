@@ -114,12 +114,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           KC_ESC,                 KC_P,                 KC_M,              KC_LGUI,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                             KC_S,                 KC_C,                 KC_N,                 KC_T,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                            KC_NO,                 KC_F,                 KC_L,                 KC_D,                KC_NO,                KC_NO, LM(_LMODS, MOD_LSFT), LM(_LMODS, MOD_LCTL), LM(_LMODS, MOD_LALT),                KC_NO,
-                                           KC_NO,                 KC_R,                KC_NO,                KC_NO),
+                                       OSL(_NAV),                 KC_R,                KC_NO,                KC_NO),
 	[_RMODS] = LAYOUT_split_3x5_2(
                            KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,               KC_F16, UP(UMLAUT_a, UMLAUT_A), UP(UMLAUT_o, UMLAUT_O),              QK_BOOT,
                            KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,                 KC_A,                 KC_E,                 KC_I,                 KC_H,
                            KC_NO, LM(_RMODS, MOD_LALT), LM(_RMODS, MOD_LCTL), LM(_RMODS, MOD_LSFT),                KC_NO,                KC_NO,                 KC_U,                 KC_O,                 KC_Y, UP(UMLAUT_u, UMLAUT_U),
-                                           KC_NO,                KC_NO,               KC_SPC,                KC_NO),
+                                           KC_NO,                KC_NO,               KC_SPC,             OSL(_FN)),
 	[_NAV] = LAYOUT_split_3x5_2(
                           KC_SPC,              C(KC_X),              C(KC_V),            RCS(KC_Z),                KC_NO,                KC_NO,                KC_NO,               KC_ESC,               KC_INS,                KC_NO,
             LT(_NAV2,_TAP_C_CKC_C),              KC_LALT,              KC_LCTL,              KC_LSFT,                KC_NO,                KC_NO,              KC_LEFT,                KC_UP,              KC_DOWN,             KC_RIGHT,
