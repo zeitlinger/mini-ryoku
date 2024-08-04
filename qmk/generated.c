@@ -32,9 +32,6 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_NAV_CKC_Y: return 50;
     case C_NAV_RCSKC_F: return 50;
     case C_NAV_RCSKC_V: return 50;
-    case C_RIGHT_CAPS_WORDS: return 50;
-    case C_RIGHT_DOT_SPC: return 50;
-    case C_RIGHT_KC_DQUO: return 50;
     case S_C_BASE_KC_B: return 50;
     case S_C_BASE_KC_G: return 50;
     case S_C_BASE_KC_J: return 50;
@@ -69,6 +66,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
             case KC_ENT: tap_code16(DOT_CASE); return false;
             case KC_BSPC: tap_code16(KC_CAPS); return false;
             case KC_DEL: tap_code16(KEBAP_CASE); return false;
+            case KC_SPC: tap_code16(DOT_SPC); return false;
             }
         case _SYM: 
             switch (keycode) {
