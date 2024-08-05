@@ -26,6 +26,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_NAV_CKC_D: return 50;
     case C_NAV_CKC_K: return 50;
     case C_NAV_CKC_R: return 50;
+    case C_NAV_CKC_SLASH: return 50;
     case C_NAV_CKC_Y: return 50;
     case C_NAV_RCSKC_F: return 50;
     case C_NAV_RCSKC_R: return 50;
@@ -44,54 +45,57 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
 }
 
 bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
-    if (!record->event.pressed) {
+    if (record->event.pressed) {
         switch (keycode) {
         case OSL(_NAV): alternateLayer = _SC; break;
         case OSL(_FN): alternateLayer = _SYM; break;
         }
     }
     if (alternateLayer >= 0 && record->event.pressed) {
-        switch (alternateLayer) {
-        case _SC:
-            switch (keycode) {
-                case RCS(KC_N): tap_code16(C(KC_N)); return false;
-                case RCS(KC_BSPC): tap_code16(C(KC_F)); return false;
-                case LT(_NAV2,_TAP_C_CKC_Z): tap_code16(A(KC_RIGHT)); return false;
-                case KC_LALT: tap_code16(C(KC_X)); return false;
-                case KC_LCTL: tap_code16(C(KC_C)); return false;
-                case KC_LSFT: tap_code16(C(KC_V)); return false;
-                case KC_UP: tap_code16(C(KC_LEFT_BRACKET)); return false;
-                case KC_DOWN: tap_code16(C(KC_RIGHT_BRACKET)); return false;
-                case RCS(KC_Z): tap_code16(C(KC_RIGHT)); return false;
-                case C(KC_W): tap_code16(C(KC_A)); return false;
-                case NEXT_TAB: tap_code16(C(KC_E)); return false;
-                case NEXT_WINDOW: tap_code16(RCS(KC_V)); return false;
-                case KC_SPC: tap_code16(DOT_SPC); return false;
+        alternateLayer = -1;
+        if (get_highest_layer(state) == _BASE) {
+            switch (alternateLayer) {
+            case _SC:
+                switch (keycode) {
+                    case KC_P: tap_code16(C(KC_N)); return false;
+                    case KC_M: tap_code16(C(KC_F)); return false;
+                    case KC_S: tap_code16(A(KC_RIGHT)); return false;
+                    case KC_C: tap_code16(C(KC_X)); return false;
+                    case KC_N: tap_code16(C(KC_C)); return false;
+                    case KC_T: tap_code16(C(KC_V)); return false;
+                    case KC_E: tap_code16(C(KC_LEFT_BRACKET)); return false;
+                    case KC_I: tap_code16(C(KC_RIGHT_BRACKET)); return false;
+                    case MO(_RIGHT): tap_code16(C(KC_RIGHT)); return false;
+                    case KC_F: tap_code16(C(KC_A)); return false;
+                    case KC_L: tap_code16(C(KC_E)); return false;
+                    case KC_D: tap_code16(RCS(KC_V)); return false;
+                    case MO(_LEFT): tap_code16(DOT_SPC); return false;
+                }
+                break;
+            case _SYM:
+                switch (keycode) {
+                    case KC_P: tap_code16(KC_PIPE); return false;
+                    case KC_M: tap_code16(KC_ASTR); return false;
+                    case QK_REPEAT_KEY: tap_code16(KC_LABK); return false;
+                    case QK_ALT_REPEAT_KEY: tap_code16(KC_RABK); return false;
+                    case KC_S: tap_code16(KC_DLR); return false;
+                    case KC_C: tap_code16(KC_HASH); return false;
+                    case KC_N: tap_code16(KC_AT); return false;
+                    case KC_T: tap_code16(KC_EXLM); return false;
+                    case KC_A: tap_code16(KC_UNDS); return false;
+                    case KC_E: tap_code16(KC_LCBR); return false;
+                    case KC_I: tap_code16(KC_RCBR); return false;
+                    case KC_H: tap_code16(KC_COLN); return false;
+                    case KC_F: tap_code16(KC_AMPR); return false;
+                    case KC_L: tap_code16(KC_CIRC); return false;
+                    case KC_D: tap_code16(KC_PERC); return false;
+                    case KC_U: tap_code16(KC_TILD); return false;
+                    case KC_O: tap_code16(KC_BACKSLASH); return false;
+                    case KC_Y: tap_code16(KC_PLUS); return false;
+                    case MO(_LEFT): tap_code16(KC_QUES); return false;
+                }
+                break;
             }
-            break;
-        case _SYM:
-            switch (keycode) {
-                case KC_F10: tap_code16(KC_PIPE); return false;
-                case KC_F9: tap_code16(KC_ASTR); return false;
-                case KC_LPRN: tap_code16(KC_LABK); return false;
-                case KC_RPRN: tap_code16(KC_RABK); return false;
-                case KC_F4: tap_code16(KC_DLR); return false;
-                case ALT_T(KC_F3): tap_code16(KC_HASH); return false;
-                case CTL_T(KC_F2): tap_code16(KC_AT); return false;
-                case SFT_T(KC_F1): tap_code16(KC_EXLM); return false;
-                case SFT_T(KC_MINUS): tap_code16(KC_UNDS); return false;
-                case CTL_T(KC_LEFT_BRACKET): tap_code16(KC_LCBR); return false;
-                case ALT_T(KC_RIGHT_BRACKET): tap_code16(KC_RCBR); return false;
-                case LT(_NUM,KC_SEMICOLON): tap_code16(KC_COLN); return false;
-                case KC_F7: tap_code16(KC_AMPR); return false;
-                case KC_F6: tap_code16(KC_CIRC); return false;
-                case KC_F5: tap_code16(KC_PERC); return false;
-                case KC_GRAVE: tap_code16(KC_TILD); return false;
-                case KC_DQUO: tap_code16(KC_BACKSLASH); return false;
-                case KC_EQUAL: tap_code16(KC_PLUS); return false;
-                case KC_SLASH: tap_code16(KC_QUES); return false;
-            }
-            break;
         }
     }
 

@@ -16,6 +16,7 @@ COMB(C_NAV_AKC_F7                       , A(KC_F7)                           , C
 COMB(C_NAV_CKC_D                        , C(KC_D)                            , KC_LCTL, NEXT_TAB)
 COMB(C_NAV_CKC_K                        , C(KC_K)                            , LT(_NAV2,_TAP_C_CKC_Z), RCS(KC_Z))
 COMB(C_NAV_CKC_R                        , C(KC_R)                            , KC_LSFT, NEXT_WINDOW)
+COMB(C_NAV_CKC_SLASH                    , C(KC_SLASH)                        , KC_LCTL, RCS(KC_BSPC))
 COMB(C_NAV_CKC_Y                        , C(KC_Y)                            , C(KC_W), KC_LALT)
 COMB(C_NAV_RCSKC_F                      , RCS(KC_F)                          , RCS(KC_BSPC), RCS(KC_N))
 COMB(C_NAV_RCSKC_R                      , RCS(KC_R)                          , KC_LSFT, KC_SPC)
