@@ -16,13 +16,13 @@
 #define _NAV 5
 #define _NAV2 6
 #define _FN 7
-#define _SC 8
-#define _NUM 9
-#define _MOUSE 10
-#define _MOUSE2 11
-#define _CASE 12
-#define _MEDIA 13
-#define _SYM 14
+#define _NUM 8
+#define _MOUSE 9
+#define _MOUSE2 10
+#define _CASE 11
+#define _MEDIA 12
+#define _SYM 13
+#define _SC 14
 
 enum custom_keycodes {
 	NEXT_TAB = SAFE_RANGE,
@@ -46,8 +46,6 @@ enum custom_keycodes {
     _RMODS_S,
     _TAP_C_CKC_Z,
     L_NAV,
-    _TAP_C_CKC_LEFT_BRACKET,
-    _TAP_C_CKC_RIGHT_BRACKET,
     L_MOUSE,
     ALT_KC_D,
     ALT_KC_H,
@@ -83,8 +81,6 @@ enum custom_keycodes {
 #define _HANDLER__RMODS_S _RMODS_S
 #define _HANDLER__TAP_C_CKC_Z LT(_NAV2,_TAP_C_CKC_Z)
 #define _HANDLER_L_NAV L_NAV
-#define _HANDLER__TAP_C_CKC_LEFT_BRACKET _TAP_C_CKC_LEFT_BRACKET
-#define _HANDLER__TAP_C_CKC_RIGHT_BRACKET _TAP_C_CKC_RIGHT_BRACKET
 #define _HANDLER_L_MOUSE L_MOUSE
 #define _HANDLER_ALT_KC_D ALT_KC_D
 #define _HANDLER_ALT_KC_H ALT_KC_H
@@ -135,9 +131,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                                            KC_NO,                KC_NO,                KC_NO,                KC_NO),
 	[_FN] = LAYOUT_split_3x5_2(
-                           KC_NO,               KC_F10,                KC_F9,                KC_NO, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
-                           KC_F4,         ALT_T(KC_F3),         CTL_T(KC_F2),         SFT_T(KC_F1), KC_NO, KC_NO,              KC_LSFT, _TAP_C_CKC_LEFT_BRACKET, _TAP_C_CKC_RIGHT_BRACKET,             MO(_NUM),
-                           KC_F8,                KC_F7,                KC_F6,                KC_F5, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,              DOT_SPC,
+                           KC_NO,               KC_F10,                KC_F9,                KC_NO, KC_NO, KC_NO,                KC_NO,              KC_LPRN,              KC_RPRN,                KC_NO,
+                           KC_F4,         ALT_T(KC_F3),         CTL_T(KC_F2),         SFT_T(KC_F1), KC_NO, KC_NO,      SFT_T(KC_MINUS), CTL_T(KC_LEFT_BRACKET), ALT_T(KC_RIGHT_BRACKET), LT(_NUM,KC_SEMICOLON),
+                           KC_F8,                KC_F7,                KC_F6,                KC_F5, KC_NO, KC_NO,             KC_GRAVE,              KC_DQUO,             KC_EQUAL,             KC_SLASH,
                                           KC_F11,               KC_F12,                KC_NO,                KC_NO),
 	[_NUM] = LAYOUT_split_3x5_2(
                            KC_NO,         KC_BACKSLASH,                 KC_9,                KC_NO, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
