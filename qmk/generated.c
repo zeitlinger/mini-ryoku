@@ -23,15 +23,12 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_BASE_KC_Z: return 25;
     case C_BASE_ONE_SHOT_MOUSE: return 25;
     case C_NAV_AKC_F7: return 50;
-    case C_NAV_CKC_A: return 50;
     case C_NAV_CKC_D: return 50;
-    case C_NAV_CKC_F: return 50;
     case C_NAV_CKC_K: return 50;
-    case C_NAV_CKC_N: return 50;
     case C_NAV_CKC_R: return 50;
     case C_NAV_CKC_Y: return 50;
     case C_NAV_RCSKC_F: return 50;
-    case C_NAV_RCSKC_V: return 50;
+    case C_NAV_RCSKC_R: return 50;
     case S_C_BASE_KC_B: return 50;
     case S_C_BASE_KC_G: return 50;
     case S_C_BASE_KC_J: return 50;
@@ -55,41 +52,62 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     }
     if (alternateLayer >= 0 && record->event.pressed) {
         switch (alternateLayer) {
-        case _SC: 
+        case _SC:
             switch (keycode) {
-            case KC_UP: tap_code16(C(KC_LEFT_BRACKET)); return false;
-            case KC_DOWN: tap_code16(C(KC_RIGHT_BRACKET)); return false;
-            case KC_SPC: tap_code16(DOT_SPC); return false;
+                case RCS(KC_N): tap_code16(C(KC_N)); return false;
+                case RCS(KC_BSPC): tap_code16(C(KC_F)); return false;
+                case KC_ESC: tap_code16(KC_LPRN); return false;
+                case KC_INS: tap_code16(KC_RPRN); return false;
+                case LT(_NAV2,_TAP_C_CKC_Z): tap_code16(A(KC_RIGHT)); return false;
+                case KC_LALT: tap_code16(C(KC_X)); return false;
+                case KC_LCTL: tap_code16(C(KC_C)); return false;
+                case KC_LSFT: tap_code16(C(KC_V)); return false;
+                case KC_LEFT: tap_code16(KC_MINUS); return false;
+                case KC_UP: tap_code16(KC_LEFT_BRACKET); return false;
+                case KC_DOWN: tap_code16(KC_RIGHT_BRACKET); return false;
+                case KC_RIGHT: tap_code16(KC_SEMICOLON); return false;
+                case RCS(KC_Z): tap_code16(C(KC_RIGHT)); return false;
+                case C(KC_W): tap_code16(C(KC_A)); return false;
+                case NEXT_TAB: tap_code16(C(KC_E)); return false;
+                case NEXT_WINDOW: tap_code16(RCS(KC_V)); return false;
+                case KC_ENT: tap_code16(KC_GRAVE); return false;
+                case KC_BSPC: tap_code16(KC_DQUO); return false;
+                case KC_DEL: tap_code16(KC_EQUAL); return false;
+                case KC_SPC: tap_code16(KC_SLASH); return false;
             }
-        case _SYM: 
+            break;
+        case _SYM:
             switch (keycode) {
-            case KC_F10: tap_code16(KC_PIPE); return false;
-            case KC_F9: tap_code16(KC_ASTR); return false;
-            case KC_LPRN: tap_code16(KC_LABK); return false;
-            case KC_RPRN: tap_code16(KC_RABK); return false;
-            case KC_F4: tap_code16(KC_DLR); return false;
-            case ALT_T(KC_F3): tap_code16(KC_HASH); return false;
-            case CTL_T(KC_F2): tap_code16(KC_AT); return false;
-            case SFT_T(KC_F1): tap_code16(KC_EXLM); return false;
-            case SFT_T(KC_MINUS): tap_code16(KC_UNDS); return false;
-            case CTL_T(KC_LEFT_BRACKET): tap_code16(KC_LCBR); return false;
-            case ALT_T(KC_RIGHT_BRACKET): tap_code16(KC_RCBR); return false;
-            case LT(_NUM,KC_SEMICOLON): tap_code16(KC_COLN); return false;
-            case KC_F7: tap_code16(KC_AMPR); return false;
-            case KC_F6: tap_code16(KC_CIRC); return false;
-            case KC_F5: tap_code16(KC_PERC); return false;
-            case KC_GRAVE: tap_code16(KC_TILD); return false;
-            case KC_DQUO: tap_code16(KC_BACKSLASH); return false;
-            case KC_EQUAL: tap_code16(KC_PLUS); return false;
-            case KC_SLASH: tap_code16(KC_QUES); return false;
+                case KC_F10: tap_code16(KC_PIPE); return false;
+                case KC_F9: tap_code16(KC_ASTR); return false;
+                case KC_NO: tap_code16(KC_LABK); return false;
+                case KC_NO: tap_code16(KC_RABK); return false;
+                case KC_F4: tap_code16(KC_DLR); return false;
+                case ALT_T(KC_F3): tap_code16(KC_HASH); return false;
+                case CTL_T(KC_F2): tap_code16(KC_AT); return false;
+                case SFT_T(KC_F1): tap_code16(KC_EXLM); return false;
+                case KC_LSFT: tap_code16(KC_UNDS); return false;
+                case _TAP_C_CKC_LEFT_BRACKET: tap_code16(KC_LCBR); return false;
+                case _TAP_C_CKC_RIGHT_BRACKET: tap_code16(KC_RCBR); return false;
+                case MO(_NUM): tap_code16(KC_COLN); return false;
+                case KC_F7: tap_code16(KC_AMPR); return false;
+                case KC_F6: tap_code16(KC_CIRC); return false;
+                case KC_F5: tap_code16(KC_PERC); return false;
+                case KC_NO: tap_code16(KC_TILD); return false;
+                case KC_NO: tap_code16(KC_BACKSLASH); return false;
+                case KC_NO: tap_code16(KC_PLUS); return false;
+                case DOT_SPC: tap_code16(KC_QUES); return false;
             }
+            break;
         }
     }
 
     if (record->tap.count) {
         if (record->event.pressed) {
             switch (keycode) {
-            case _HANDLER__TAP_C_CKC_C: tap_code16(C(KC_C)); return false;
+            case _HANDLER__TAP_C_CKC_Z: tap_code16(C(KC_Z)); return false;
+            case _HANDLER__TAP_C_CKC_LEFT_BRACKET: tap_code16(C(KC_LEFT_BRACKET)); return false;
+            case _HANDLER__TAP_C_CKC_RIGHT_BRACKET: tap_code16(C(KC_RIGHT_BRACKET)); return false;
             default:
                 break;
             }
@@ -161,8 +179,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-    case LT(_NAV2,_TAP_C_CKC_C): return true;
-    case LT(_NUM,KC_SEMICOLON): return true;
+    case LT(_NAV2,_TAP_C_CKC_Z): return true;
     default:
         // Do not select the hold action when another key is pressed.
         return false;
