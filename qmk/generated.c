@@ -4,6 +4,7 @@
  */
 
 int alternateLayer = -1;
+int layer = -1;
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     switch(index) {
@@ -47,13 +48,13 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
 bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
         switch (keycode) {
-        case OSL(_NAV): alternateLayer = _SC; break;
-        case OSL(_FN): alternateLayer = _SYM; break;
+        case MO(_NAV): alternateLayer = _SC; break;
+        case MO(_FN): alternateLayer = _SYM; break;
         }
     }
     if (alternateLayer >= 0 && record->event.pressed) {
         alternateLayer = -1;
-        if (get_highest_layer(state) == _BASE) {
+        if (layer == _BASE) {
             switch (alternateLayer) {
             case _SC:
                 switch (keycode) {
