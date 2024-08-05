@@ -46,12 +46,6 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
 }
 
 bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
-    if (record->event.pressed) {
-        switch (keycode) {
-        case MO(_NAV): alternateLayer = _SC; break;
-        case MO(_FN): alternateLayer = _SYM; break;
-        }
-    }
     if (alternateLayer >= 0 && record->event.pressed) {
         alternateLayer = -1;
         if (layer == _BASE) {
@@ -97,6 +91,11 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
                 }
                 break;
             }
+        }
+    } else if (layer == _BASE && record->event.pressed) {
+        switch (keycode) {
+        case MO(_NAV): alternateLayer = _SC; break;
+        case MO(_FN): alternateLayer = _SYM; break;
         }
     }
 
