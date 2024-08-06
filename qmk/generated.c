@@ -1,6 +1,6 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/84e856a28301a2d488e6a4f7a2b2c8a89ca8c9d8/README.md using https://github.com/zeitlinger/keyboard/blob/84e856a28301a2d488e6a4f7a2b2c8a89ca8c9d8/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
  */
 
 int alternateLayer = -1;
@@ -45,6 +45,12 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     }
 }
 
+bool tap(uint16_t keycode) {
+    tap_code16(keycode);
+    set_last_keycode(keycode);
+    return false;
+}
+
 bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     if (alternateLayer >= 0 && record->event.pressed) {
         int al = alternateLayer;
@@ -53,42 +59,42 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
             switch (al) {
             case _SC:
                 switch (keycode) {
-                    case KC_P: tap_code16(C(KC_N)); return false;
-                    case KC_M: tap_code16(C(KC_F)); return false;
-                    case KC_S: tap_code16(A(KC_RIGHT)); return false;
-                    case KC_C: tap_code16(C(KC_X)); return false;
-                    case KC_N: tap_code16(C(KC_C)); return false;
-                    case KC_T: tap_code16(C(KC_V)); return false;
-                    case KC_E: tap_code16(C(KC_LEFT_BRACKET)); return false;
-                    case KC_I: tap_code16(C(KC_RIGHT_BRACKET)); return false;
-                    case MO(_RIGHT): tap_code16(C(KC_RIGHT)); return false;
-                    case KC_F: tap_code16(C(KC_A)); return false;
-                    case KC_L: tap_code16(C(KC_E)); return false;
-                    case KC_D: tap_code16(RCS(KC_V)); return false;
-                    case MO(_LEFT): tap_code16(DOT_SPC); return false;
+                    case KC_P: return tap(C(KC_N));
+                    case KC_M: return tap(C(KC_F));
+                    case KC_S: return tap(A(KC_RIGHT));
+                    case KC_C: return tap(C(KC_X));
+                    case KC_N: return tap(C(KC_C));
+                    case KC_T: return tap(C(KC_V));
+                    case KC_E: return tap(C(KC_LEFT_BRACKET));
+                    case KC_I: return tap(C(KC_RIGHT_BRACKET));
+                    case MO(_RIGHT): return tap(C(KC_RIGHT));
+                    case KC_F: return tap(C(KC_A));
+                    case KC_L: return tap(C(KC_E));
+                    case KC_D: return tap(RCS(KC_V));
+                    case MO(_LEFT): return tap(DOT_SPC);
                 }
                 break;
             case _SYM:
                 switch (keycode) {
-                    case KC_P: tap_code16(KC_PIPE); return false;
-                    case KC_M: tap_code16(KC_ASTR); return false;
-                    case QK_REPEAT_KEY: tap_code16(KC_LABK); return false;
-                    case QK_ALT_REPEAT_KEY: tap_code16(KC_RABK); return false;
-                    case KC_S: tap_code16(KC_DLR); return false;
-                    case KC_C: tap_code16(KC_HASH); return false;
-                    case KC_N: tap_code16(KC_AT); return false;
-                    case KC_T: tap_code16(KC_EXLM); return false;
-                    case KC_A: tap_code16(KC_UNDS); return false;
-                    case KC_E: tap_code16(KC_LCBR); return false;
-                    case KC_I: tap_code16(KC_RCBR); return false;
-                    case KC_H: tap_code16(KC_COLN); return false;
-                    case KC_F: tap_code16(KC_AMPR); return false;
-                    case KC_L: tap_code16(KC_CIRC); return false;
-                    case KC_D: tap_code16(KC_PERC); return false;
-                    case KC_U: tap_code16(KC_TILD); return false;
-                    case KC_O: tap_code16(KC_BACKSLASH); return false;
-                    case KC_Y: tap_code16(KC_PLUS); return false;
-                    case MO(_LEFT): tap_code16(KC_QUES); return false;
+                    case KC_P: return tap(KC_PIPE);
+                    case KC_M: return tap(KC_ASTR);
+                    case QK_REPEAT_KEY: return tap(KC_LABK);
+                    case QK_ALT_REPEAT_KEY: return tap(KC_RABK);
+                    case KC_S: return tap(KC_DLR);
+                    case KC_C: return tap(KC_HASH);
+                    case KC_N: return tap(KC_AT);
+                    case KC_T: return tap(KC_EXLM);
+                    case KC_A: return tap(KC_UNDS);
+                    case KC_E: return tap(KC_LCBR);
+                    case KC_I: return tap(KC_RCBR);
+                    case KC_H: return tap(KC_COLN);
+                    case KC_F: return tap(KC_AMPR);
+                    case KC_L: return tap(KC_CIRC);
+                    case KC_D: return tap(KC_PERC);
+                    case KC_U: return tap(KC_TILD);
+                    case KC_O: return tap(KC_BACKSLASH);
+                    case KC_Y: return tap(KC_PLUS);
+                    case MO(_LEFT): return tap(KC_QUES);
                 }
                 break;
             }
