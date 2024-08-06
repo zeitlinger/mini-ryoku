@@ -1,10 +1,10 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/84e856a28301a2d488e6a4f7a2b2c8a89ca8c9d8/README.md using https://github.com/zeitlinger/keyboard/blob/84e856a28301a2d488e6a4f7a2b2c8a89ca8c9d8/generateKeyboard.kt
  */
 
 int alternateLayer = -1;
-int layer = -1;
+int layer = _BASE;
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     switch(index) {
@@ -47,9 +47,10 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
 
 bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     if (alternateLayer >= 0 && record->event.pressed) {
+        int al = alternateLayer;
         alternateLayer = -1;
         if (layer == _BASE) {
-            switch (alternateLayer) {
+            switch (al) {
             case _SC:
                 switch (keycode) {
                     case KC_P: tap_code16(C(KC_N)); return false;
