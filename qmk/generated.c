@@ -1,6 +1,6 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/297c971eea030ba51b75d8f8bc3f0d985ca3bce7/README.md using https://github.com/zeitlinger/keyboard/blob/297c971eea030ba51b75d8f8bc3f0d985ca3bce7/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
  */
 
 int alternateLayer = -1;
@@ -47,7 +47,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
 
 bool tap(uint16_t keycode) {
     tap_code16(keycode);
-    get_repeat_key_count(keycode)
+    get_repeat_key_count(keycode);
     return false;
 }
 
@@ -78,8 +78,6 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
                 switch (keycode) {
                     case KC_P: return tap(KC_PIPE);
                     case KC_M: return tap(KC_ASTR);
-                    case QK_REPEAT_KEY: return tap(KC_LABK);
-                    case QK_ALT_REPEAT_KEY: return tap(KC_RABK);
                     case KC_S: return tap(KC_DLR);
                     case KC_C: return tap(KC_HASH);
                     case KC_N: return tap(KC_AT);
@@ -88,13 +86,14 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
                     case KC_E: return tap(KC_LCBR);
                     case KC_I: return tap(KC_RCBR);
                     case KC_H: return tap(KC_COLN);
+                    case MO(_RIGHT): return tap(KC_LABK);
                     case KC_F: return tap(KC_AMPR);
                     case KC_L: return tap(KC_CIRC);
                     case KC_D: return tap(KC_PERC);
                     case KC_U: return tap(KC_TILD);
                     case KC_O: return tap(KC_BACKSLASH);
                     case KC_Y: return tap(KC_PLUS);
-                    case MO(_LEFT): return tap(KC_QUES);
+                    case MO(_LEFT): return tap(KC_RABK);
                 }
                 break;
             }
