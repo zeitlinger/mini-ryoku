@@ -1,6 +1,6 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/297c971eea030ba51b75d8f8bc3f0d985ca3bce7/README.md using https://github.com/zeitlinger/keyboard/blob/297c971eea030ba51b75d8f8bc3f0d985ca3bce7/generateKeyboard.kt
  */
 
 int alternateLayer = -1;
@@ -47,7 +47,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
 
 bool tap(uint16_t keycode) {
     tap_code16(keycode);
-    set_last_keycode(keycode);
+    get_repeat_key_count(keycode)
     return false;
 }
 
