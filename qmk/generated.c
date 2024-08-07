@@ -63,6 +63,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
                 switch (keycode) {
                     case KC_E: return tap(C(KC_LEFT_BRACKET));
                     case KC_I: return tap(C(KC_RIGHT_BRACKET));
+                    case KC_H: return tap(C(KC_SLASH));
                     case MO(_LEFT): return tap(DOT_SPC);
                     case MO(_NAV): return tap(A(KC_RIGHT));
                 }
