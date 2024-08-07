@@ -29,6 +29,7 @@ enum custom_keycodes {
 	NEXT_WINDOW,
     ONE_SHOT_MOUSE,
     DOT_SPC,
+    N_T,
     PRINT_VERSION,
     CAPS_WORDS,
     SNAKE_CASE,
@@ -64,6 +65,7 @@ enum custom_keycodes {
 #define _HANDLER_NEXT_WINDOW NEXT_WINDOW
 #define _HANDLER_ONE_SHOT_MOUSE ONE_SHOT_MOUSE
 #define _HANDLER_DOT_SPC DOT_SPC
+#define _HANDLER_N_T N_T
 #define _HANDLER_PRINT_VERSION PRINT_VERSION
 #define _HANDLER_CAPS_WORDS CAPS_WORDS
 #define _HANDLER_SNAKE_CASE SNAKE_CASE
@@ -106,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          KC_UNDS,              S(KC_F),              S(KC_L),              S(KC_D), KC_NO, KC_NO, LM(_LMODS, MOD_LSFT), LM(_LMODS, MOD_LCTL), LM(_LMODS, MOD_LALT),                KC_NO,
                                             KC_4,              S(KC_R),                 KC_7,                 KC_8),
 	[_RIGHT] = LAYOUT_split_3x5_2(
-                           KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,            S(KC_F16),                "n't", S(QK_ALT_REPEAT_KEY),           S(QK_BOOT),
+                           KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,            S(KC_F16),                  N_T, S(QK_ALT_REPEAT_KEY),           S(QK_BOOT),
                            KC_NO,            MO(_CASE),                 KC_9,                 KC_0, KC_NO, KC_NO,              S(KC_A),              S(KC_E),              S(KC_I),              S(KC_H),
                            KC_NO, LM(_RMODS, MOD_LALT), LM(_RMODS, MOD_LCTL), LM(_RMODS, MOD_LSFT), KC_NO, KC_NO,              S(KC_U),              S(KC_O),              S(KC_Y),              KC_QUES,
                                             KC_1,                 KC_2,               KC_SPC,                 KC_3),
