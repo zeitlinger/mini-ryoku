@@ -1,6 +1,6 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/3b95e37a0105273821aa3c6ef9bf921df4ed6b68/README.md using https://github.com/zeitlinger/keyboard/blob/3b95e37a0105273821aa3c6ef9bf921df4ed6b68/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
  */
 
 int alternateLayer = -1;
@@ -24,13 +24,15 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_BASE_KC_Z: return 25;
     case C_BASE_ONE_SHOT_MOUSE: return 25;
     case C_NAV_AKC_F7: return 50;
+    case C_NAV_CKC_A: return 50;
     case C_NAV_CKC_D: return 50;
+    case C_NAV_CKC_F: return 50;
     case C_NAV_CKC_K: return 50;
+    case C_NAV_CKC_N: return 50;
     case C_NAV_CKC_R: return 50;
-    case C_NAV_CKC_SLASH: return 50;
     case C_NAV_CKC_Y: return 50;
     case C_NAV_RCSKC_F: return 50;
-    case C_NAV_RCSKC_R: return 50;
+    case C_NAV_RCSKC_V: return 50;
     case S_C_BASE_KC_B: return 50;
     case S_C_BASE_KC_G: return 50;
     case S_C_BASE_KC_J: return 50;
@@ -47,7 +49,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
 
 bool tap(uint16_t keycode) {
     tap_code16(keycode);
-    get_repeat_key_count(keycode);
+    set_last_keycode(keycode);
     return false;
 }
 
@@ -59,19 +61,10 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
             switch (al) {
             case _SC:
                 switch (keycode) {
-                    case KC_P: return tap(C(KC_N));
-                    case KC_M: return tap(C(KC_F));
-                    case KC_S: return tap(A(KC_RIGHT));
-                    case KC_C: return tap(C(KC_X));
-                    case KC_N: return tap(C(KC_C));
-                    case KC_T: return tap(C(KC_V));
                     case KC_E: return tap(C(KC_LEFT_BRACKET));
                     case KC_I: return tap(C(KC_RIGHT_BRACKET));
-                    case MO(_RIGHT): return tap(C(KC_RIGHT));
-                    case KC_F: return tap(C(KC_A));
-                    case KC_L: return tap(C(KC_E));
-                    case KC_D: return tap(RCS(KC_V));
                     case MO(_LEFT): return tap(DOT_SPC);
+                    case MO(_NAV): return tap(A(KC_RIGHT));
                 }
                 break;
             case _SYM:
@@ -82,7 +75,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
                     case KC_C: return tap(KC_HASH);
                     case KC_N: return tap(KC_AT);
                     case KC_T: return tap(KC_EXLM);
-                    case KC_A: return tap(KC_UNDS);
+                    case KC_A: return tap(KC_MINUS);
                     case KC_E: return tap(KC_LCBR);
                     case KC_I: return tap(KC_RCBR);
                     case KC_H: return tap(KC_COLN);
@@ -108,7 +101,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
     if (record->tap.count) {
         if (record->event.pressed) {
             switch (keycode) {
-            case _HANDLER__TAP_C_CKC_Z: tap_code16(C(KC_Z)); return false;
+            case _HANDLER__TAP_C_CKC_C: tap_code16(C(KC_C)); return false;
             default:
                 break;
             }
@@ -180,7 +173,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-    case LT(_NAV2,_TAP_C_CKC_Z): return true;
+    case LT(_NAV2,_TAP_C_CKC_C): return true;
     case LT(_NUM,KC_SEMICOLON): return true;
     default:
         // Do not select the hold action when another key is pressed.
