@@ -33,6 +33,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_NAV_CKC_Y: return 50;
     case C_NAV_RCSKC_F: return 50;
     case C_NAV_RCSKC_V: return 50;
+    case C_RIGHT_DOT_SPC: return 50;
     case S_C_BASE_KC_B: return 50;
     case S_C_BASE_KC_G: return 50;
     case S_C_BASE_KC_J: return 50;
@@ -59,15 +60,6 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
         alternateLayer = -1;
         if (layer == _BASE) {
             switch (al) {
-            case _SC:
-                switch (keycode) {
-                    case KC_E: return tap(C(KC_LEFT_BRACKET));
-                    case KC_I: return tap(C(KC_RIGHT_BRACKET));
-                    case KC_H: return tap(C(KC_SLASH));
-                    case MO(_LEFT): return tap(DOT_SPC);
-                    case MO(_NAV): return tap(A(KC_RIGHT));
-                }
-                break;
             case _SYM:
                 switch (keycode) {
                     case KC_P: return tap(KC_PIPE);
@@ -94,7 +86,6 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
         }
     } else if (layer == _BASE && record->event.pressed) {
         switch (keycode) {
-        case MO(_NAV): alternateLayer = _SC; break;
         case MO(_FN): alternateLayer = _SYM; break;
         }
     }
