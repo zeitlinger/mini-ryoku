@@ -22,7 +22,6 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_BASE_KC_W: return 25;
     case C_BASE_KC_X: return 25;
     case C_BASE_KC_Z: return 25;
-    case C_BASE_ONE_SHOT_MOUSE: return 25;
     case C_NAV_AKC_F7: return 50;
     case C_NAV_CKC_A: return 50;
     case C_NAV_CKC_D: return 50;
@@ -143,7 +142,6 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
             }
             switch (keycode) {
             case _HANDLER_L_NAV: layer_invert(_NAV); return false;
-            case _HANDLER_L_MOUSE: layer_invert(_MOUSE); return false;
             case _HANDLER_ALT_KC_D: SEND_STRING("oes"); return false;
             case _HANDLER_ALT_KC_H: SEND_STRING("ey"); return false;
             case _HANDLER_ALT_KC_J: SEND_STRING("ust"); return false;

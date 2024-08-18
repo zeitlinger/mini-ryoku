@@ -11,7 +11,6 @@ COMB(C_BASE_KC_V                        , KC_V                               , K
 COMB(C_BASE_KC_W                        , KC_W                               , KC_M, KC_N)
 COMB(C_BASE_KC_X                        , KC_X                               , KC_C, KC_P)
 COMB(C_BASE_KC_Z                        , KC_Z                               , KC_I, QK_ALT_REPEAT_KEY)
-COMB(C_BASE_ONE_SHOT_MOUSE              , ONE_SHOT_MOUSE                     , QK_ALT_REPEAT_KEY, QK_REPEAT_KEY)
 COMB(C_NAV_AKC_F7                       , A(KC_F7)                           , C(KC_W), C(KC_Z))
 COMB(C_NAV_CKC_A                        , C(KC_A)                            , C(KC_X), KC_LALT)
 COMB(C_NAV_CKC_D                        , C(KC_D)                            , KC_LCTL, NEXT_TAB)
