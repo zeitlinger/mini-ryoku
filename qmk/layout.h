@@ -3,10 +3,10 @@
 
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/19042ae8299ee63b47d058b4758d364c2439f3f1/README.md using https://github.com/zeitlinger/keyboard/blob/19042ae8299ee63b47d058b4758d364c2439f3f1/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
  */
 
-#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/19042ae8299ee63b47d058b4758d364c2439f3f1/README.md"
+#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md"
 
 #define _BASE 0
 #define _LEFT 1
@@ -98,7 +98,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_LEFT] = LAYOUT_split_3x5_2(
                        S(KC_ESC),              S(KC_P),              S(KC_M),           S(KC_LGUI), KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                          S(KC_S),              S(KC_C),              S(KC_N),              S(KC_T), KC_NO, KC_NO,                 KC_5,                 KC_6,           MO(_MEDIA),                KC_NO,
-                         KC_UNDS,              S(KC_F),              S(KC_L),              S(KC_D), KC_NO, KC_NO, LM(_LMODS, MOD_LSFT), LM(_LMODS, MOD_LCTL), LM(_LMODS, MOD_LALT),                KC_NO,
+                         KC_COLN,              S(KC_F),              S(KC_L),              S(KC_D), KC_NO, KC_NO, LM(_LMODS, MOD_LSFT), LM(_LMODS, MOD_LCTL), LM(_LMODS, MOD_LALT),                KC_NO,
                                             KC_4,              S(KC_R),                 KC_7,                 KC_8),
 	[_RIGHT] = LAYOUT_split_3x5_2(
                            KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,            S(KC_F16),                  N_T,          A(KC_RIGHT),           S(QK_BOOT),
@@ -108,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_LMODS] = LAYOUT_split_3x5_2(
                           KC_ESC,                 KC_P,                 KC_M,              KC_LGUI, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                             KC_S,                 KC_C,                 KC_N,                 KC_T, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
-                         KC_UNDS,                 KC_F,                 KC_L,                 KC_D, KC_NO, KC_NO, LM(_LMODS, MOD_LSFT), LM(_LMODS, MOD_LCTL), LM(_LMODS, MOD_LALT),                KC_NO,
+                           KC_NO,                 KC_F,                 KC_L,                 KC_D, KC_NO, KC_NO, LM(_LMODS, MOD_LSFT), LM(_LMODS, MOD_LCTL), LM(_LMODS, MOD_LALT),                KC_NO,
                                            KC_NO,                 KC_R,                KC_NO,                KC_NO),
 	[_RMODS] = LAYOUT_split_3x5_2(
                            KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,               KC_F16,        QK_REPEAT_KEY,    QK_ALT_REPEAT_KEY,              QK_BOOT,
@@ -126,7 +126,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO, UP(UMLAUT_a, UMLAUT_A), UP(UMLAUT_o, UMLAUT_O), UP(UMLAUT_u, UMLAUT_U),         UM(UMLAUT_s),
                                            KC_NO,                KC_NO,          C(KC_SLASH),                KC_NO),
 	[_FN] = LAYOUT_split_3x5_2(
-                          KC_F11,               KC_F10,                KC_F9,                KC_NO, KC_NO, KC_NO,                KC_NO,              KC_LPRN,              KC_RPRN,                KC_NO,
+                           KC_NO,               KC_F10,                KC_F9,                KC_NO, KC_NO, KC_NO,                KC_NO,              KC_LPRN,              KC_RPRN,                KC_NO,
                            KC_F4,         ALT_T(KC_F3),         CTL_T(KC_F2),         SFT_T(KC_F1), KC_NO, KC_NO,      SFT_T(KC_MINUS), CTL_T(KC_LEFT_BRACKET), ALT_T(KC_RIGHT_BRACKET), LT(_NUM,KC_SEMICOLON),
                            KC_F8,                KC_F7,                KC_F6,                KC_F5, KC_NO, KC_NO,             KC_GRAVE,              KC_DQUO,             KC_EQUAL,             KC_SLASH,
                                         MO(_SYM),               KC_F12,                KC_NO,                KC_NO),
@@ -146,8 +146,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                    PRINT_VERSION,              KC_MPRV,              KC_MNXT,              KC_MPLY, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                                            KC_NO,                KC_NO,                KC_NO,                KC_NO),
 	[_SYM] = LAYOUT_split_3x5_2(
-                           KC_NO,              KC_PIPE,              KC_ASTR,                KC_NO, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
-                          KC_DLR,              KC_HASH,                KC_AT,              KC_EXLM, KC_NO, KC_NO,             KC_MINUS,              KC_LCBR,              KC_RCBR,              KC_COLN,
-                         KC_LABK,              KC_AMPR,              KC_CIRC,              KC_PERC, KC_NO, KC_NO,              KC_TILD,         KC_BACKSLASH,              KC_PLUS,              KC_RABK,
+                           KC_NO,              KC_PIPE,              KC_ASTR,                KC_NO, KC_NO, KC_NO,                KC_NO,              KC_LABK,              KC_RABK,                KC_NO,
+                          KC_DLR,              KC_HASH,                KC_AT,              KC_EXLM, KC_NO, KC_NO,              KC_UNDS,              KC_LCBR,              KC_RCBR,              KC_COLN,
+                           KC_NO,              KC_AMPR,              KC_CIRC,              KC_PERC, KC_NO, KC_NO,              KC_TILD,         KC_BACKSLASH,              KC_PLUS,                KC_NO,
                                            KC_NO,                KC_NO,                KC_NO,                KC_NO),
 };

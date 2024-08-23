@@ -1,6 +1,6 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/19042ae8299ee63b47d058b4758d364c2439f3f1/README.md using https://github.com/zeitlinger/keyboard/blob/19042ae8299ee63b47d058b4758d364c2439f3f1/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
  */
 
 int alternateLayer = -1;
@@ -22,6 +22,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_BASE_KC_W: return 25;
     case C_BASE_KC_X: return 25;
     case C_BASE_KC_Z: return 25;
+    case C_FN_KC_F11: return 50;
     case C_NAV_AKC_F7: return 50;
     case C_NAV_CKC_A: return 50;
     case C_NAV_CKC_D: return 50;
@@ -33,6 +34,15 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_NAV_RCSKC_F: return 50;
     case C_NAV_RCSKC_V: return 50;
     case C_RIGHT_DOT_SPC: return 50;
+    case DS_C_BASE_KC_B: return 50;
+    case DS_C_BASE_KC_G: return 50;
+    case DS_C_BASE_KC_J: return 50;
+    case DS_C_BASE_KC_K: return 50;
+    case DS_C_BASE_KC_Q: return 50;
+    case DS_C_BASE_KC_V: return 50;
+    case DS_C_BASE_KC_W: return 50;
+    case DS_C_BASE_KC_X: return 50;
+    case DS_C_BASE_KC_Z: return 50;
     case S_C_BASE_KC_B: return 50;
     case S_C_BASE_KC_G: return 50;
     case S_C_BASE_KC_J: return 50;
