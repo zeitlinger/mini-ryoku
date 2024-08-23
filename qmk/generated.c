@@ -1,6 +1,6 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/19042ae8299ee63b47d058b4758d364c2439f3f1/README.md using https://github.com/zeitlinger/keyboard/blob/19042ae8299ee63b47d058b4758d364c2439f3f1/generateKeyboard.kt
  */
 
 int alternateLayer = -1;
@@ -59,33 +59,12 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
         alternateLayer = -1;
         if (layer == _BASE) {
             switch (al) {
-            case _SYM:
-                switch (keycode) {
-                    case KC_P: return tap(KC_PIPE);
-                    case KC_M: return tap(KC_ASTR);
-                    case KC_S: return tap(KC_DLR);
-                    case KC_C: return tap(KC_HASH);
-                    case KC_N: return tap(KC_AT);
-                    case KC_T: return tap(KC_EXLM);
-                    case KC_A: return tap(KC_MINUS);
-                    case KC_E: return tap(KC_LCBR);
-                    case KC_I: return tap(KC_RCBR);
-                    case KC_H: return tap(KC_COLN);
-                    case MO(_RIGHT): return tap(KC_LABK);
-                    case KC_F: return tap(KC_AMPR);
-                    case KC_L: return tap(KC_CIRC);
-                    case KC_D: return tap(KC_PERC);
-                    case KC_U: return tap(KC_TILD);
-                    case KC_O: return tap(KC_BACKSLASH);
-                    case KC_Y: return tap(KC_PLUS);
-                    case MO(_LEFT): return tap(KC_RABK);
-                }
-                break;
+            
             }
         }
     } else if (layer == _BASE && record->event.pressed) {
         switch (keycode) {
-        case MO(_FN): alternateLayer = _SYM; break;
+        
         }
     }
 
