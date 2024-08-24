@@ -140,6 +140,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
                 case KC_M: SEND_STRING("ent"); return false;
                 case KC_N: tap_code16(KC_K); return false;
                 case KC_P: tap_code16(KC_S); return false;
+                case KC_S: SEND_STRING("ion"); return false;
                 case KC_SPC: SEND_STRING("and"); return false;
                 case KC_T: SEND_STRING("hat"); return false;
                 case KC_TAB: SEND_STRING("and"); return false;
@@ -158,6 +159,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
                 case S(KC_M): SEND_STRING("ent"); return false;
                 case S(KC_N): tap_code16(KC_K); return false;
                 case S(KC_P): tap_code16(KC_S); return false;
+                case S(KC_S): SEND_STRING("ion"); return false;
                 case S(KC_T): SEND_STRING("hat"); return false;
                 case S(KC_V): SEND_STRING("en"); return false;
                 case S(KC_W): tap_code16(KC_S); return false;
