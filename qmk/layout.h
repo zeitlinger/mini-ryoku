@@ -3,10 +3,10 @@
 
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/5bb83aef1c3f3ebd4d8efbb290d8d3b90d6b0b1c/README.md using https://github.com/zeitlinger/keyboard/blob/5bb83aef1c3f3ebd4d8efbb290d8d3b90d6b0b1c/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
  */
 
-#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/5bb83aef1c3f3ebd4d8efbb290d8d3b90d6b0b1c/README.md"
+#define VERSION_STRING "https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md"
 
 #define _BASE 0
 #define _LEFT 1
@@ -148,6 +148,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_SYM] = LAYOUT_split_3x5_2(
                            KC_NO,              KC_PIPE,              KC_ASTR,                KC_NO, KC_NO, KC_NO,                KC_NO,              KC_LABK,              KC_RABK,                KC_NO,
                           KC_DLR,              KC_HASH,                KC_AT,              KC_EXLM, KC_NO, KC_NO,              KC_UNDS,              KC_LCBR,              KC_RCBR,              KC_COLN,
-                           KC_NO,              KC_AMPR,              KC_CIRC,              KC_PERC, KC_NO, KC_NO,              KC_TILD,         KC_BACKSLASH,              KC_PLUS,                KC_NO,
+                           KC_NO,              KC_AMPR,              KC_CIRC,              KC_PERC, KC_NO, KC_NO,              KC_TILD,         KC_BACKSLASH,              KC_PLUS,              KC_QUES,
                                            KC_NO,                KC_NO,                KC_NO,                KC_NO),
 };
