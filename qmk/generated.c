@@ -1,6 +1,6 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/959695387f4928b463eae494cc1b6b2d34ed1031/README.md using https://github.com/zeitlinger/keyboard/blob/959695387f4928b463eae494cc1b6b2d34ed1031/generateKeyboard.kt
  */
 
 int alternateLayer = -1;
@@ -61,6 +61,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_NAV_KC_ESC: return 200;
     case C_NAV_KC_INS: return 200;
     case C_NAV_KC_LEFT: return 200;
+    case C_NAV_KC_MUTE: return 200;
     case C_NAV_KC_RIGHT: return 200;
     case C_NAV_KC_SPC: return 200;
     case C_NAV_KC_TAB: return 200;
@@ -68,6 +69,10 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_NAV_RCSKC_F: return 200;
     case C_NAV_RCSKC_V: return 200;
     case C_NAV_RCSKC_Z: return 200;
+    case C_NAV_UMUMLAUT_S: return 200;
+    case C_NAV_UPUMLAUT_AUMLAUT_A: return 200;
+    case C_NAV_UPUMLAUT_OUMLAUT_O: return 200;
+    case C_NAV_UPUMLAUT_UUMLAUT_U: return 200;
     case C_RIGHT_DOT_SPC: return 200;
     case C_SYM_KC_AMPR: return 200;
     case C_SYM_KC_ASTR: return 200;
@@ -135,6 +140,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
         if (record->event.pressed) {
             switch (keycode) {
             case _HANDLER__TAP_C_CKC_C: tap_code16(C(KC_C)); return false;
+            case _HANDLER__TAP_C_CKC_K: tap_code16(C(KC_K)); return false;
             default:
                 break;
             }
@@ -158,7 +164,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
                 case KC_P: tap_code16(KC_S); return false;
                 case KC_S: SEND_STRING("ion"); return false;
                 case KC_SPC: SEND_STRING("and"); return false;
-                case KC_T: SEND_STRING("hat"); return false;
+                case KC_T: SEND_STRING("ing"); return false;
                 case KC_TAB: SEND_STRING("and"); return false;
                 case KC_V: SEND_STRING("en"); return false;
                 case KC_W: tap_code16(KC_S); return false;
@@ -176,7 +182,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
                 case S(KC_N): tap_code16(KC_K); return false;
                 case S(KC_P): tap_code16(KC_S); return false;
                 case S(KC_S): SEND_STRING("ion"); return false;
-                case S(KC_T): SEND_STRING("hat"); return false;
+                case S(KC_T): SEND_STRING("ing"); return false;
                 case S(KC_V): SEND_STRING("en"); return false;
                 case S(KC_W): tap_code16(KC_S); return false;
                 case S(KC_X): tap_code16(KC_C); return false;
