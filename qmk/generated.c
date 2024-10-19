@@ -1,6 +1,6 @@
 /* THIS FILE WAS GENERATED!
  *
- * file is generated from https://github.com/zeitlinger/keyboard/blob/959695387f4928b463eae494cc1b6b2d34ed1031/README.md using https://github.com/zeitlinger/keyboard/blob/959695387f4928b463eae494cc1b6b2d34ed1031/generateKeyboard.kt
+ * file is generated from https://github.com/zeitlinger/keyboard/blob/uncommitted changes/README.md using https://github.com/zeitlinger/keyboard/blob/uncommitted changes/generateKeyboard.kt
  */
 
 int alternateLayer = -1;
@@ -151,7 +151,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
                 switch (keycode) {
                 case KC_B: SEND_STRING("ecause"); return false;
                 case KC_COMMA: SEND_STRING(" and"); return false;
-                case KC_D: tap_code16(KC_V); return false;
+                case KC_D: SEND_STRING("oes"); return false;
                 case KC_DOT: SEND_STRING("./"); return false;
                 case KC_ENT: SEND_STRING("and"); return false;
                 case KC_F: SEND_STRING("or"); return false;
@@ -172,7 +172,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
                 case KC_Y: tap_code16(KC_I); return false;
                 case KC_Z: tap_code16(KC_I); return false;
                 case S(KC_B): SEND_STRING("ecause"); return false;
-                case S(KC_D): tap_code16(KC_V); return false;
+                case S(KC_D): SEND_STRING("oes"); return false;
                 case S(KC_F): SEND_STRING("or"); return false;
                 case S(KC_G): tap_code16(KC_L); return false;
                 case S(KC_H): SEND_STRING("ave"); return false;
@@ -238,7 +238,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         case KC_I: return KC_Z;
         case KC_J: return ALT_KC_J;
         case KC_K: return KC_N;
-        case KC_L: return KC_L;
+        case KC_L: return KC_P;
         case KC_M: return KC_B;
         case KC_MINUS: return KC_RABK;
         case KC_N: return KC_G;
@@ -267,7 +267,7 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         case S(KC_I): return KC_Z;
         case S(KC_J): return ALT_KC_J;
         case S(KC_K): return KC_N;
-        case S(KC_L): return KC_L;
+        case S(KC_L): return KC_P;
         case S(KC_M): return KC_B;
         case S(KC_N): return KC_G;
         case S(KC_O): return KC_E;
