@@ -40,7 +40,6 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_FN_KC_F9: return 200;
     case C_FN_KC_HASH: return 200;
     case C_FN_KC_LABK: return 200;
-    case C_FN_KC_LCBR: return 200;
     case C_FN_KC_LEFT_BRACKET: return 200;
     case C_FN_KC_LGUI: return 200;
     case C_FN_KC_LPRN: return 200;
@@ -49,12 +48,13 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_FN_KC_PIPE: return 200;
     case C_FN_KC_PLUS: return 200;
     case C_FN_KC_RABK: return 200;
-    case C_FN_KC_RCBR: return 200;
     case C_FN_KC_RIGHT_BRACKET: return 200;
     case C_FN_KC_RPRN: return 200;
     case C_FN_KC_TILD: return 200;
     case C_FN_KC_UNDS: return 200;
     case C_FN_LT_NUMKC_SEMICOLON: return 200;
+    case C_FN_SKC_LEFT_BRACKET: return 200;
+    case C_FN_SKC_RIGHT_BRACKET: return 200;
     case C_LEFT_CAMEL_CASE: return 200;
     case C_LEFT_CAPS_WORDS: return 200;
     case C_LEFT_DOT_CASE: return 200;
@@ -157,8 +157,8 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
             switch (keycode) {
             case _HANDLER__TAP_C_CKC_C: tap_code16(C(KC_C)); return false;
             case _HANDLER__TAP_C_CKC_K: tap_code16(C(KC_K)); return false;
-            case _HANDLER__TAP_C_KC_LCBR: tap_code16(KC_LCBR); return false;
-            case _HANDLER__TAP_C_KC_RCBR: tap_code16(KC_RCBR); return false;
+            case _HANDLER__TAP_C_SKC_LEFT_BRACKET: tap_code16(S(KC_LEFT_BRACKET)); return false;
+            case _HANDLER__TAP_C_SKC_RIGHT_BRACKET: tap_code16(S(KC_RIGHT_BRACKET)); return false;
             default:
                 break;
             }

@@ -41,8 +41,8 @@ enum custom_keycodes {
     _RMODS_S,
     _TAP_C_CKC_C,
     _TAP_C_CKC_K,
-    _TAP_C_KC_LCBR,
-    _TAP_C_KC_RCBR,
+    _TAP_C_SKC_LEFT_BRACKET,
+    _TAP_C_SKC_RIGHT_BRACKET,
     ALT_KC_D,
     ALT_KC_H,
     ALT_KC_J,
@@ -77,8 +77,8 @@ enum custom_keycodes {
 #define _HANDLER__RMODS_S _RMODS_S
 #define _HANDLER__TAP_C_CKC_C LT(_NAV2,_TAP_C_CKC_C)
 #define _HANDLER__TAP_C_CKC_K _TAP_C_CKC_K
-#define _HANDLER__TAP_C_KC_LCBR _TAP_C_KC_LCBR
-#define _HANDLER__TAP_C_KC_RCBR _TAP_C_KC_RCBR
+#define _HANDLER__TAP_C_SKC_LEFT_BRACKET _TAP_C_SKC_LEFT_BRACKET
+#define _HANDLER__TAP_C_SKC_RIGHT_BRACKET _TAP_C_SKC_RIGHT_BRACKET
 #define _HANDLER_ALT_KC_D ALT_KC_D
 #define _HANDLER_ALT_KC_H ALT_KC_H
 #define _HANDLER_ALT_KC_J ALT_KC_J
@@ -129,7 +129,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                            KC_NO,                KC_NO,                KC_NO,                KC_NO),
 	[_FN] = LAYOUT_split_3x5_2(
                            KC_NO,               KC_F10,                KC_F9,              KC_LGUI, KC_NO, KC_NO,                KC_NO,              KC_LPRN,              KC_RPRN,                KC_NO,
-                           KC_F4,         ALT_T(KC_F3),         CTL_T(KC_F2),         SFT_T(KC_F1), KC_NO, KC_NO,      SFT_T(KC_MINUS), CTL_T(_TAP_C_KC_LCBR), ALT_T(_TAP_C_KC_RCBR), LT(_NUM,KC_SEMICOLON),
+                           KC_F4,         ALT_T(KC_F3),         CTL_T(KC_F2),         SFT_T(KC_F1), KC_NO, KC_NO,      SFT_T(KC_MINUS), CTL_T(_TAP_C_SKC_LEFT_BRACKET), ALT_T(_TAP_C_SKC_RIGHT_BRACKET), LT(_NUM,KC_SEMICOLON),
                            KC_F8,                KC_F7,                KC_F6,                KC_F5, KC_NO, KC_NO,              KC_UNDS,             KC_EQUAL,              KC_PLUS,             KC_SLASH,
                                           KC_F11,               KC_F12,                KC_NO,                KC_NO),
 	[_NUM] = LAYOUT_split_3x5_2(
