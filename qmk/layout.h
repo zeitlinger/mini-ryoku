@@ -120,7 +120,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_NAV] = LAYOUT_split_3x5_2(
                           KC_SPC,              C(KC_X),              C(KC_V),            RCS(KC_Z), KC_NO, KC_NO,              KC_MUTE,               KC_ESC,               KC_INS,                KC_NO,
             LT(_NAV2,_TAP_C_CKC_C),              KC_LALT,              KC_LCTL,              KC_LSFT, KC_NO, KC_NO,              KC_LEFT,              KC_DOWN,                KC_UP,             KC_RIGHT,
-                         C(KC_Z),              C(KC_W),             NEXT_TAB,          NEXT_WINDOW, KC_NO, KC_NO,               KC_ENT,               KC_TAB,             TO(_NAV),               KC_SPC,
+                         C(KC_Z),              C(KC_W),             NEXT_TAB,          NEXT_WINDOW, KC_NO, KC_NO,               KC_ENT,               KC_TAB,            S(KC_TAB),               KC_SPC,
                                        TO(_BASE),                KC_NO,              KC_BSPC,               KC_DEL),
 	[_NAV2] = LAYOUT_split_3x5_2(
                            KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
