@@ -36,6 +36,7 @@ enum custom_keycodes {
     _LMODS_S,
     _LMODS_C,
     _LMODS_A,
+    L_NUM,
     _RMODS_A,
     _RMODS_C,
     _RMODS_S,
@@ -71,6 +72,7 @@ enum custom_keycodes {
 #define _HANDLER__LMODS_S _LMODS_S
 #define _HANDLER__LMODS_C _LMODS_C
 #define _HANDLER__LMODS_A _LMODS_A
+#define _HANDLER_L_NUM L_NUM
 #define _HANDLER__RMODS_A _RMODS_A
 #define _HANDLER__RMODS_C _RMODS_C
 #define _HANDLER__RMODS_S _RMODS_S
@@ -102,7 +104,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             KC_4,              S(KC_R),                 KC_7,                 KC_8),
 	[_RIGHT] = LAYOUT_split_3x5_2(
                            KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,               KC_F16,              KC_DQUO,          A(KC_RIGHT),           S(QK_BOOT),
-                           KC_NO,                KC_NO,                 KC_9,                 KC_0, KC_NO, KC_NO,              S(KC_A),              S(KC_E),              S(KC_I),              S(KC_H),
+                           KC_NO,                L_NUM,                 KC_9,                 KC_0, KC_NO, KC_NO,              S(KC_A),              S(KC_E),              S(KC_I),              S(KC_H),
                            KC_NO, LM(_RMODS, MOD_LALT), LM(_RMODS, MOD_LCTL), LM(_RMODS, MOD_LSFT), KC_NO, KC_NO,              S(KC_U),              S(KC_O),              S(KC_Y),              KC_QUES,
                                             KC_1,                 KC_2,               KC_SPC,                 KC_3),
 	[_LMODS] = LAYOUT_split_3x5_2(

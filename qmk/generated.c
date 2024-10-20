@@ -207,6 +207,7 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
                 }
             }
             switch (keycode) {
+            case _HANDLER_L_NUM: layer_invert(_NUM); return false;
             case _HANDLER_L_NAV: layer_invert(_NAV); return false;
             case _HANDLER_ALT_KC_D: SEND_STRING("oes"); return false;
             case _HANDLER_ALT_KC_H: SEND_STRING("ey"); return false;
