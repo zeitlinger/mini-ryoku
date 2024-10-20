@@ -17,8 +17,7 @@
 #define _NAV2 6
 #define _FN 7
 #define _NUM 8
-#define _CASE 9
-#define _MEDIA 10
+#define _MEDIA 9
 
 enum custom_keycodes {
 	NEXT_TAB = SAFE_RANGE,
@@ -103,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             KC_4,              S(KC_R),                 KC_7,                 KC_8),
 	[_RIGHT] = LAYOUT_split_3x5_2(
                            KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,               KC_F16,              KC_DQUO,          A(KC_RIGHT),           S(QK_BOOT),
-                           KC_NO,            MO(_CASE),                 KC_9,                 KC_0, KC_NO, KC_NO,              S(KC_A),              S(KC_E),              S(KC_I),              S(KC_H),
+                           KC_NO,                KC_NO,                 KC_9,                 KC_0, KC_NO, KC_NO,              S(KC_A),              S(KC_E),              S(KC_I),              S(KC_H),
                            KC_NO, LM(_RMODS, MOD_LALT), LM(_RMODS, MOD_LCTL), LM(_RMODS, MOD_LSFT), KC_NO, KC_NO,              S(KC_U),              S(KC_O),              S(KC_Y),              KC_QUES,
                                             KC_1,                 KC_2,               KC_SPC,                 KC_3),
 	[_LMODS] = LAYOUT_split_3x5_2(
@@ -122,10 +121,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          C(KC_Z),              C(KC_W),             NEXT_TAB,          NEXT_WINDOW, KC_NO, KC_NO,               KC_ENT,               KC_TAB,                L_NAV,               KC_SPC,
                                            L_NAV,                KC_NO,              KC_BSPC,               KC_DEL),
 	[_NAV2] = LAYOUT_split_3x5_2(
-                           KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,                KC_NO,   C(KC_LEFT_BRACKET),  C(KC_RIGHT_BRACKET),                KC_NO,
+                           KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                            KC_NO,              KC_LALT,              KC_LCTL,              KC_LSFT, KC_NO, KC_NO,              KC_HOME,              KC_PGDN,              KC_PGUP,               KC_END,
                            KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
-                                           KC_NO,                KC_NO,          C(KC_SLASH),                KC_NO),
+                                           KC_NO,                KC_NO,                KC_NO,                KC_NO),
 	[_FN] = LAYOUT_split_3x5_2(
                            KC_NO,               KC_F10,                KC_F9,              KC_LGUI, KC_NO, KC_NO,                KC_NO,              KC_LPRN,              KC_RPRN,                KC_NO,
                            KC_F4,         ALT_T(KC_F3),         CTL_T(KC_F2),         SFT_T(KC_F1), KC_NO, KC_NO,      SFT_T(KC_MINUS),       CTL_T(KC_LCBR),       ALT_T(KC_RCBR), LT(_NUM,KC_SEMICOLON),
@@ -136,11 +135,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                             KC_4,                 KC_3,                 KC_2,                 KC_1, KC_NO, KC_NO,              KC_LSFT,              KC_LCTL,              KC_LALT,                KC_NO,
                             KC_8,                 KC_7,                 KC_6,                 KC_5, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                                           KC_DOT,                 KC_0,                KC_NO,                KC_NO),
-	[_CASE] = LAYOUT_split_3x5_2(
-                           KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,                KC_NO,          PASCAL_CASE, SCREAMING_SNAKE_CASE,                KC_NO,
-                           KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,           SLASH_CASE,           CAMEL_CASE,           SNAKE_CASE,           CAPS_WORDS,
-                           KC_NO,                KC_NO,                KC_NO,                KC_NO, KC_NO, KC_NO,             DOT_CASE,              KC_CAPS,           KEBAP_CASE,                KC_NO,
-                                           KC_NO,                KC_NO,                KC_NO,                KC_NO),
 	[_MEDIA] = LAYOUT_split_3x5_2(
                            KC_NO,              KC_BRID,              KC_BRIU,                KC_NO, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
                          KC_PSCR,              KC_VOLD,              KC_VOLU,              KC_MUTE, KC_NO, KC_NO,                KC_NO,                KC_NO,                KC_NO,                KC_NO,
