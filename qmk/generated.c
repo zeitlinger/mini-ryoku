@@ -157,6 +157,8 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
             switch (keycode) {
             case _HANDLER__TAP_C_CKC_C: tap_code16(C(KC_C)); return false;
             case _HANDLER__TAP_C_CKC_K: tap_code16(C(KC_K)); return false;
+            case _HANDLER__TAP_C_KC_LCBR: tap_code16(KC_LCBR); return false;
+            case _HANDLER__TAP_C_KC_RCBR: tap_code16(KC_RCBR); return false;
             default:
                 break;
             }
