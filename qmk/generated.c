@@ -92,10 +92,10 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case C_NAV_KC_SPC: return 200;
     case C_NAV_KC_TAB: return 200;
     case C_NAV_KC_UP: return 200;
-    case C_NAV_L_NAV: return 200;
     case C_NAV_RCSKC_F: return 200;
     case C_NAV_RCSKC_V: return 200;
     case C_NAV_RCSKC_Z: return 200;
+    case C_NAV_TO_NAV: return 200;
     case C_RIGHT_DOT_SPC: return 200;
     case C_RIGHT_KC_AT: return 200;
     case C_RIGHT_KC_EXLM: return 200;
@@ -207,8 +207,6 @@ bool process_record_generated(uint16_t keycode, keyrecord_t *record) {
                 }
             }
             switch (keycode) {
-            case _HANDLER_L_NUM: layer_invert(_NUM); return false;
-            case _HANDLER_L_NAV: layer_invert(_NAV); return false;
             case _HANDLER_ALT_KC_D: SEND_STRING("oes"); return false;
             case _HANDLER_ALT_KC_H: SEND_STRING("ey"); return false;
             case _HANDLER_ALT_KC_J: SEND_STRING("ust"); return false;
